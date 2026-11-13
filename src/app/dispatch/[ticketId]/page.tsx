@@ -26,3 +26,4 @@ export default async function DispatchPage({ params }: PageProps) {
   const { ticketId } = await params;
   return <DispatchClient ticketId={ticketId} />;
 }
+

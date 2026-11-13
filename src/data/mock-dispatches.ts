@@ -137,3 +137,4 @@ export const INITIAL_PENDING_APPLICATIONS: PendingTradieApplication[] = [
     status: "pending",
   },
 ];
+
