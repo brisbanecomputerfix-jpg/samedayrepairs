@@ -85,12 +85,12 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
               <span className="text-slate-500 uppercase block font-semibold">Priority Dispatch Hotline:</span>
               <a
                 href="tel:0468991300"
-                className="text-slate-950 text-base font-black hover:text-orange-600 transition-colors inline-flex items-center gap-1.5 mt-0.5"
+                className="text-slate-950 text-base font-black hover:text-orange-700 transition-colors inline-flex items-center gap-1.5 mt-0.5"
               >
-                <Phone className="h-4 w-4 text-emerald-600" />
+                <Phone className="h-4 w-4 text-emerald-700" />
                 <span>0468 991 300</span>
               </a>
-              <span className="text-slate-400 block text-[10px] mt-0.5">24/7 Intake • 45–75 Min Metro ETA</span>
+              <span className="text-slate-500 block text-[10px] mt-0.5">24/7 Intake • 45–75 Min Metro ETA</span>
             </div>
           </div>
 
@@ -183,60 +183,65 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
             <h4 className="font-black text-slate-950 uppercase tracking-wider text-xs mb-3 font-mono">
               Portals & Standards
             </h4>
-            <ul className="space-y-2 text-slate-600 text-[11px] font-medium">
+            <ul className="space-y-1.5 text-slate-600 text-[11px] font-medium">
               <li>
                 <Link
                   href="/trade-charter"
-                  className="flex items-center gap-1.5 hover:text-orange-600 transition-colors"
+                  className="inline-flex items-center gap-1.5 hover:text-orange-700 transition-colors py-0.5 min-h-[26px]"
                 >
-                  <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <ShieldCheck className="h-4 w-4 text-emerald-700 shrink-0" />
                   <span>QBCC & Fair Trading Licences</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/trade-charter"
-                  className="flex items-center gap-1.5 hover:text-orange-600 transition-colors"
+                  className="inline-flex items-center gap-1.5 hover:text-orange-700 transition-colors py-0.5 min-h-[26px]"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-700 shrink-0" />
                   <span>$20M Public Liability Insured</span>
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-orange-600 transition-colors block">
+                <Link
+                  href="/terms"
+                  className="hover:text-orange-700 transition-colors inline-flex items-center py-0.5 min-h-[26px]"
+                >
                   12-Month Genuine Parts Warranty
                 </Link>
               </li>
-              <li>Mobile Card Terminals • Tax Invoices</li>
+              <li className="py-0.5 min-h-[26px] inline-flex items-center">
+                Mobile Card Terminals • Tax Invoices
+              </li>
 
-              <li className="pt-2 space-y-1.5">
+              <li className="pt-2 space-y-1">
                 <Link
                   href="/portal/seeker"
-                  className="block font-bold text-slate-900 hover:text-orange-600 transition-colors"
+                  className="inline-flex items-center font-bold text-slate-900 hover:text-orange-700 transition-colors py-1 min-h-[28px]"
                 >
                   → Customer Booking Account
                 </Link>
                 <Link
                   href="/portal/provider"
-                  className="block font-bold text-slate-900 hover:text-orange-600 transition-colors"
+                  className="inline-flex items-center font-bold text-slate-900 hover:text-orange-700 transition-colors py-1 min-h-[28px]"
                 >
                   → Contractor Fleet Portal
                 </Link>
                 <Link
                   href="/trade-charter"
-                  className="block font-bold text-slate-900 hover:text-orange-600 transition-colors"
+                  className="inline-flex items-center font-bold text-slate-900 hover:text-orange-700 transition-colors py-1 min-h-[28px]"
                 >
                   → Trade Charter & Standards
                 </Link>
                 <Link
                   href="/admin"
-                  className="block text-slate-500 hover:text-slate-800 transition-colors"
+                  className="inline-flex items-center text-slate-600 hover:text-slate-950 transition-colors py-1 min-h-[28px]"
                 >
                   → Operations Dispatch Console
                 </Link>
                 <Link
                   href="/login"
-                  className="block text-slate-500 hover:text-slate-800 transition-colors"
+                  className="inline-flex items-center text-slate-600 hover:text-slate-950 transition-colors py-1 min-h-[28px]"
                 >
                   → Portal Login
                 </Link>

@@ -84,7 +84,7 @@ export function SuburbDirectory({
                 <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900">
                   {region}
                 </h3>
-                <span className="text-[11px] font-semibold text-slate-400">
+                <span className="text-[11px] font-semibold text-slate-600">
                   {suburbs.length} Suburbs
                 </span>
               </div>
@@ -102,15 +102,15 @@ export function SuburbDirectory({
                       className="group flex items-center justify-between p-2.5 rounded-xl bg-white border border-slate-200/90 hover:border-orange-500 hover:shadow-xs transition-all text-xs"
                     >
                       <div className="flex items-center gap-2">
-                        <MapPin className="h-3.5 w-3.5 text-slate-400 group-hover:text-orange-600 transition-colors" />
-                        <span className="font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
+                        <MapPin className="h-3.5 w-3.5 text-slate-500 group-hover:text-orange-700 transition-colors" />
+                        <span className="font-bold text-slate-900 group-hover:text-orange-700 transition-colors">
                           {sub.name}
                         </span>
-                        <span className="font-mono text-[11px] text-slate-400">
+                        <span className="font-mono text-[11px] text-slate-600">
                           {sub.postcode}
                         </span>
                       </div>
-                      <ArrowRight className="h-3 w-3 text-slate-300 group-hover:text-orange-600 group-hover:translate-x-0.5 transition-all" />
+                      <ArrowRight className="h-3 w-3 text-slate-400 group-hover:text-orange-700 group-hover:translate-x-0.5 transition-all" />
                     </Link>
                   );
                 })}

@@ -352,9 +352,9 @@ export default function HomePage() {
           </div>
 
           {/* Need help footer */}
-          <div className="mt-8 text-center text-xs text-slate-600 font-medium">
+          <div className="mt-8 text-center text-xs text-slate-700 font-medium">
             Have a question not listed here? Talk to our emergency dispatcher at{" "}
-            <a href="tel:0468991300" className="text-orange-600 font-black hover:underline">
+            <a href="tel:0468991300" className="text-orange-700 font-black hover:underline">
               0468 991 300
             </a>
           </div>
