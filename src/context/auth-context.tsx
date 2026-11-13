@@ -87,7 +87,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!user || user.role !== "provider") return;
     const updatedJobs = user.activeJobs.map((j) => (j.id === jobId ? { ...j, status } : j));
     const completedIncrement = status === "Completed" ? 1 : 0;
-    const earningsIncrement = status === "Completed" ? 180 : 0;
+    const earningsIncrement = status === "Completed" ? 280 : 0;
     const updated: ProviderUser = {
       ...user,
       activeJobs: updatedJobs,
@@ -113,7 +113,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       urgency: target.urgency,
       status: "En Route",
       etaMinutes: 25,
-      diagnosticFee: "$89 Diagnostic (Waived if repair approved)",
+      diagnosticFee: "$149 Urgent Diagnostic (Waived if repair approved)",
       totalQuote: target.payoutEstimate,
     };
 
@@ -187,3 +187,4 @@ export function useAuth() {
   }
   return context;
 }
+

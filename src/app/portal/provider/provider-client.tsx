@@ -359,12 +359,12 @@ export function ProviderClient() {
                           onClick={() => {
                             updateJobStatus(job.id, "Completed");
                             showToast(
-                              "Job successfully marked as COMPLETED! $180 credited to your account balance."
+                              "Job successfully marked as COMPLETED! $280 credited to your account balance."
                             );
                           }}
                           className="px-4 py-2 rounded-xl bg-emerald-500 text-zinc-950 font-bold text-xs hover:bg-emerald-400 transition-colors shadow-sm cursor-pointer"
                         >
-                          Mark Complete & Issue $180 Receipt
+                          Mark Complete & Issue $280 Receipt
                         </button>
                       )}
                     </div>

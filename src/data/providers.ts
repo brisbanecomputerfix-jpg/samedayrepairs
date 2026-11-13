@@ -22,7 +22,7 @@ export const INITIAL_PROVIDERS: RepairProvider[] = [
     isOnDutyToday: true,
     rating: 4.9,
     reviewCount: 142,
-    calloutPricingNote: "$89 Diagnostic (Waived if repair approved)",
+    calloutPricingNote: "$149 Urgent Diagnostic (Waived if repair approved)",
     features: [
       "Van stocked with LG, Samsung, Fisher & Paykel, Bosch parts",
       "Average arrival time 45 - 75 mins",
@@ -52,7 +52,7 @@ export const INITIAL_PROVIDERS: RepairProvider[] = [
     isOnDutyToday: true,
     rating: 4.8,
     reviewCount: 215,
-    calloutPricingNote: "$0 Callout during business hours with repair",
+    calloutPricingNote: "$189 Emergency Callout & Drain Camera Diagnostics",
     features: [
       "High-pressure water jetter & CCTV drain camera on board",
       "Temporary hot water systems installed same day",
@@ -82,7 +82,7 @@ export const INITIAL_PROVIDERS: RepairProvider[] = [
     isOnDutyToday: true,
     rating: 4.9,
     reviewCount: 310,
-    calloutPricingNote: "$95 Flat Day Callout / $140 After 7PM",
+    calloutPricingNote: "$165 Urgent Lockout Callout / $240 After-Hours",
     features: [
       "Master Security Licensed NSW #409210",
       "Non-destructive door entry specialist",
@@ -112,7 +112,7 @@ export const INITIAL_PROVIDERS: RepairProvider[] = [
     isOnDutyToday: true,
     rating: 4.9,
     reviewCount: 188,
-    calloutPricingNote: "$110 Diagnostic Callout ($10M Insured)",
+    calloutPricingNote: "$175 Urgent Diagnostic & Switchboard Fault Scan",
     features: [
       "Energy Safe Victoria Registered Electrical Contractor REC #28911",
       "Thermal imaging camera for switchboard hot spots",
@@ -142,7 +142,7 @@ export const INITIAL_PROVIDERS: RepairProvider[] = [
     isOnDutyToday: true,
     rating: 4.7,
     reviewCount: 94,
-    calloutPricingNote: "Direct billing to all major Australian insurers",
+    calloutPricingNote: "$240 Emergency Make-Safe Board-Up & Direct Insurer Billing",
     features: [
       "Australian Standard AS1288 Safety Glazing certified",
       "Heavy-duty timber board-up for storm security",
@@ -172,7 +172,7 @@ export const INITIAL_PROVIDERS: RepairProvider[] = [
     isOnDutyToday: true,
     rating: 4.9,
     reviewCount: 167,
-    calloutPricingNote: "$99 Diagnostic & Safety Tune-up",
+    calloutPricingNote: "$160 Urgent Callout & Emergency Spring Tension Release",
     features: [
       "High-cycle replacement torsion & extension springs in van",
       "Merlin, B&D, ATA, Gliderol motor specialists",
@@ -202,7 +202,7 @@ export const INITIAL_PROVIDERS: RepairProvider[] = [
     isOnDutyToday: true,
     rating: 4.8,
     reviewCount: 270,
-    calloutPricingNote: "$99 Callout (Includes Battery Test)",
+    calloutPricingNote: "$149 Emergency Mobile Workshop Callout (Includes Battery Test)",
     features: [
       "Century & Bosch batteries with 3-year nationwide warranty",
       "Mobile tyre fitting & electronic wheel balancing van",
@@ -232,7 +232,7 @@ export const INITIAL_PROVIDERS: RepairProvider[] = [
     isOnDutyToday: true,
     rating: 4.9,
     reviewCount: 420,
-    calloutPricingNote: "Free Diagnostic / $30 Courier Pickup",
+    calloutPricingNote: "$89 Priority Same-Day Diagnostics & Express Courier",
     features: [
       "OEM-grade iPhone, iPad, Samsung & MacBook screens",
       "Immediate data preservation focus",
@@ -262,7 +262,7 @@ export const INITIAL_PROVIDERS: RepairProvider[] = [
     isOnDutyToday: true,
     rating: 4.8,
     reviewCount: 112,
-    calloutPricingNote: "$180 Emergency Make-Safe / Insurance Reports",
+    calloutPricingNote: "$290 Emergency Roof Make-Safe & Storm Tarping",
     features: [
       "Working at Heights Certified & QBCC Licensed",
       "Heavy industrial storm tarps & sandbag securing",

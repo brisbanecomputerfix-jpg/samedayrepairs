@@ -234,7 +234,7 @@ export function SeekerClient() {
                 <span className="text-[10px] uppercase font-bold text-zinc-500 block">
                   Diagnostic Guarantee
                 </span>
-                <span className="font-bold text-amber-400 block mt-0.5">$89 Diagnostic</span>
+                <span className="font-bold text-amber-400 block mt-0.5">$149 Urgent Diagnostic</span>
                 <span className="text-[11px] text-zinc-400">Waived if repair work is approved</span>
               </div>
             </div>

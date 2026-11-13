@@ -86,3 +86,4 @@ export interface ProviderUser {
 }
 
 export type AuthUser = SeekerUser | ProviderUser | null;
+

@@ -25,21 +25,21 @@ export function Navbar({
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-zinc-200 bg-white/95 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/95">
-      {/* Top Emergency Announcement Ribbon */}
-      <div className="bg-amber-500 text-zinc-950 px-3 py-1.5 text-xs font-semibold flex items-center justify-between">
+      {/* Top Network Status Ribbon */}
+      <div className="bg-zinc-900 text-zinc-300 border-b border-zinc-800 px-3 py-1 text-[11px] font-medium flex items-center justify-between">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="flex h-2 w-2 rounded-full bg-red-600 animate-ping" />
+            <span className="flex h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
             <span>
-              <strong>Australia-Wide Same-Day Guarantee:</strong> Technicians currently on-call across {currentCity.name}.
+              Simulated Emergency Network • Coverage: <strong className="text-white">{currentCity.name} ({currentCity.state})</strong>
             </span>
           </div>
           <div className="hidden md:flex items-center gap-3 text-[11px]">
-            <span className="flex items-center gap-1">
-              <ShieldCheck className="h-3.5 w-3.5" /> ABN Verified Trades
+            <span className="flex items-center gap-1 text-zinc-400">
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" /> ABN Verified Tradies
             </span>
-            <span className="text-zinc-700 dark:text-zinc-400">•</span>
-            <span>No Flake Guarantee</span>
+            <span className="text-zinc-700">•</span>
+            <span>Prototype Version</span>
           </div>
         </div>
       </div>

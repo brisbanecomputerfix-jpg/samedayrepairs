@@ -11,7 +11,7 @@ export const REPAIR_CATEGORIES: RepairCategory[] = [
     description:
       "Rapid diagnostics and genuine replacement parts for dead fridges, overflowing washers, faulty ovens, and dishwashers.",
     avgResponseTime: "60 - 90 mins",
-    typicalCalloutFee: "$89 - $120",
+    typicalCalloutFee: "$149 - $195 diagnostic",
     popularIssues: [
       "Fridge not cooling / warm freezer",
       "Washing machine not spinning / leaking water",
@@ -31,7 +31,7 @@ export const REPAIR_CATEGORIES: RepairCategory[] = [
     description:
       "Licensed plumbers equipped for sudden burst water pipes, overflowing blocked drains, no hot water, and gas leaks.",
     avgResponseTime: "30 - 60 mins",
-    typicalCalloutFee: "$0 callout with repair or $99",
+    typicalCalloutFee: "$189 - $260 callout & camera",
     popularIssues: [
       "Burst pipe flooding inside wall/cabinet",
       "Complete hot water system outage",
@@ -51,7 +51,7 @@ export const REPAIR_CATEGORIES: RepairCategory[] = [
     description:
       "Mobile locksmith vans for immediate house lockouts, snapped keys, damaged deadbolts, digital locks, and after-hours vehicle access.",
     avgResponseTime: "20 - 45 mins",
-    typicalCalloutFee: "$95 - $150",
+    typicalCalloutFee: "$165 - $260 emergency lockout",
     popularIssues: [
       "Locked out of home or unit",
       "Key snapped inside front door cylinder",
@@ -71,7 +71,7 @@ export const REPAIR_CATEGORIES: RepairCategory[] = [
     description:
       "Immediate power fault isolation, sparking switchboards, continuous safety switch trips, and storm electrical repairs.",
     avgResponseTime: "45 - 75 mins",
-    typicalCalloutFee: "$110 - $160",
+    typicalCalloutFee: "$175 - $250 urgent fault scan",
     popularIssues: [
       "Safety switch constantly tripping / no power",
       "Burning plastic smell from power point",
@@ -91,7 +91,7 @@ export const REPAIR_CATEGORIES: RepairCategory[] = [
     description:
       "24/7 glass replacement and make-safe board-ups for broken house windows, sliding patio doors, shopfronts, and shower screens.",
     avgResponseTime: "60 - 90 mins",
-    typicalCalloutFee: "Insurance-direct or $120 make-safe",
+    typicalCalloutFee: "$240 - $380 emergency board-up",
     popularIssues: [
       "Shattered sliding glass patio door",
       "Smashed front window from storm or impact",
@@ -111,7 +111,7 @@ export const REPAIR_CATEGORIES: RepairCategory[] = [
     description:
       "Stuck vehicles trapped inside? Emergency technicians for snapped torsion springs, cables off drum, motor burnout, and derailed roller doors.",
     avgResponseTime: "45 - 90 mins",
-    typicalCalloutFee: "$99 - $140",
+    typicalCalloutFee: "$160 - $240 urgent callout",
     popularIssues: [
       "Car stuck inside / door won't lift",
       "Snapped torsion or extension spring",
@@ -131,7 +131,7 @@ export const REPAIR_CATEGORIES: RepairCategory[] = [
     description:
       "On-site roadside and home driveway rescue: flat battery replacement, mobile puncture repair, alternator faults, and starter issues.",
     avgResponseTime: "30 - 60 mins",
-    typicalCalloutFee: "$99 - $130",
+    typicalCalloutFee: "$149 - $220 mobile callout",
     popularIssues: [
       "Dead battery / vehicle won't crank",
       "Flat tyre on driveway / mobile changeover",
@@ -151,7 +151,7 @@ export const REPAIR_CATEGORIES: RepairCategory[] = [
     description:
       "Express same-day repair for business phones, iPads, laptops, broken OLED screens, charging ports, and urgent battery swaps.",
     avgResponseTime: "30 - 60 mins",
-    typicalCalloutFee: "$0 (walk-in) or $40 mobile courier",
+    typicalCalloutFee: "$89 priority diagnostic & courier",
     popularIssues: [
       "Shattered iPhone / Samsung OLED screen",
       "Phone won't charge / loose USB-C / Lightning port",
@@ -171,7 +171,7 @@ export const REPAIR_CATEGORIES: RepairCategory[] = [
     description:
       "Emergency roof leak stop, tarping over storm-damaged tiles, blocked box gutters, and ceiling collapse prevention.",
     avgResponseTime: "60 - 120 mins",
-    typicalCalloutFee: "$150 - $250 make-safe",
+    typicalCalloutFee: "$290 - $480 emergency tarp make-safe",
     popularIssues: [
       "Active ceiling water leak during rain storm",
       "Missing or cracked roof tiles letting water in",
