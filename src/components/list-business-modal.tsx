@@ -151,10 +151,12 @@ export function ListBusinessModal({ isOpen, onClose }: ListBusinessModalProps) {
               {/* Business Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                  <label htmlFor="modal-business-name" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                     Legal Business Name
                   </label>
                   <input
+                    id="modal-business-name"
+                    name="modal-business-name"
                     type="text"
                     value={form.businessName}
                     onChange={(e) => setForm({ ...form, businessName: e.target.value })}
@@ -165,10 +167,12 @@ export function ListBusinessModal({ isOpen, onClose }: ListBusinessModalProps) {
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                  <label htmlFor="modal-business-abn" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                     Australian Business Number (ABN)
                   </label>
                   <input
+                    id="modal-business-abn"
+                    name="modal-business-abn"
                     type="text"
                     value={form.abn}
                     onChange={(e) => setForm({ ...form, abn: e.target.value })}
@@ -182,10 +186,12 @@ export function ListBusinessModal({ isOpen, onClose }: ListBusinessModalProps) {
               {/* Contact Name & Phone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                  <label htmlFor="modal-business-contact-name" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                     Lead Technician / Contact
                   </label>
                   <input
+                    id="modal-business-contact-name"
+                    name="modal-business-contact-name"
                     type="text"
                     value={form.contactName}
                     onChange={(e) => setForm({ ...form, contactName: e.target.value })}
@@ -196,10 +202,12 @@ export function ListBusinessModal({ isOpen, onClose }: ListBusinessModalProps) {
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                  <label htmlFor="modal-business-contact-phone" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                     Mobile for Dispatch Alerts
                   </label>
                   <input
+                    id="modal-business-contact-phone"
+                    name="modal-business-contact-phone"
                     type="tel"
                     value={form.contactPhone}
                     onChange={(e) => setForm({ ...form, contactPhone: e.target.value })}
@@ -213,10 +221,12 @@ export function ListBusinessModal({ isOpen, onClose }: ListBusinessModalProps) {
               {/* Trade Licence & Insurance */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                  <label htmlFor="modal-business-license" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                     State Trade Licence / ARC #
                   </label>
                   <input
+                    id="modal-business-license"
+                    name="modal-business-license"
                     type="text"
                     value={form.licenseNumber}
                     onChange={(e) => setForm({ ...form, licenseNumber: e.target.value })}
@@ -226,10 +236,13 @@ export function ListBusinessModal({ isOpen, onClose }: ListBusinessModalProps) {
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                  <label htmlFor="modal-business-city" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                     City Metro Hub
                   </label>
                   <select
+                    id="modal-business-city"
+                    name="modal-business-city"
+                    aria-label="Select City Metro Hub"
                     value={form.cityId}
                     onChange={(e) => setForm({ ...form, cityId: e.target.value })}
                     className="w-full rounded-lg border-2 border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-900 focus:border-slate-900 focus:bg-white focus:outline-hidden cursor-pointer"

@@ -201,10 +201,13 @@ export function UrgentDispatchModal({
             <form onSubmit={handleSubmit} className="mt-4 space-y-3.5">
               {/* Category selector */}
               <div>
-                <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                <label htmlFor="modal-dispatch-category" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                   Repair Vertical
                 </label>
                 <select
+                  id="modal-dispatch-category"
+                  name="modal-dispatch-category"
+                  aria-label="Select repair trade vertical"
                   value={form.categoryId}
                   onChange={(e) => setForm({ ...form, categoryId: e.target.value as RepairCategoryId })}
                   className="w-full rounded-lg border-2 border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold text-slate-900 focus:border-slate-900 focus:bg-white focus:outline-hidden cursor-pointer"
@@ -220,10 +223,12 @@ export function UrgentDispatchModal({
               {/* Name & Phone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                  <label htmlFor="modal-customer-name" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                     Your Name
                   </label>
                   <input
+                    id="modal-customer-name"
+                    name="modal-customer-name"
                     type="text"
                     value={form.customerName}
                     onChange={(e) => setForm({ ...form, customerName: e.target.value })}
@@ -234,10 +239,12 @@ export function UrgentDispatchModal({
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                  <label htmlFor="modal-customer-phone" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                     Contact Phone
                   </label>
                   <input
+                    id="modal-customer-phone"
+                    name="modal-customer-phone"
                     type="tel"
                     value={form.customerPhone}
                     onChange={(e) => setForm({ ...form, customerPhone: e.target.value })}
@@ -251,10 +258,12 @@ export function UrgentDispatchModal({
               {/* Suburb & Postcode */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                  <label htmlFor="modal-suburb" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                     Suburb
                   </label>
                   <input
+                    id="modal-suburb"
+                    name="modal-suburb"
                     type="text"
                     value={form.suburb}
                     onChange={(e) => setForm({ ...form, suburb: e.target.value })}
@@ -265,10 +274,12 @@ export function UrgentDispatchModal({
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                  <label htmlFor="modal-postcode" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                     Postcode
                   </label>
                   <input
+                    id="modal-postcode"
+                    name="modal-postcode"
                     type="text"
                     value={form.postcode}
                     onChange={(e) => setForm({ ...form, postcode: e.target.value })}
@@ -281,10 +292,12 @@ export function UrgentDispatchModal({
 
               {/* Issue Description */}
               <div>
-                <label className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
+                <label htmlFor="modal-specific-issue" className="text-[11px] font-bold uppercase tracking-wider text-slate-600 block mb-1 font-mono">
                   Symptom / What Happened?
                 </label>
                 <textarea
+                  id="modal-specific-issue"
+                  name="modal-specific-issue"
                   value={form.specificIssue}
                   onChange={(e) => setForm({ ...form, specificIssue: e.target.value })}
                   placeholder="e.g. Fridge warming up, compressor buzzing, water leaking under vegetable crisper."

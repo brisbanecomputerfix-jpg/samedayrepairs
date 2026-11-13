@@ -257,8 +257,13 @@ export function Navbar({
           {/* Metro Region Selector Pill */}
           <div className="hidden xl:flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50/80 px-3.5 py-2 text-xs text-slate-700">
             <MapPin className="h-4 w-4 text-orange-600 shrink-0" />
-            <span className="text-slate-500 font-medium">Service Area:</span>
+            <label htmlFor="desktop-metro-region" className="text-slate-500 font-medium cursor-pointer">
+              Service Area:
+            </label>
             <select
+              id="desktop-metro-region"
+              name="desktop-metro-region"
+              aria-label="Select Australian metropolitan service area"
               value={selectedCityId}
               onChange={(e) => onSelectCity(e.target.value)}
               className="bg-transparent font-bold text-slate-900 focus:outline-hidden cursor-pointer"

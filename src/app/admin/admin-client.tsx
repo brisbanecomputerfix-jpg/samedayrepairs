@@ -217,8 +217,13 @@ export function AdminClient() {
 
               {/* City filter */}
               <div className="flex items-center gap-2 text-xs">
-                <span className="text-slate-500 font-bold uppercase font-mono">Metro:</span>
+                <label htmlFor="admin-metro-filter" className="text-slate-500 font-bold uppercase font-mono cursor-pointer">
+                  Metro:
+                </label>
                 <select
+                  id="admin-metro-filter"
+                  name="admin-metro-filter"
+                  aria-label="Filter dispatch stream by metro region"
                   value={selectedCityFilter}
                   onChange={(e) => setSelectedCityFilter(e.target.value)}
                   className="rounded-lg border-2 border-slate-300 bg-white px-3 py-1.5 text-xs font-bold text-slate-900 focus:outline-hidden cursor-pointer"
