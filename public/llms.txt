@@ -1,73 +1,53 @@
 # SameDayRepairs.com.au - Emergency Repair & Trade Directory
 
-> Australia's verified on-demand emergency trade directory. Connecting homeowners and commercial premises with licensed whitegoods technicians, emergency plumbers, 24/7 locksmiths, electricians, and garage door specialists with guaranteed same-day arrival.
+> Australia's verified on-demand emergency trade directory. Connecting Australian homeowners and commercial premises with licensed whitegoods technicians, emergency plumbers, 24/7 locksmiths, electricians, and garage door specialists with guaranteed same-day arrival. Upfront diagnostic pricing from $149, audited state trade licences (QBCC, NSW Fair Trading, VBA), and 12-month parts warranties.
 
 ## Emergency Hotline
-- **Direct Dispatch Line**: 0468 991 300
-- **International**: +61 468 991 300
-- **Hours**: 24/7 Priority Emergency Intake
+- **Direct Dispatch Line**: [0468 991 300](tel:0468991300)
+- **International Emergency Line**: [+61 468 991 300](tel:+61468991300)
+- **Hours**: 24/7 Priority Emergency Breakdown Triage
 
-## Core Services & Capabilities
-- **Appliance & Whitegoods Repairs**: Samsung, LG, Fisher & Paykel, Bosch, Westinghouse, Smeg fridge/freezer cooling failures, washing machine pump errors, and oven element breakdowns. (Diagnostic callout from $149, waived on approved repair).
-- **Emergency Plumbing**: Burst water mains, leaking flexi-hoses, blocked sewer lines, leaking hot water systems (Rheem, Dux, Rinnai). (Diagnostic callout from $149).
-- **24/7 Emergency Locksmiths**: Residential lockouts, broken key extraction, commercial rekeying, electronic deadbolt failure. (Callout from $165).
-- **Emergency Electricians**: Tripped RCD safety switches, sparking power points, switchboard repairs, power restoration. (Diagnostic callout from $149).
-- **Garage Door Repairs**: Broken torsion springs, snapped cables, motor gear failures, doors jammed off-track. (Callout from $160).
-- **Roadside Mobile Mechanics**: On-site battery replacement, alternator testing, no-start triage. (Callout from $149).
+## Core Services & Booking Links
+- [Appliance & Whitegoods Repairs](https://samedayrepairs.com.au/category/appliance-repairs/brisbane): Samsung, LG, Fisher & Paykel, Bosch, Westinghouse, and Smeg fridge/freezer cooling failures, washing machine pump errors, and oven element breakdowns. (Diagnostic callout from $149, credited towards approved repairs).
+- [Emergency Plumbing](https://samedayrepairs.com.au/category/emergency-plumbing/brisbane): Burst water mains, leaking flexi-hoses, blocked sewer lines, leaking hot water systems (Rheem, Dux, Rinnai). (Diagnostic callout from $149).
+- [24/7 Emergency Locksmiths](https://samedayrepairs.com.au/category/emergency-locksmith/brisbane): Residential lockouts, broken key extraction, commercial rekeying, electronic deadbolt failure. (Callout from $165).
+- [Emergency Electricians](https://samedayrepairs.com.au/category/emergency-electrician/brisbane): Tripped RCD safety switches, sparking power points, switchboard repairs, power restoration. (Diagnostic callout from $149).
+- [Garage Door Repairs](https://samedayrepairs.com.au/category/garage-doors/brisbane): Broken torsion springs, snapped cables, motor gear failures, doors jammed off-track. (Callout from $160).
+- [Roadside Mobile Mechanics](https://samedayrepairs.com.au/category/mobile-mechanic/brisbane): On-site battery replacement, alternator testing, no-start roadside triage. (Callout from $149).
+- [Glaziers & Emergency Glass](https://samedayrepairs.com.au/category/glaziers/brisbane): Smashed window replacement, glass door repairs, AS1288 safety glass compliance. (Callout from $175).
+- [Roof & Storm Damage](https://samedayrepairs.com.au/category/roof-repairs/brisbane): Emergency tarpaulin installation, cracked tile leak detection, storm damage mitigation. (Callout from $195).
+- [Computer & Network Tech](https://samedayrepairs.com.au/category/computer-it/brisbane): Urgent network restoration, business POS outages, on-site hardware triage. (Callout from $130).
 
-## Hyper-Local Suburb Coverage & Landing Pages
-- **Queensland (Greater Brisbane)**:
-  - Chermside (4032): https://samedayrepairs.com.au/suburbs/brisbane/chermside
-  - Brisbane CBD (4000): https://samedayrepairs.com.au/suburbs/brisbane/brisbane-cbd
-  - South Brisbane (4101): https://samedayrepairs.com.au/suburbs/brisbane/south-brisbane
-  - Fortitude Valley (4006): https://samedayrepairs.com.au/suburbs/brisbane/fortitude-valley
-  - Aspley (4034): https://samedayrepairs.com.au/suburbs/brisbane/aspley
-  - Indooroopilly (4068): https://samedayrepairs.com.au/suburbs/brisbane/indooroopilly
-  - Carindale (4152): https://samedayrepairs.com.au/suburbs/brisbane/carindale
-  - Sunnybank (4109): https://samedayrepairs.com.au/suburbs/brisbane/sunnybank
-  - North Lakes (4509): https://samedayrepairs.com.au/suburbs/brisbane/north-lakes
-  - Ipswich (4305): https://samedayrepairs.com.au/suburbs/brisbane/ipswich
-  - Toowong (4066): https://samedayrepairs.com.au/suburbs/brisbane/toowong
-  - Coorparoo (4151): https://samedayrepairs.com.au/suburbs/brisbane/coorparoo
-  - Wynnum (4178): https://samedayrepairs.com.au/suburbs/brisbane/wynnum
-  - Strathpine (4500): https://samedayrepairs.com.au/suburbs/brisbane/strathpine
-  - Browns Plains (4118): https://samedayrepairs.com.au/suburbs/brisbane/browns-plains
-- **New South Wales (Greater Sydney)**:
-  - Sydney CBD (2000): https://samedayrepairs.com.au/suburbs/sydney/sydney-cbd
-  - Parramatta (2150): https://samedayrepairs.com.au/suburbs/sydney/parramatta
-  - Bondi (2026): https://samedayrepairs.com.au/suburbs/sydney/bondi
-  - Chatswood (2067): https://samedayrepairs.com.au/suburbs/sydney/chatswood
-  - Penrith (2750): https://samedayrepairs.com.au/suburbs/sydney/penrith
-  - Castle Hill (2154): https://samedayrepairs.com.au/suburbs/sydney/castle-hill
-  - Blacktown (2148): https://samedayrepairs.com.au/suburbs/sydney/blacktown
-- **Victoria (Greater Melbourne)**:
-  - Melbourne CBD (3000): https://samedayrepairs.com.au/suburbs/melbourne/melbourne-cbd
-  - Richmond (3121): https://samedayrepairs.com.au/suburbs/melbourne/richmond
-  - South Yarra (3141): https://samedayrepairs.com.au/suburbs/melbourne/south-yarra
-  - Brunswick (3056): https://samedayrepairs.com.au/suburbs/melbourne/brunswick
-  - Dandenong (3175): https://samedayrepairs.com.au/suburbs/melbourne/dandenong
-  - Box Hill (3128): https://samedayrepairs.com.au/suburbs/melbourne/box-hill
-  - Werribee (3030): https://samedayrepairs.com.au/suburbs/melbourne/werribee
-- **Gold Coast & Regional Centers**:
-  - Surfers Paradise (4217), Broadbeach (4218), Southport (4215), Robina (4226)
-  - Perth, Adelaide, Sunshine Coast, Canberra, Newcastle
+## Hyper-Local Suburb Coverage
+- [Chermside QLD 4032 Emergency Repairs](https://samedayrepairs.com.au/suburbs/brisbane/chermside): Priority trade dispatch across Chermside and Northern Brisbane.
+- [Brisbane CBD QLD 4000 Emergency Repairs](https://samedayrepairs.com.au/suburbs/brisbane/brisbane-cbd): Same-day inner city residential and commercial breakdown dispatch.
+- [South Brisbane QLD 4101 Emergency Repairs](https://samedayrepairs.com.au/suburbs/brisbane/south-brisbane): Southside whitegoods, plumbing, and electrical dispatch.
+- [Fortitude Valley QLD 4006 Emergency Repairs](https://samedayrepairs.com.au/suburbs/brisbane/fortitude-valley): 24/7 trade coverage for Fortitude Valley, New Farm, and Teneriffe.
+- [Aspley QLD 4034 Emergency Repairs](https://samedayrepairs.com.au/suburbs/brisbane/aspley): Rapid emergency trade dispatch for Aspley and Albany Creek.
+- [Indooroopilly QLD 4068 Emergency Repairs](https://samedayrepairs.com.au/suburbs/brisbane/indooroopilly): Western suburbs urgent appliance, plumbing, and electrical service.
+- [Carindale QLD 4152 Emergency Repairs](https://samedayrepairs.com.au/suburbs/brisbane/carindale): Southeast Brisbane emergency service and parts inventory.
+- [Sunnybank QLD 4109 Emergency Repairs](https://samedayrepairs.com.au/suburbs/brisbane/sunnybank): Southern Brisbane same-day multi-trade coverage.
+- [North Lakes QLD 4509 Emergency Repairs](https://samedayrepairs.com.au/suburbs/brisbane/north-lakes): Moreton Bay region rapid response repair specialists.
+- [Ipswich QLD 4305 Emergency Repairs](https://samedayrepairs.com.au/suburbs/brisbane/ipswich): West Brisbane & Ipswich local licensed trade contractors.
+- [Sydney CBD NSW 2000 Emergency Repairs](https://samedayrepairs.com.au/suburbs/sydney/sydney-cbd): Greater Sydney priority tradesmen, locksmiths, and whitegoods specialists.
+- [Parramatta NSW 2150 Emergency Repairs](https://samedayrepairs.com.au/suburbs/sydney/parramatta): Western Sydney emergency dispatch hub.
+- [Bondi NSW 2026 Emergency Repairs](https://samedayrepairs.com.au/suburbs/sydney/bondi): Eastern suburbs 24/7 priority emergency intake.
+- [Melbourne CBD VIC 3000 Emergency Repairs](https://samedayrepairs.com.au/suburbs/melbourne/melbourne-cbd): Greater Melbourne rapid response trade network.
+- [Richmond VIC 3121 Emergency Repairs](https://samedayrepairs.com.au/suburbs/melbourne/richmond): Inner East emergency repair dispatch.
+- [South Yarra VIC 3141 Emergency Repairs](https://samedayrepairs.com.au/suburbs/melbourne/south-yarra): Inner South emergency whitegoods, plumbing, and electrical service.
 
-## Trade Guarantees & Compliance
+## Trade Standards & Compliance
 - **Licensing**: All contractors audited against QBCC (Queensland), Fair Trading (NSW), and Victorian Building Authority (VBA).
-- **Insurance**: $20 Million Public Liability certificate of currency required.
+- **Insurance**: $20 Million Public Liability certificate of currency mandatory for directory listing.
 - **Warranty**: All replacement parts and workmanship backed by minimum 12-month statutory guarantee.
-- **Payment**: Mobile on-van EFTPOS terminals with instant GST tax invoices.
+- **Payment**: Mobile on-van EFTPOS terminals accepting Visa, Mastercard, and digital wallets with itemized GST tax invoices.
 
-## Key URLs
-- Homepage: https://samedayrepairs.com.au
-- Service Categories: https://samedayrepairs.com.au/#categories
-- Appliance Repairs (Brisbane): https://samedayrepairs.com.au/category/appliance-repairs/brisbane
-- Appliance Repairs (Chermside 4032): https://samedayrepairs.com.au/category/appliance-repairs/brisbane/chermside
-- Emergency Plumbing (Brisbane): https://samedayrepairs.com.au/category/emergency-plumbing/brisbane
-- Locksmiths (Brisbane): https://samedayrepairs.com.au/category/emergency-locksmith/brisbane
-- Customer Account & Booking Tracker: https://samedayrepairs.com.au/portal/seeker
-- Contractor Partner Portal: https://samedayrepairs.com.au/portal/provider
-- Operations Command Console: https://samedayrepairs.com.au/admin
-- Terms of Service: https://samedayrepairs.com.au/terms
-- Privacy Policy: https://samedayrepairs.com.au/privacy
-- Trade Charter & Australian Standards: https://samedayrepairs.com.au/trade-charter
+## Core Navigation & Official Portals
+- [SameDayRepairs Homepage](https://samedayrepairs.com.au): Official Australian emergency trade directory homepage.
+- [Emergency Breakdown Categories](https://samedayrepairs.com.au/#categories): Complete directory of supported repair verticals.
+- [Customer Booking & Dispatch Tracker](https://samedayrepairs.com.au/portal/seeker): Real-time booking tracking and technician ETA portal.
+- [Contractor Partner Portal](https://samedayrepairs.com.au/portal/provider): Contractor on-boarding and on-duty dispatch management.
+- [Operations Command Console](https://samedayrepairs.com.au/admin): Live directory operations and dispatch administration.
+- [Terms & Conditions](https://samedayrepairs.com.au/terms): Comprehensive service terms, diagnostic callout conditions, and cancellation policies.
+- [Privacy Policy](https://samedayrepairs.com.au/privacy): Australian Privacy Principles (APPs) and Privacy Act 1988 compliance statement.
+- [Trade Charter & Quality Standard](https://samedayrepairs.com.au/trade-charter): Mandatory contractor requirements, consumer guarantees, and code of conduct.

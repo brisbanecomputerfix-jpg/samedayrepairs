@@ -5,8 +5,11 @@ import { AlertTriangle, Phone } from "lucide-react";
 
 export function DemoBanner() {
   return (
-    <div className="bg-amber-400 border-b-2 border-slate-950 text-slate-950 px-3 py-2 text-xs font-bold shadow-sm relative z-50">
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 text-center sm:text-left">
+    <aside
+      aria-label="Prototype demo disclaimer"
+      className="bg-amber-400 border-b-2 border-slate-950 text-slate-950 px-3 py-2 text-xs font-bold shadow-sm relative z-50 min-h-[56px] sm:min-h-[38px] flex items-center justify-center"
+    >
+      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 text-center sm:text-left w-full">
         <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-start gap-1.5 sm:gap-2">
           <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-xs text-[10px] font-mono font-black bg-slate-950 text-amber-300 uppercase tracking-widest shrink-0 shadow-2xs">
             <AlertTriangle className="h-3 w-3 text-amber-400 fill-amber-400/20" />
@@ -28,6 +31,6 @@ export function DemoBanner() {
           </a>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }

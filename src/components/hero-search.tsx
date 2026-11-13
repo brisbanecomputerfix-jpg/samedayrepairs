@@ -181,7 +181,7 @@ export function HeroSearch({
                   key={item.id}
                   type="button"
                   onClick={() => onSelectCategory(item.id)}
-                  className={`group text-left p-4 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between h-full select-none ${
+                  className={`group text-left p-3.5 sm:p-4 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between min-h-[148px] select-none ${
                     isSelected
                       ? "bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-orange-500/40 scale-[1.02]"
                       : "bg-white hover:bg-slate-50/80 text-slate-900 border-slate-200/90 shadow-2xs hover:shadow-md hover:-translate-y-1 hover:border-slate-300"

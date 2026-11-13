@@ -76,8 +76,8 @@ export function Navbar({
   return (
     <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-200 shadow-xs">
       {/* Top Reassurance Ribbon */}
-      <div className="bg-slate-900 text-slate-300 px-3 sm:px-4 py-2 text-xs">
-        <div className="container mx-auto max-w-7xl flex items-center justify-between gap-2">
+      <div className="bg-slate-900 text-slate-300 px-3 sm:px-4 py-2 text-xs min-h-[34px] flex items-center">
+        <div className="container mx-auto max-w-7xl flex items-center justify-between gap-2 w-full">
           <div className="flex items-center gap-2 sm:gap-4 min-w-0">
             <span className="flex items-center gap-1.5 text-slate-200 font-medium truncate">
               <span className="h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
@@ -108,7 +108,7 @@ export function Navbar({
       </div>
 
       {/* Main Navbar */}
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 h-18 flex items-center justify-between">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 h-[72px] min-h-[72px] flex items-center justify-between">
         
         {/* Left: Brand Logo & Internal Nav Links */}
         <div className="flex items-center gap-6 lg:gap-8">
