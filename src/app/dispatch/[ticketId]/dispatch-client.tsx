@@ -46,7 +46,7 @@ export function DispatchClient({ ticketId }: DispatchClientProps) {
       urgency: "Emergency (1-2 Hours)",
       status: "En Route",
       assignedTechName: "Dave Mitchell (Licensed Mobile Tech)",
-      assignedTechPhone: "1300 726 339",
+      assignedTechPhone: "0468 991 300",
       assignedTechVehicle: "Mobile Workshop Van #QLD-842",
       etaMinutes: 24,
       createdAt: "Just now",
@@ -210,7 +210,7 @@ export function DispatchClient({ ticketId }: DispatchClientProps) {
 
             {/* Direct Call Tech Button */}
             <a
-              href={`tel:${ticket.assignedTechPhone?.replace(/\s+/g, "") || "1300726339"}`}
+              href={`tel:${ticket.assignedTechPhone?.replace(/\s+/g, "") || "0468991300"}`}
               className="mt-5 w-full flex items-center justify-center gap-2 rounded-xl bg-zinc-950 py-3 text-xs font-bold text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 transition-colors"
             >
               <Phone className="h-3.5 w-3.5 text-emerald-400" />
@@ -258,8 +258,8 @@ export function DispatchClient({ ticketId }: DispatchClientProps) {
             {/* Help / Hotline */}
             <div className="flex items-center justify-between text-xs text-zinc-500 pt-2 border-t border-zinc-100 dark:border-zinc-800">
               <span>Need to change or cancel this request?</span>
-              <a href="tel:1300726339" className="font-bold text-zinc-900 dark:text-zinc-100 hover:underline">
-                Call Support: 1300 726 339
+              <a href="tel:0468991300" className="font-bold text-zinc-900 dark:text-zinc-100 hover:underline">
+                Call Support: 0468 991 300
               </a>
             </div>
           </div>

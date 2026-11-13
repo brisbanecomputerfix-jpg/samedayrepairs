@@ -11,7 +11,7 @@ export function MobileStickyBar({ onOpenDispatch }: MobileStickyBarProps) {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 sm:hidden border-t border-zinc-200 bg-white/95 backdrop-blur-md p-2.5 px-3 flex items-center gap-2 shadow-2xl dark:border-zinc-800 dark:bg-zinc-950/95">
       <a
-        href="tel:1300726339"
+        href="tel:0468991300"
         className="flex-1 flex items-center justify-center gap-2 rounded-xl border border-zinc-300 bg-zinc-50 py-3 text-xs font-bold text-zinc-900 active:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
       >
         <Phone className="h-4 w-4 text-emerald-600" />

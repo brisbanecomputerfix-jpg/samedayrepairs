@@ -94,11 +94,11 @@ export function Navbar({
 
           {/* Emergency Hotline Button */}
           <a
-            href="tel:1300726339"
+            href="tel:0468991300"
             className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-3.5 py-2 text-xs font-bold text-zinc-900 hover:border-amber-400 hover:bg-amber-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 transition-all shadow-xs"
           >
             <Phone className="h-3.5 w-3.5 text-emerald-600" />
-            <span>1300 726 339</span>
+            <span>0468 991 300</span>
           </a>
 
           {/* Urgent Dispatch CTA */}
@@ -153,11 +153,11 @@ export function Navbar({
 
           <div className="pt-2 flex flex-col gap-2">
             <a
-              href="tel:1300726339"
+              href="tel:0468991300"
               className="w-full flex items-center justify-center gap-2 rounded-xl bg-zinc-100 p-2.5 text-xs font-bold text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100"
             >
               <Phone className="h-4 w-4 text-emerald-600" />
-              <span>Call Emergency Hotline: 1300 726 339</span>
+              <span>Call Hotline: 0468 991 300</span>
             </a>
 
             <button

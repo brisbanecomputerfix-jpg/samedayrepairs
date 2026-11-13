@@ -72,7 +72,7 @@ export default async function CityCategoryPage({ params }: PageProps) {
     "@type": "EmergencyService",
     name: `SameDay ${category.name} ${city.name}`,
     description: `Same-day emergency ${category.name.toLowerCase()} across ${city.name}, ${city.state}.`,
-    telephone: "1300726339",
+    telephone: "0468991300",
     url: `https://samedayrepairs.com.au/category/${category.slug}/${city.slug}`,
     areaServed: {
       "@type": "City",

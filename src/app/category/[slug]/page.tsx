@@ -77,7 +77,7 @@ export default async function CategoryPage({ params }: PageProps) {
       "@type": "Organization",
       name: "SameDayRepairs.com.au",
       url: "https://samedayrepairs.com.au",
-      telephone: "1300726339",
+      telephone: "0468991300",
     },
     areaServed: {
       "@type": "Country",

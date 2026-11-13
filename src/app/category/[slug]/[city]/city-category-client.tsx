@@ -129,11 +129,11 @@ export function CityCategoryClient({
               <span>Dispatch {city.name} Tech Now</span>
             </button>
             <a
-              href="tel:1300726339"
+              href="tel:0468991300"
               className="flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-800/80 px-5 py-3 text-xs font-bold text-white hover:bg-zinc-700 transition-colors"
             >
               <Phone className="h-4 w-4 text-emerald-400" />
-              <span>Call Direct: 1300 726 339</span>
+              <span>Call Direct: 0468 991 300</span>
             </a>
           </div>
         </div>

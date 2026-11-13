@@ -55,8 +55,10 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
               Australia's dedicated nationwide directory and dispatch network for urgent, emergency, and same-day repair providers.
             </p>
             <div className="pt-2 text-[11px] text-zinc-500">
-              National Emergency Referral Hotline:<br />
-              <strong className="text-zinc-900 dark:text-zinc-200 text-sm">1300 726 339</strong>
+              National Referral Hotline:<br />
+              <a href="tel:0468991300" className="text-zinc-900 dark:text-zinc-200 text-sm font-bold hover:text-amber-500 transition-colors">
+                0468 991 300
+              </a>
             </div>
           </div>
 
