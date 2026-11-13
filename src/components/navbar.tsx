@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Zap, Phone, PlusCircle, MapPin, ShieldCheck, Menu, X } from "lucide-react";
+import { Zap, Phone, PlusCircle, MapPin, ShieldCheck, Menu, X, User, LogIn, Wrench } from "lucide-react";
 import { AUSTRALIAN_CITIES } from "@/data/locations";
+import { useAuth } from "@/context/auth-context";
 
 interface NavbarProps {
   selectedCityId: string;
@@ -18,6 +19,7 @@ export function Navbar({
   onOpenDispatch,
   onOpenRegister,
 }: NavbarProps) {
+  const { user, role, isHydrated } = useAuth();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const currentCity = AUSTRALIAN_CITIES.find((c) => c.id === selectedCityId) || AUSTRALIAN_CITIES[0];
 
@@ -82,20 +84,53 @@ export function Navbar({
         </div>
 
         {/* Right Actions */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-2.5">
+          {/* Portal Access / User Profile */}
+          {isHydrated && user ? (
+            <Link
+              href={role === "seeker" ? "/portal/seeker" : "/portal/provider"}
+              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition-all shadow-xs ${
+                role === "seeker"
+                  ? "border border-amber-500/40 bg-amber-500/10 text-amber-500 hover:bg-amber-500/20 dark:text-amber-400"
+                  : "border border-orange-500/40 bg-orange-500/10 text-orange-600 hover:bg-orange-500/20 dark:text-orange-400"
+              }`}
+            >
+              {role === "seeker" ? (
+                <>
+                  <User className="h-3.5 w-3.5" />
+                  <span>{(user as any).name?.split(" ")[0]} (Seeker)</span>
+                </>
+              ) : (
+                <>
+                  <Wrench className="h-3.5 w-3.5" />
+                  <span>{(user as any).contactName?.split(" ")[0]} (Tradie)</span>
+                </>
+              )}
+            </Link>
+          ) : (
+            <Link
+              href="/login"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-700 hover:text-amber-600 dark:text-zinc-300 dark:hover:text-amber-400 transition-colors px-2.5 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/60"
+            >
+              <LogIn className="h-3.5 w-3.5 text-zinc-500" />
+              <span>Login</span>
+            </Link>
+          )}
+
           {/* List Your Business Button */}
           <button
             onClick={onOpenRegister}
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-700 hover:text-amber-600 dark:text-zinc-300 dark:hover:text-amber-400 transition-colors px-2 py-1.5"
           >
             <PlusCircle className="h-4 w-4" />
-            <span>List Your Business (Free)</span>
+            <span className="hidden lg:inline">List Business (Free)</span>
+            <span className="lg:hidden">List Free</span>
           </button>
 
           {/* Emergency Hotline Button */}
           <a
             href="tel:0468991300"
-            className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-3.5 py-2 text-xs font-bold text-zinc-900 hover:border-amber-400 hover:bg-amber-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 transition-all shadow-xs"
+            className="inline-flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-3 py-2 text-xs font-bold text-zinc-900 hover:border-amber-400 hover:bg-amber-50/50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 transition-all shadow-xs"
           >
             <Phone className="h-3.5 w-3.5 text-emerald-600" />
             <span>0468 991 300</span>
@@ -104,10 +139,10 @@ export function Navbar({
           {/* Urgent Dispatch CTA */}
           <button
             onClick={onOpenDispatch}
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 px-4 py-2 text-xs font-bold text-zinc-950 shadow-md shadow-orange-500/20 hover:brightness-105 active:scale-95 transition-all cursor-pointer"
+            className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 px-3.5 py-2 text-xs font-bold text-zinc-950 shadow-md shadow-orange-500/20 hover:brightness-105 active:scale-95 transition-all cursor-pointer"
           >
             <Zap className="h-3.5 w-3.5 fill-zinc-950" />
-            <span>Dispatch Tech Today</span>
+            <span>Dispatch Tech</span>
           </button>
         </div>
 
@@ -152,6 +187,26 @@ export function Navbar({
           </div>
 
           <div className="pt-2 flex flex-col gap-2">
+            {isHydrated && user ? (
+              <Link
+                href={role === "seeker" ? "/portal/seeker" : "/portal/provider"}
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-2 rounded-xl bg-amber-500/10 border border-amber-500/30 p-2.5 text-xs font-bold text-amber-500 dark:text-amber-400"
+              >
+                {role === "seeker" ? <User className="h-4 w-4" /> : <Wrench className="h-4 w-4" />}
+                <span>Go to {role === "seeker" ? "Seeker Portal" : "Tradie Dispatch Portal"}</span>
+              </Link>
+            ) : (
+              <Link
+                href="/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-2 rounded-xl bg-zinc-900 p-2.5 text-xs font-bold text-white border border-zinc-700"
+              >
+                <LogIn className="h-4 w-4 text-amber-400" />
+                <span>Sign In to Customer or Tradie Portal</span>
+              </Link>
+            )}
+
             <a
               href="tel:0468991300"
               className="w-full flex items-center justify-center gap-2 rounded-xl bg-zinc-100 p-2.5 text-xs font-bold text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100"

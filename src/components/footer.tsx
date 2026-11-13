@@ -107,6 +107,14 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
               <li>Same-Day Cutoff Policy</li>
               <li>12-Month Workmanship Warranty</li>
               <li>Fair Diagnostic Fee Guidelines</li>
+              <li className="pt-2 space-y-1">
+                <Link href="/login" className="block font-bold text-amber-500 hover:underline">
+                  → Portal Access & Login
+                </Link>
+                <Link href="/admin" className="block text-zinc-400 hover:underline">
+                  → Operations Dispatch Center
+                </Link>
+              </li>
               <li className="pt-2">
                 <div className="rounded-lg bg-red-50 p-2 text-[10px] text-red-900 dark:bg-red-950/40 dark:text-red-300">
                   <strong>Notice:</strong> For life-threatening emergencies (e.g. major gas leaks, structural collapse), please call <strong>000</strong> immediately.
