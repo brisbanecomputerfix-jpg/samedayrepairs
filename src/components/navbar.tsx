@@ -2,7 +2,19 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Zap, Phone, PlusCircle, MapPin, ShieldCheck, Menu, X, User, LogIn, Wrench, Radio } from "lucide-react";
+import {
+  Zap,
+  Phone,
+  MapPin,
+  ShieldCheck,
+  Menu,
+  X,
+  User,
+  LogIn,
+  Wrench,
+  Clock,
+  ArrowRight,
+} from "lucide-react";
 import { AUSTRALIAN_CITIES } from "@/data/locations";
 import { useAuth } from "@/context/auth-context";
 
@@ -25,35 +37,30 @@ export function Navbar({
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-200 shadow-xs">
-      {/* Top Industrial Dispatch Ribbon */}
-      <div className="bg-slate-950 text-slate-300 px-3 py-1.5 text-[11px] font-mono tracking-tight border-b border-slate-800">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+      {/* Top Reassurance Ribbon */}
+      <div className="bg-slate-900 text-slate-300 px-4 py-2 text-xs">
+        <div className="container mx-auto max-w-7xl flex items-center justify-between">
+          <div className="flex items-center gap-2 sm:gap-4">
+            <span className="flex items-center gap-1.5 text-slate-200 font-medium">
+              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+              <span>Same-Day Availability: <strong className="text-white">{currentCity.name} Metro</strong></span>
             </span>
-            <span className="text-slate-400">DISPATCH RADAR:</span>
-            <span className="font-semibold text-slate-100 uppercase">
-              {currentCity.name} ({currentCity.state}) FLEET ON-CALL
-            </span>
-            <span className="hidden sm:inline text-slate-500">|</span>
-            <span className="hidden sm:inline text-amber-400 font-semibold">
-              AVG ARRIVAL: 45-65 MINS
+            <span className="hidden md:inline text-slate-600">|</span>
+            <span className="hidden md:flex items-center gap-1 text-slate-400">
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+              <span>QBCC & Fair Trading Licensed Trades</span>
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-[11px]">
-            <span className="hidden md:flex items-center gap-1.5 text-slate-300">
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-              <span>QBCC / Fair Trading / ABN Verified</span>
+          <div className="flex items-center gap-3 sm:gap-5">
+            <span className="hidden sm:inline text-slate-400 text-[11px]">
+              Average arrival window: 45–75 mins
             </span>
-            <span className="hidden sm:inline text-slate-700">|</span>
             <a
               href="tel:0468991300"
-              className="text-amber-400 font-bold hover:text-amber-300 flex items-center gap-1"
+              className="inline-flex items-center gap-1.5 font-bold text-amber-400 hover:text-amber-300 transition-colors"
             >
-              <Phone className="h-3 w-3" />
+              <Phone className="h-3.5 w-3.5" />
               <span>0468 991 300</span>
             </a>
           </div>
@@ -61,31 +68,31 @@ export function Navbar({
       </div>
 
       {/* Main Navbar */}
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Brand Logo - Utilitarian & Authoritative */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="h-10 w-10 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-center text-amber-400 shadow-xs group-hover:border-amber-500 transition-colors">
-            <Zap className="h-5 w-5 fill-amber-400 text-amber-400" />
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 h-18 flex items-center justify-between">
+        {/* Brand Logo */}
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="h-10 w-10 rounded-xl bg-orange-600 flex items-center justify-center text-white shadow-sm group-hover:bg-orange-700 transition-colors">
+            <Zap className="h-5 w-5 fill-white" />
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5">
               <span className="text-xl font-black tracking-tight text-slate-950">
                 SameDay<span className="text-orange-600">Repairs</span>
               </span>
-              <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-black uppercase text-slate-700 border border-slate-300 tracking-wider">
+              <span className="text-xs font-bold text-slate-400 tracking-normal">
                 .com.au
               </span>
             </div>
-            <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 -mt-0.5 hidden sm:block">
-              Emergency Trade & Repair Fleet
+            <span className="text-[11px] font-medium text-slate-500 hidden sm:block">
+              Australia's Verified Emergency Trade Directory
             </span>
           </div>
         </Link>
 
         {/* Metro Region Selector */}
-        <div className="hidden lg:flex items-center gap-2 rounded-lg border border-slate-300 bg-slate-50 px-3 py-1.5 text-xs text-slate-700 shadow-2xs">
-          <MapPin className="h-3.5 w-3.5 text-orange-600 shrink-0" />
-          <span className="text-slate-500 font-medium text-[11px] uppercase tracking-wider">Region:</span>
+        <div className="hidden lg:flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50/80 px-3.5 py-2 text-xs text-slate-700">
+          <MapPin className="h-4 w-4 text-orange-600 shrink-0" />
+          <span className="text-slate-500 font-medium">Service Area:</span>
           <select
             value={selectedCityId}
             onChange={(e) => onSelectCity(e.target.value)}
@@ -99,99 +106,92 @@ export function Navbar({
           </select>
         </div>
 
-        {/* Right Actions */}
-        <div className="hidden sm:flex items-center gap-2.5">
+        {/* Right Navigation & CTAs */}
+        <div className="hidden sm:flex items-center gap-3">
           {/* User / Tradie Portal Indicator */}
           {isHydrated && user ? (
             <Link
               href={role === "seeker" ? "/portal/seeker" : "/portal/provider"}
-              className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-bold transition-all border ${
-                role === "seeker"
-                  ? "border-amber-300 bg-amber-50 text-amber-950 hover:bg-amber-100"
-                  : "border-orange-300 bg-orange-50 text-orange-950 hover:bg-orange-100"
-              }`}
+              className="inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-bold transition-all border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-800"
             >
               {role === "seeker" ? (
                 <>
-                  <User className="h-3.5 w-3.5 text-amber-600" />
-                  <span>{(user as any).name?.split(" ")[0] || "Seeker"} (Seeker)</span>
+                  <User className="h-4 w-4 text-orange-600" />
+                  <span>{(user as any).name?.split(" ")[0] || "Account"}</span>
                 </>
               ) : (
                 <>
-                  <Wrench className="h-3.5 w-3.5 text-orange-600" />
-                  <span>{(user as any).contactName?.split(" ")[0] || "Tradie"} (Tradie)</span>
+                  <Wrench className="h-4 w-4 text-orange-600" />
+                  <span>{(user as any).contactName?.split(" ")[0] || "Contractor"}</span>
                 </>
               )}
             </Link>
           ) : (
             <Link
               href="/login"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-slate-700 hover:bg-slate-50 hover:text-slate-900 transition-colors shadow-2xs"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-slate-950 transition-colors shadow-2xs"
             >
-              <LogIn className="h-3.5 w-3.5 text-slate-500" />
+              <LogIn className="h-4 w-4 text-slate-400" />
               <span>Portal Login</span>
             </Link>
           )}
 
-          {/* Tradie List Button */}
+          {/* Tradie Partner Button */}
           <button
             onClick={onOpenRegister}
-            className="hidden md:inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+            className="hidden md:inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-950 transition-colors cursor-pointer"
           >
-            <PlusCircle className="h-3.5 w-3.5 text-slate-500" />
-            <span>Register Trade Van</span>
+            <span>Contractor Sign-Up</span>
           </button>
 
-          {/* Direct Emergency Call Button */}
+          {/* Direct Phone Call */}
           <a
             href="tel:0468991300"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 px-3.5 py-2 text-xs font-bold text-white shadow-xs transition-colors"
+            className="hidden lg:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-900 hover:border-slate-300 hover:bg-slate-50 transition-all"
           >
-            <Phone className="h-3.5 w-3.5 fill-white text-emerald-700" />
+            <Phone className="h-3.5 w-3.5 text-orange-600" />
             <span>0468 991 300</span>
           </a>
 
-          {/* Rapid Dispatch CTA */}
+          {/* Primary Action Button */}
           <button
             onClick={onOpenDispatch}
-            className="inline-flex items-center gap-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 px-3.5 py-2 text-xs font-black text-slate-950 shadow-xs transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-700 px-4 py-2.5 text-xs font-bold text-white shadow-sm hover:shadow-md transition-all cursor-pointer"
           >
-            <Zap className="h-3.5 w-3.5 fill-slate-950" />
-            <span>Dispatch Tech</span>
+            <Zap className="h-4 w-4 fill-white" />
+            <span>Request Same-Day Repair</span>
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="sm:hidden flex items-center gap-2">
+        {/* Mobile Menu Toggle Button */}
+        <div className="flex sm:hidden items-center gap-2">
           <a
             href="tel:0468991300"
-            className="inline-flex items-center gap-1 rounded-lg bg-emerald-700 px-2.5 py-1.5 text-xs font-bold text-white"
+            className="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-orange-50 border border-orange-200 text-orange-600"
           >
-            <Phone className="h-3.5 w-3.5" />
-            <span>Call</span>
+            <Phone className="h-4 w-4" />
           </a>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-slate-700 hover:bg-slate-100"
-            aria-label="Toggle Menu"
+            className="p-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100"
+            aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="sm:hidden border-t border-slate-200 bg-white p-4 space-y-3">
-          <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Your Region</span>
+        <div className="sm:hidden border-t border-slate-200 bg-white p-4 space-y-3 animate-in fade-in">
+          {/* Region selector mobile */}
+          <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 p-2.5 text-xs">
+            <MapPin className="h-4 w-4 text-orange-600 shrink-0" />
+            <span className="text-slate-500 font-medium">Region:</span>
             <select
               value={selectedCityId}
-              onChange={(e) => {
-                onSelectCity(e.target.value);
-                setMobileMenuOpen(false);
-              }}
-              className="text-xs font-bold text-slate-900 bg-slate-50 border border-slate-200 rounded-md p-1.5"
+              onChange={(e) => onSelectCity(e.target.value)}
+              className="bg-transparent font-bold text-slate-900 focus:outline-hidden w-full cursor-pointer"
             >
               {AUSTRALIAN_CITIES.map((c) => (
                 <option key={c.id} value={c.id}>
@@ -205,21 +205,19 @@ export function Navbar({
             <Link
               href="/login"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-1.5 rounded-lg border border-slate-300 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50"
+              className="flex items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-white py-2.5 text-xs font-bold text-slate-800"
             >
-              <LogIn className="h-4 w-4" />
+              <LogIn className="h-4 w-4 text-slate-400" />
               <span>Portal Login</span>
             </Link>
-
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenRegister();
               }}
-              className="flex items-center justify-center gap-1.5 rounded-lg border border-slate-300 bg-slate-50 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-100"
+              className="flex items-center justify-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-xs font-bold text-slate-700"
             >
-              <PlusCircle className="h-4 w-4" />
-              <span>Register Van</span>
+              <span>Join As Tradie</span>
             </button>
           </div>
 
@@ -228,10 +226,10 @@ export function Navbar({
               setMobileMenuOpen(false);
               onOpenDispatch();
             }}
-            className="w-full flex items-center justify-center gap-2 rounded-lg bg-amber-500 py-3 text-sm font-black text-slate-950 shadow-xs"
+            className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-600 py-3 text-xs font-bold text-white shadow-sm"
           >
-            <Zap className="h-4 w-4 fill-slate-950" />
-            <span>Emergency Van Dispatch</span>
+            <Zap className="h-4 w-4 fill-white" />
+            <span>Request Same-Day Repair Now</span>
           </button>
         </div>
       )}

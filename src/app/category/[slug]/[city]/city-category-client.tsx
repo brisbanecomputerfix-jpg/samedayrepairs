@@ -74,10 +74,11 @@ export function CityCategoryClient({
       {/* Local Hero Header - Industrial Emergency Command */}
       <header className="relative bg-white border-b border-slate-200 py-12 px-4 industrial-grid">
         <div className="container mx-auto max-w-5xl relative z-10 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 rounded-md bg-slate-900 px-3 py-1 text-xs font-mono font-medium text-slate-100 mb-4 border border-slate-700 shadow-2xs">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-amber-400 font-bold">RADAR:</span>
-            <span>On-Duty Across {city.name} Today</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-1 text-xs text-slate-700 mb-4 shadow-2xs">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="font-semibold text-slate-900">Verified Same-Day Contractors</span>
+            <span className="text-slate-400">•</span>
+            <span className="text-slate-600">Available Across {city.name} Today</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-950 leading-tight">

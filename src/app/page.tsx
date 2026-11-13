@@ -134,28 +134,45 @@ export default function HomePage() {
         onOpenDispatch={handleOpenDispatch}
       />
 
-      {/* LIVE DISPATCH TELEMETRY TICKER */}
-      <div className="bg-slate-900 text-slate-200 border-y-2 border-slate-950 py-2.5 px-4 overflow-hidden">
-        <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-2 text-xs font-mono">
-          <div className="flex items-center gap-2 shrink-0">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span className="text-amber-400 font-bold uppercase tracking-wider">Live Incident Feed:</span>
-          </div>
+      {/* 3-STEP REASSURANCE STRIP */}
+      <div className="bg-slate-900 text-slate-100 py-6 px-4 border-y border-slate-800">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+            <div className="flex items-start gap-3.5">
+              <div className="h-8 w-8 rounded-lg bg-orange-600/20 border border-orange-500/40 text-orange-400 font-bold flex items-center justify-center shrink-0 text-xs">
+                01
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-sm">1. Select Your Service</h3>
+                <p className="text-xs text-slate-400 mt-0.5 leading-relaxed">
+                  Choose your repair category and suburb for immediate match with on-call licensed trades.
+                </p>
+              </div>
+            </div>
 
-          <div className="flex flex-wrap items-center gap-4 text-[11px] text-slate-300">
-            <span className="bg-slate-800 px-2 py-0.5 rounded-sm border border-slate-700">
-              <strong className="text-white">12m ago:</strong> SDR-948102 Fridge Cooling • Chermside QLD (En Route)
-            </span>
-            <span className="hidden sm:inline bg-slate-800 px-2 py-0.5 rounded-sm border border-slate-700">
-              <strong className="text-white">34m ago:</strong> SDR-812940 Burst Mains • Parramatta NSW (Fixed $285)
-            </span>
-            <span className="hidden lg:inline bg-slate-800 px-2 py-0.5 rounded-sm border border-slate-700">
-              <strong className="text-white">52m ago:</strong> SDR-774190 Locked Out • South Yarra VIC (Resolved $240)
-            </span>
-          </div>
+            <div className="flex items-start gap-3.5">
+              <div className="h-8 w-8 rounded-lg bg-orange-600/20 border border-orange-500/40 text-orange-400 font-bold flex items-center justify-center shrink-0 text-xs">
+                02
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-sm">2. Rapid Same-Day Arrival</h3>
+                <p className="text-xs text-slate-400 mt-0.5 leading-relaxed">
+                  Contractor calls within 15 minutes to confirm ETA. Mobile vans carry common parts for first-visit fix.
+                </p>
+              </div>
+            </div>
 
-          <div className="shrink-0 text-slate-400 text-[11px]">
-            Dispatcher: <a href="tel:0468991300" className="text-amber-400 font-bold hover:underline">0468 991 300</a>
+            <div className="flex items-start gap-3.5">
+              <div className="h-8 w-8 rounded-lg bg-orange-600/20 border border-orange-500/40 text-orange-400 font-bold flex items-center justify-center shrink-0 text-xs">
+                03
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-sm">3. Upfront Pricing & 12-Mo Warranty</h3>
+                <p className="text-xs text-slate-400 mt-0.5 leading-relaxed">
+                  Fixed diagnostic callout fee credited toward repair. All work backed by 12-month warranty.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -170,21 +187,21 @@ export default function HomePage() {
       </div>
 
       {/* Live Directory Section */}
-      <section className="py-12 px-4 container mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b-2 border-slate-200">
+      <section className="py-14 px-4 container mx-auto max-w-6xl">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200">
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">
-                ACTIVE ON-CALL ROSTER
+              <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
+                Verified Local Contractors
               </span>
             </div>
-            <h2 className="text-2xl font-black text-slate-950 mt-0.5 tracking-tight">
-              Verified Same-Day Technicians in {currentCity.name}
+            <h2 className="text-2xl font-black text-slate-950 mt-1 tracking-tight">
+              Same-Day Repair Providers in {currentCity.name}
             </h2>
-            <p className="text-xs text-slate-600 mt-0.5 font-medium">
+            <p className="text-xs sm:text-sm text-slate-600 mt-1">
               {selectedCategory !== "all" ? `Category: ${selectedCategoryObj?.name} • ` : ""}
-              Showing <strong>{filteredProviders.length}</strong> vetted providers with on-duty mobile vans ready to dispatch.
+              Showing <strong>{filteredProviders.length}</strong> licensed contractors available for same-day callouts.
             </p>
           </div>
 
@@ -192,21 +209,21 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => setOnDutyOnly(!onDutyOnly)}
-              className={`rounded-lg border-2 px-3 py-1.5 text-xs font-black uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 ${
+              className={`rounded-xl border px-3.5 py-2 text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                 onDutyOnly
                   ? "border-emerald-600 bg-emerald-50 text-emerald-900"
-                  : "border-slate-300 text-slate-700 hover:bg-slate-100"
+                  : "border-slate-200 text-slate-700 hover:bg-slate-50 bg-white"
               }`}
             >
               <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
-              <span>On-Duty Today Only</span>
+              <span>Available Today Only</span>
             </button>
 
             {/* City Switcher */}
             <select
               value={selectedCityId}
               onChange={(e) => setSelectedCityId(e.target.value)}
-              className="rounded-lg border-2 border-slate-300 bg-white px-3 py-1.5 text-xs font-bold text-slate-900 focus:outline-hidden cursor-pointer shadow-2xs"
+              className="rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-900 focus:outline-hidden cursor-pointer shadow-2xs"
             >
               {AUSTRALIAN_CITIES.map((c) => (
                 <option key={c.id} value={c.id}>

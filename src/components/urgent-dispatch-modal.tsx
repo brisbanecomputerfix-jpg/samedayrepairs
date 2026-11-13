@@ -124,12 +124,12 @@ export function UrgentDispatchModal({
             </div>
 
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-left text-xs space-y-2">
-              <div className="flex items-center gap-2 font-black text-slate-900 font-mono">
+              <div className="flex items-center gap-2 font-bold text-slate-900">
                 <Clock className="h-4 w-4 text-orange-600" />
-                <span>NEXT STEP: VAN ROSTER CONFIRMATION</span>
+                <span>Next Step: Contractor Confirmation</span>
               </div>
-              <p className="text-slate-600 text-xs leading-relaxed font-medium">
-                You will receive an SMS and direct phone connection within <strong>5 to 15 minutes</strong> confirming your arrival window and on-duty technician ETA.
+              <p className="text-slate-600 text-xs leading-relaxed">
+                You will receive a phone call within <strong>5 to 15 minutes</strong> confirming your arrival window and assigned technician details.
               </p>
             </div>
 
@@ -137,14 +137,14 @@ export function UrgentDispatchModal({
               <Link
                 href={`/dispatch/${ticketId}`}
                 onClick={onClose}
-                className="w-full flex items-center justify-center gap-2 rounded-lg bg-orange-600 hover:bg-orange-700 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all"
+                className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-700 py-3 text-xs font-bold text-white shadow-sm transition-all"
               >
-                <span>Track Live Dispatch Telemetry (ETA & Specialist)</span>
+                <span>View Live Status Tracker (ETA & Specialist)</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <button
                 onClick={onClose}
-                className="w-full rounded-lg border-2 border-slate-200 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
+                className="w-full rounded-xl border border-slate-200 py-2.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
               >
                 Close & Return to Directory
               </button>
@@ -154,9 +154,9 @@ export function UrgentDispatchModal({
           <div>
             {/* Header */}
             <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-1.5 text-orange-600 text-xs font-black uppercase tracking-wider font-mono">
+              <div className="flex items-center gap-1.5 text-orange-600 text-xs font-bold uppercase tracking-wider">
                 <Zap className="h-4 w-4 fill-orange-600 text-orange-600" />
-                <span>Priority Emergency Intake</span>
+                <span>Request Same-Day Repair</span>
               </div>
 
               {/* 1-Click Demo Fill */}

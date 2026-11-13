@@ -109,7 +109,7 @@ export function ListBusinessModal({ isOpen, onClose }: ListBusinessModalProps) {
               </div>
               <ul className="list-disc pl-4 space-y-1 text-slate-600 text-xs font-medium">
                 <li>Your listing profile is published to the directory within 12–24 hours.</li>
-                <li>You will receive SMS radar alerts when homeowners in your {form.serviceRadiusKm}km radius trigger urgent dispatches.</li>
+                <li>You will receive SMS alerts when homeowners in your {form.serviceRadiusKm}km radius request urgent repairs.</li>
                 <li>Zero upfront fee during our Australian national rollout.</li>
               </ul>
             </div>

@@ -2,15 +2,14 @@
 
 :root {
   --background: #f8fafc;
-  --foreground: #090d16;
+  --foreground: #0f172a;
   --surface: #ffffff;
   --surface-muted: #f1f5f9;
   --border: #e2e8f0;
-  --border-strong: #cbd5e1;
+  --border-subtle: #cbd5e1;
   --primary: #ea580c;
   --primary-hover: #c2410c;
-  --safety-amber: #f59e0b;
-  --emergency-red: #dc2626;
+  --safety-amber: #d97706;
   --slate-dark: #0f172a;
 }
 
@@ -20,47 +19,21 @@ body {
   overflow-x: hidden;
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Subtle industrial tech grid background */
-.industrial-grid {
+/* Subtle clean architectural grid background */
+.clean-grid {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
 }
 
-.industrial-grid-dark {
-  background-size: 28px 28px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-}
-
-/* Authentic Emergency Hazard Stripe bar */
-.hazard-stripe {
-  background: repeating-linear-gradient(
-    -45deg,
-    #f59e0b,
-    #f59e0b 10px,
-    #0f172a 10px,
-    #0f172a 20px
-  );
-}
-
-.hazard-stripe-thin {
-  background: repeating-linear-gradient(
-    -45deg,
-    #f59e0b,
-    #f59e0b 6px,
-    #18181b 6px,
-    #18181b 12px
-  );
-}
-
-/* Tabular figures for dispatch telemetry, prices, and countdowns */
+/* Tabular figures for numbers, prices, and countdowns */
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
