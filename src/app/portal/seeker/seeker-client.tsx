@@ -21,6 +21,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { useAuth } from "@/context/auth-context";
+import { DEMO_SEEKER } from "@/data/mock-users";
+import { SeekerUser } from "@/types/auth";
 import { UrgentDispatchModal } from "@/components/urgent-dispatch-modal";
 
 export function SeekerClient() {
@@ -64,7 +66,7 @@ export function SeekerClient() {
 
   if (!isHydrated) return null;
 
-  const seeker = role === "seeker" && user ? (user as any) : null;
+  const seeker: SeekerUser = (role === "seeker" && user ? user : DEMO_SEEKER) as SeekerUser;
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white flex flex-col justify-between">

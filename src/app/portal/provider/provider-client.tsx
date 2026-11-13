@@ -23,6 +23,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { useAuth } from "@/context/auth-context";
+import { DEMO_PROVIDER } from "@/data/mock-users";
+import { ProviderUser } from "@/types/auth";
 
 export function ProviderClient() {
   const router = useRouter();
@@ -47,7 +49,7 @@ export function ProviderClient() {
 
   if (!isHydrated) return null;
 
-  const provider = role === "provider" && user ? (user as any) : null;
+  const provider: ProviderUser = (role === "provider" && user ? user : DEMO_PROVIDER) as ProviderUser;
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white flex flex-col justify-between">
