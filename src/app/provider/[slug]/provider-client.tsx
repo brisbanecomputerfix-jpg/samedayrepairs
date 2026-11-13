@@ -75,15 +75,27 @@ export function ProviderClient({ provider }: ProviderClientProps) {
       {/* Breadcrumb */}
       <div className="bg-slate-100 border-b border-slate-200 text-xs py-2 px-4">
         <div className="container mx-auto max-w-5xl flex items-center gap-1.5 text-slate-500 font-medium">
-          <Link href="/" className="hover:text-slate-900">
+          <Link href="/" className="hover:text-slate-900 transition-colors">
             Home
           </Link>
-          <ChevronRight className="h-3 w-3" />
-          <Link href="/#categories" className="hover:text-slate-900">
-            Directory
-          </Link>
-          <ChevronRight className="h-3 w-3" />
-          <span className="font-bold text-slate-900">
+          <ChevronRight className="h-3 w-3 text-slate-400" />
+          {categories[0] && (
+            <>
+              <Link href={`/category/${categories[0].slug}`} className="hover:text-slate-900 transition-colors">
+                {categories[0].shortName}
+              </Link>
+              <ChevronRight className="h-3 w-3 text-slate-400" />
+            </>
+          )}
+          {city && (
+            <>
+              <Link href={`/category/${categories[0]?.slug || "appliance-repairs"}/${city.slug}`} className="hover:text-slate-900 transition-colors">
+                {city.name}
+              </Link>
+              <ChevronRight className="h-3 w-3 text-slate-400" />
+            </>
+          )}
+          <span className="font-bold text-slate-950">
             {provider.name}
           </span>
         </div>
@@ -270,13 +282,17 @@ export function ProviderClient({ provider }: ProviderClientProps) {
 
               <div className="space-y-1.5 text-xs text-slate-700">
                 {city?.popularSuburbs.map((sub) => (
-                  <div key={sub.name} className="flex items-center justify-between py-1 border-b border-slate-100 text-[11px] font-medium">
+                  <Link
+                    key={sub.name}
+                    href={`/suburbs/${city.slug}/${sub.slug}`}
+                    className="flex items-center justify-between py-1.5 border-b border-slate-100 text-[11px] font-medium hover:text-orange-600 transition-colors group"
+                  >
                     <span className="flex items-center gap-1.5">
-                      <MapPin className="h-3 w-3 text-orange-600" />
-                      <span>{sub.name}</span>
+                      <MapPin className="h-3 w-3 text-orange-600 group-hover:scale-110 transition-transform" />
+                      <span className="group-hover:underline">{sub.name}</span>
                     </span>
                     <span className="text-slate-400 font-mono">{sub.postcode}</span>
-                  </div>
+                  </Link>
                 ))}
               </div>
 

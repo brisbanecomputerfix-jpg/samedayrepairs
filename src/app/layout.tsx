@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/auth-context";
 import { DemoBanner } from "@/components/demo-banner";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -190,6 +191,7 @@ export default function RootLayout({
         <AuthProvider>
           <DemoBanner />
           {children}
+          <ScrollToTop />
         </AuthProvider>
       </body>
     </html>

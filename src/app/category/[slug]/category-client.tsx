@@ -13,6 +13,7 @@ import { Footer } from "@/components/footer";
 import { MobileStickyBar } from "@/components/mobile-sticky-bar";
 import { UrgentDispatchModal } from "@/components/urgent-dispatch-modal";
 import { ListBusinessModal } from "@/components/list-business-modal";
+import { SuburbDirectory } from "@/components/suburb-directory";
 import { CategoryFaq } from "@/data/faqs";
 import {
   Clock,
@@ -222,6 +223,9 @@ export function CategoryClient({
           </div>
         )}
       </section>
+
+      {/* Hyper-Local Suburb Coverage for this Category */}
+      <SuburbDirectory categorySlug={category.slug} />
 
       {/* Category FAQs (SEO Schema-Powered) */}
       <section className="py-14 px-4 bg-zinc-50 border-t border-zinc-200 dark:bg-zinc-900/50 dark:border-zinc-800">

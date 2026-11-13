@@ -88,7 +88,7 @@ export function CategorySuburbClient({
               <span>Same-Day Response Active in {suburb.name} ({suburb.postcode})</span>
             </span>
             <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600">
-              {suburb.region} • Greater {city.name}
+              {suburb.region} • {city.name}
             </span>
           </div>
 
