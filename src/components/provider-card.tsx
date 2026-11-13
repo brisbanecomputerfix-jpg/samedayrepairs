@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import {
   Phone,
   Clock,
@@ -43,9 +44,12 @@ export function ProviderCard({ provider, onOpenDispatch }: ProviderCardProps) {
         </div>
 
         {/* Business Title & Tagline */}
-        <h3 className="text-lg font-black text-zinc-950 dark:text-white leading-snug">
-          {provider.name}
-        </h3>
+        <Link href={`/provider/${provider.slug}`} className="group block">
+          <h3 className="text-lg font-black text-zinc-950 dark:text-white leading-snug group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors flex items-center justify-between">
+            <span>{provider.name}</span>
+            <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-amber-500" />
+          </h3>
+        </Link>
         <p className="text-xs font-medium text-amber-600 dark:text-amber-400 mt-0.5">
           {provider.tagline}
         </p>

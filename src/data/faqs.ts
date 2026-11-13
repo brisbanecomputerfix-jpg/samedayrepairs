@@ -135,3 +135,4 @@ export const CATEGORY_FAQS: Record<RepairCategoryId, CategoryFaq[]> = {
     },
   ],
 };
+
