@@ -15,6 +15,7 @@ import {
   Warehouse,
   CheckCircle2,
   ArrowRight,
+  Radio,
 } from "lucide-react";
 import { REPAIR_CATEGORIES } from "@/data/categories";
 import { AUSTRALIAN_CITIES } from "@/data/locations";
@@ -45,6 +46,12 @@ export function HeroSearch({
     subtitle: string;
     icon: React.ComponentType<{ className?: string }>;
     diagnostic: string;
+    bg: string;
+    text: string;
+    border: string;
+    hoverBg: string;
+    glow: string;
+    dot: string;
   }> = [
     {
       id: "appliances",
@@ -52,6 +59,12 @@ export function HeroSearch({
       subtitle: "Whitegoods & freezer rescue",
       icon: Refrigerator,
       diagnostic: "$149 Diagnostic",
+      bg: "bg-sky-50",
+      text: "text-sky-600",
+      border: "border-sky-200/80",
+      hoverBg: "group-hover:bg-sky-600 group-hover:text-white",
+      glow: "group-hover:shadow-[0_0_15px_rgba(2,132,199,0.35)]",
+      dot: "bg-sky-500",
     },
     {
       id: "plumbing",
@@ -59,6 +72,12 @@ export function HeroSearch({
       subtitle: "Mains shutoff & pipe repair",
       icon: Droplets,
       diagnostic: "$149 Diagnostic",
+      bg: "bg-blue-50",
+      text: "text-blue-600",
+      border: "border-blue-200/80",
+      hoverBg: "group-hover:bg-blue-600 group-hover:text-white",
+      glow: "group-hover:shadow-[0_0_15px_rgba(37,99,235,0.35)]",
+      dot: "bg-blue-500",
     },
     {
       id: "locksmith",
@@ -66,6 +85,12 @@ export function HeroSearch({
       subtitle: "Residential & automotive entry",
       icon: KeyRound,
       diagnostic: "$165 Callout",
+      bg: "bg-amber-50",
+      text: "text-amber-600",
+      border: "border-amber-200/80",
+      hoverBg: "group-hover:bg-amber-500 group-hover:text-white",
+      glow: "group-hover:shadow-[0_0_15px_rgba(245,158,11,0.35)]",
+      dot: "bg-amber-500",
     },
     {
       id: "electrical",
@@ -73,6 +98,12 @@ export function HeroSearch({
       subtitle: "RCD safety switch failure",
       icon: Zap,
       diagnostic: "$149 Diagnostic",
+      bg: "bg-orange-50",
+      text: "text-orange-600",
+      border: "border-orange-200/80",
+      hoverBg: "group-hover:bg-orange-600 group-hover:text-white",
+      glow: "group-hover:shadow-[0_0_15px_rgba(234,88,12,0.35)]",
+      dot: "bg-orange-500",
     },
     {
       id: "garage-doors",
@@ -80,6 +111,12 @@ export function HeroSearch({
       subtitle: "Broken spring or motor jam",
       icon: Warehouse,
       diagnostic: "$160 Callout",
+      bg: "bg-violet-50",
+      text: "text-violet-600",
+      border: "border-violet-200/80",
+      hoverBg: "group-hover:bg-violet-600 group-hover:text-white",
+      glow: "group-hover:shadow-[0_0_15px_rgba(124,58,237,0.35)]",
+      dot: "bg-violet-500",
     },
     {
       id: "mobile-mechanic",
@@ -87,6 +124,12 @@ export function HeroSearch({
       subtitle: "On-site roadside mechanic",
       icon: Flame,
       diagnostic: "$149 Callout",
+      bg: "bg-rose-50",
+      text: "text-rose-600",
+      border: "border-rose-200/80",
+      hoverBg: "group-hover:bg-rose-600 group-hover:text-white",
+      glow: "group-hover:shadow-[0_0_15px_rgba(225,29,72,0.35)]",
+      dot: "bg-rose-500",
     },
   ];
 
@@ -97,8 +140,8 @@ export function HeroSearch({
         {/* Verification Pill */}
         <div className="flex items-center justify-center mb-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-xs text-slate-700 shadow-xs max-w-full">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-500 shrink-0" />
-            <span className="font-semibold text-slate-900 truncate">Australia's Verified Same-Day Trade Directory</span>
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500 shrink-0 animate-pulse" />
+            <span className="font-semibold text-slate-900 truncate">Australia&apos;s Verified Same-Day Trade Directory</span>
             <span className="text-slate-300 hidden sm:inline">•</span>
             <span className="text-slate-500 hidden sm:inline">QBCC & State Licences Audited</span>
           </div>
@@ -115,49 +158,70 @@ export function HeroSearch({
           </p>
         </div>
 
-        {/* Quick Crisis Selection Cards */}
+        {/* Quick Crisis Selection Cards with Interactive Icons */}
         <div className="mt-10">
           <div className="flex items-center justify-between mb-3 px-1">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900">
-              Common Urgent Repairs (Same-Day Response)
+            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 flex items-center gap-1.5 font-mono">
+              <Radio className="h-3.5 w-3.5 text-orange-600 animate-pulse" />
+              <span>Common Urgent Repairs (Select for Instant Match)</span>
             </h2>
             <span className="text-xs text-slate-500 hidden sm:inline">
-              Select your issue for direct technician matching
+              45–75 Min Mobile Van Dispatch
             </span>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-            {COMMON_EMERGENCIES.map((item) => {
+            {COMMON_EMERGENCIES.map((item, idx) => {
               const Icon = item.icon;
               const isSelected = selectedCategory === item.id;
+              const isTiltLeft = idx % 2 === 0;
 
               return (
                 <button
                   key={item.id}
                   type="button"
                   onClick={() => onSelectCategory(item.id)}
-                  className={`group text-left p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between h-full ${
+                  className={`group text-left p-4 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between h-full select-none ${
                     isSelected
-                      ? "bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-orange-500/30"
-                      : "bg-white hover:bg-slate-50/80 text-slate-900 border-slate-200/90 shadow-2xs hover:shadow-xs hover:border-slate-300"
+                      ? "bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-orange-500/40 scale-[1.02]"
+                      : "bg-white hover:bg-slate-50/80 text-slate-900 border-slate-200/90 shadow-2xs hover:shadow-md hover:-translate-y-1 hover:border-slate-300"
                   }`}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <div
-                        className={`h-9 w-9 rounded-xl flex items-center justify-center transition-colors ${
-                          isSelected
-                            ? "bg-orange-600 text-white"
-                            : "bg-slate-100 text-slate-700 group-hover:bg-slate-200"
-                        }`}
-                      >
-                        <Icon className="h-4.5 w-4.5" />
+                      
+                      {/* Interactive Service Icon */}
+                      <div className="relative">
+                        <div
+                          className={`h-10 w-10 rounded-xl flex items-center justify-center border transition-all duration-300 ease-out transform ${
+                            isTiltLeft
+                              ? "group-hover:-rotate-6"
+                              : "group-hover:rotate-6"
+                          } group-hover:scale-115 active:scale-95 ${
+                            isSelected
+                              ? "bg-orange-600 text-white border-orange-500 shadow-md"
+                              : `${item.bg} ${item.text} ${item.border} ${item.hoverBg} ${item.glow}`
+                          }`}
+                        >
+                          <Icon className="h-5 w-5" />
+                        </div>
+
+                        {/* Interactive Live Status Indicator */}
+                        <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5 pointer-events-none">
+                          <span
+                            className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${item.dot}`}
+                          />
+                          <span
+                            className={`relative inline-flex rounded-full h-2.5 w-2.5 border border-white ${item.dot}`}
+                          />
+                        </span>
                       </div>
+
                       <span
-                        className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                        className={`text-[10px] font-bold px-2 py-0.5 rounded-full border transition-colors ${
                           isSelected
-                            ? "bg-slate-800 text-amber-300"
-                            : "bg-slate-100 text-slate-600"
+                            ? "bg-slate-800 text-amber-300 border-slate-700"
+                            : "bg-slate-100 text-slate-600 border-slate-200"
                         }`}
                       >
                         {item.diagnostic}
@@ -165,8 +229,8 @@ export function HeroSearch({
                     </div>
 
                     <div
-                      className={`text-xs font-bold leading-snug line-clamp-2 ${
-                        isSelected ? "text-white" : "text-slate-950"
+                      className={`text-xs font-bold leading-snug line-clamp-2 transition-colors ${
+                        isSelected ? "text-white" : "text-slate-950 group-hover:text-orange-600"
                       }`}
                     >
                       {item.title}

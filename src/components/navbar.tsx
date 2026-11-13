@@ -168,8 +168,8 @@ export function Navbar({
                           className="flex items-center justify-between p-2 rounded-xl hover:bg-slate-50 transition-colors group"
                         >
                           <div className="flex items-center gap-2.5">
-                            <div className="h-7 w-7 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center shrink-0">
-                              <Icon className="h-3.5 w-3.5" />
+                            <div className="h-8 w-8 rounded-xl bg-orange-50 text-orange-600 border border-orange-100 flex items-center justify-center shrink-0 transition-all duration-300 ease-out transform group-hover:scale-115 group-hover:-rotate-6 group-hover:bg-orange-600 group-hover:text-white group-hover:shadow-xs">
+                              <Icon className="h-4 w-4" />
                             </div>
                             <div>
                               <div className="text-xs font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
@@ -379,9 +379,11 @@ export function Navbar({
                     key={cat.id}
                     href={`/category/${cat.slug}/${currentCity.slug}`}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-2 p-2 rounded-xl border border-slate-200/90 bg-slate-50/50 hover:bg-orange-50 hover:border-orange-300 text-xs text-slate-800 transition-colors"
+                    className="flex items-center gap-2 p-2 rounded-xl border border-slate-200/90 bg-slate-50/50 hover:bg-orange-50 hover:border-orange-300 text-xs text-slate-800 transition-all duration-200 group active:scale-98"
                   >
-                    <Icon className="h-3.5 w-3.5 text-orange-600 shrink-0" />
+                    <div className="h-6 w-6 rounded-lg bg-orange-100/80 text-orange-600 flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-115 group-hover:-rotate-6">
+                      <Icon className="h-3.5 w-3.5" />
+                    </div>
                     <span className="truncate font-semibold">{cat.shortName}</span>
                   </Link>
                 );

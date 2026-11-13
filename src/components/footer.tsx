@@ -194,15 +194,29 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
               Portals & Standards
             </h4>
             <ul className="space-y-2 text-slate-600 text-[11px] font-medium">
-              <li className="flex items-center gap-1.5">
-                <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
-                <span>QBCC & Fair Trading Licences</span>
+              <li>
+                <Link
+                  href="/trade-charter"
+                  className="flex items-center gap-1.5 hover:text-orange-600 transition-colors"
+                >
+                  <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <span>QBCC & Fair Trading Licences</span>
+                </Link>
               </li>
-              <li className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
-                <span>$20M Public Liability Insured</span>
+              <li>
+                <Link
+                  href="/trade-charter"
+                  className="flex items-center gap-1.5 hover:text-orange-600 transition-colors"
+                >
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <span>$20M Public Liability Insured</span>
+                </Link>
               </li>
-              <li>12-Month Genuine Parts Warranty</li>
+              <li>
+                <Link href="/terms" className="hover:text-orange-600 transition-colors block">
+                  12-Month Genuine Parts Warranty
+                </Link>
+              </li>
               <li>Mobile Card Terminals • Tax Invoices</li>
 
               <li className="pt-2 space-y-1.5">
@@ -217,6 +231,12 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
                   className="block font-bold text-slate-900 hover:text-orange-600 transition-colors"
                 >
                   → Contractor Fleet Portal
+                </Link>
+                <Link
+                  href="/trade-charter"
+                  className="block font-bold text-slate-900 hover:text-orange-600 transition-colors"
+                >
+                  → Trade Charter & Standards
                 </Link>
                 <Link
                   href="/admin"
@@ -253,9 +273,15 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
 
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-4">
-              <span className="hover:underline cursor-pointer">Privacy Policy</span>
-              <span className="hover:underline cursor-pointer">Terms of Service</span>
-              <span className="hover:underline cursor-pointer">Trade Charter</span>
+              <Link href="/privacy" className="hover:text-orange-600 hover:underline transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-orange-600 hover:underline transition-colors">
+                Terms of Service
+              </Link>
+              <Link href="/trade-charter" className="hover:text-orange-600 hover:underline transition-colors">
+                Trade Charter
+              </Link>
             </div>
 
             {/* Back to Top Arrow Button in Footer */}
