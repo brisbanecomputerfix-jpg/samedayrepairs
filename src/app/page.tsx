@@ -6,6 +6,7 @@ import { HeroSearch } from "@/components/hero-search";
 import { CategoryGrid } from "@/components/category-grid";
 import { ProviderCard } from "@/components/provider-card";
 import { TrustSection } from "@/components/trust-section";
+import { SuburbDirectory } from "@/components/suburb-directory";
 import { Footer } from "@/components/footer";
 import { MobileStickyBar } from "@/components/mobile-sticky-bar";
 import { UrgentDispatchModal } from "@/components/urgent-dispatch-modal";
@@ -291,6 +292,9 @@ export default function HomePage() {
           </div>
         )}
       </section>
+
+      {/* Hyper-Local Suburb Directory */}
+      <SuburbDirectory currentCityId={selectedCityId} />
 
       {/* Trust & Australian Standard Charter */}
       <TrustSection />

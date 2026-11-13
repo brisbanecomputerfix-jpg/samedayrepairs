@@ -14,6 +14,7 @@ import { MobileStickyBar } from "@/components/mobile-sticky-bar";
 import { UrgentDispatchModal } from "@/components/urgent-dispatch-modal";
 import { ListBusinessModal } from "@/components/list-business-modal";
 import { CategoryFaq } from "@/data/faqs";
+import { SuburbDirectory } from "@/components/suburb-directory";
 import {
   Clock,
   DollarSign,
@@ -92,14 +93,15 @@ export function CityCategoryClient({
 
           {/* Suburbs Badge List */}
           <div className="mt-5 flex flex-wrap items-center gap-1.5 text-[11px] text-slate-600 font-medium">
-            <span className="font-bold text-slate-900">Fast Response Zones:</span>
+            <span className="font-bold text-slate-900">Fast Response Suburbs:</span>
             {city.popularSuburbs.map((sub) => (
-              <span
+              <Link
                 key={sub.name}
-                className="rounded-md border border-slate-200 bg-slate-100 px-2 py-0.5 text-slate-800"
+                href={`/category/${category.slug}/${city.slug}/${sub.slug}`}
+                className="rounded-md border border-slate-200 bg-white hover:border-orange-500 hover:text-orange-600 px-2 py-0.5 text-slate-800 transition-colors shadow-2xs"
               >
                 {sub.name} ({sub.postcode})
-              </span>
+              </Link>
             ))}
           </div>
 
@@ -242,6 +244,12 @@ export function CityCategoryClient({
           </div>
         </div>
       </section>
+
+      {/* Suburb Directory for this Category and City */}
+      <SuburbDirectory
+        currentCityId={city.id}
+        categorySlug={category.slug}
+      />
 
       {/* Other Cities Links */}
       <section className="py-8 px-4 bg-zinc-50 border-t border-zinc-200 dark:bg-zinc-900/40 dark:border-zinc-800">

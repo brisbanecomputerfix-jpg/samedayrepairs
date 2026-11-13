@@ -75,7 +75,7 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
               {REPAIR_CATEGORIES.map((cat) => (
                 <li key={cat.id}>
                   <Link
-                    href={`/category/${cat.id}`}
+                    href={`/category/${cat.slug}`}
                     className="hover:text-orange-600 transition-colors"
                   >
                     {cat.name}
@@ -85,20 +85,37 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
             </ul>
           </div>
 
-          {/* Australian Cities */}
+          {/* Australian Cities & Suburbs */}
           <div>
             <h4 className="font-black text-slate-950 uppercase tracking-wider text-xs mb-3 font-mono">
-              Metro Coverage Hubs
+              Metro & Suburb Hubs
             </h4>
             <ul className="space-y-1.5 text-slate-600 font-medium">
-              {AUSTRALIAN_CITIES.map((c) => (
+              {AUSTRALIAN_CITIES.slice(0, 5).map((c) => (
                 <li key={c.id}>
-                  <span className="hover:text-orange-600 transition-colors cursor-pointer">
-                    {c.name} ({c.state}) Metro
-                  </span>
+                  <Link
+                    href={`/category/appliance-repairs/${c.slug}`}
+                    className="hover:text-orange-600 transition-colors"
+                  >
+                    {c.name} ({c.state})
+                  </Link>
                 </li>
               ))}
             </ul>
+            <div className="mt-3 pt-3 border-t border-slate-100 text-[11px] space-y-1">
+              <span className="font-bold text-slate-800 block">Popular Local Suburbs:</span>
+              <div className="flex flex-wrap gap-1.5 text-slate-500">
+                <Link href="/suburbs/brisbane/chermside" className="hover:text-orange-600 underline">Chermside</Link>
+                <span>•</span>
+                <Link href="/suburbs/brisbane/aspley" className="hover:text-orange-600 underline">Aspley</Link>
+                <span>•</span>
+                <Link href="/suburbs/brisbane/indooroopilly" className="hover:text-orange-600 underline">Indooroopilly</Link>
+                <span>•</span>
+                <Link href="/suburbs/sydney/parramatta" className="hover:text-orange-600 underline">Parramatta</Link>
+                <span>•</span>
+                <Link href="/suburbs/melbourne/richmond" className="hover:text-orange-600 underline">Richmond</Link>
+              </div>
+            </div>
           </div>
 
           {/* Trust & Legal */}

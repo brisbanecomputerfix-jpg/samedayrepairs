@@ -15,12 +15,42 @@
 - **Garage Door Repairs**: Broken torsion springs, snapped cables, motor gear failures, doors jammed off-track. (Callout from $160).
 - **Roadside Mobile Mechanics**: On-site battery replacement, alternator testing, no-start triage. (Callout from $149).
 
-## Geographic Coverage
-- **Queensland**: Greater Brisbane (Brisbane CBD, Chermside, Aspley, Indooroopilly, Carindale, Sunnybank, North Lakes, Ipswich), Gold Coast, Sunshine Coast.
-- **New South Wales**: Greater Sydney (Sydney CBD, Parramatta, Blacktown, Chatswood, Bondi, Castle Hill, Liverpool, Penrith), Wollongong, Newcastle.
-- **Victoria**: Greater Melbourne (Melbourne CBD, South Yarra, Richmond, St Kilda, Box Hill, Preston, Dandenong, Geelong).
-- **Western Australia**: Greater Perth (Perth CBD, Fremantle, Joondalup, Midland).
-- **South Australia**: Greater Adelaide (Adelaide CBD, Glenelg, Norwood).
+## Hyper-Local Suburb Coverage & Landing Pages
+- **Queensland (Greater Brisbane)**:
+  - Chermside (4032): https://samedayrepairs.com.au/suburbs/brisbane/chermside
+  - Brisbane CBD (4000): https://samedayrepairs.com.au/suburbs/brisbane/brisbane-cbd
+  - South Brisbane (4101): https://samedayrepairs.com.au/suburbs/brisbane/south-brisbane
+  - Fortitude Valley (4006): https://samedayrepairs.com.au/suburbs/brisbane/fortitude-valley
+  - Aspley (4034): https://samedayrepairs.com.au/suburbs/brisbane/aspley
+  - Indooroopilly (4068): https://samedayrepairs.com.au/suburbs/brisbane/indooroopilly
+  - Carindale (4152): https://samedayrepairs.com.au/suburbs/brisbane/carindale
+  - Sunnybank (4109): https://samedayrepairs.com.au/suburbs/brisbane/sunnybank
+  - North Lakes (4509): https://samedayrepairs.com.au/suburbs/brisbane/north-lakes
+  - Ipswich (4305): https://samedayrepairs.com.au/suburbs/brisbane/ipswich
+  - Toowong (4066): https://samedayrepairs.com.au/suburbs/brisbane/toowong
+  - Coorparoo (4151): https://samedayrepairs.com.au/suburbs/brisbane/coorparoo
+  - Wynnum (4178): https://samedayrepairs.com.au/suburbs/brisbane/wynnum
+  - Strathpine (4500): https://samedayrepairs.com.au/suburbs/brisbane/strathpine
+  - Browns Plains (4118): https://samedayrepairs.com.au/suburbs/brisbane/browns-plains
+- **New South Wales (Greater Sydney)**:
+  - Sydney CBD (2000): https://samedayrepairs.com.au/suburbs/sydney/sydney-cbd
+  - Parramatta (2150): https://samedayrepairs.com.au/suburbs/sydney/parramatta
+  - Bondi (2026): https://samedayrepairs.com.au/suburbs/sydney/bondi
+  - Chatswood (2067): https://samedayrepairs.com.au/suburbs/sydney/chatswood
+  - Penrith (2750): https://samedayrepairs.com.au/suburbs/sydney/penrith
+  - Castle Hill (2154): https://samedayrepairs.com.au/suburbs/sydney/castle-hill
+  - Blacktown (2148): https://samedayrepairs.com.au/suburbs/sydney/blacktown
+- **Victoria (Greater Melbourne)**:
+  - Melbourne CBD (3000): https://samedayrepairs.com.au/suburbs/melbourne/melbourne-cbd
+  - Richmond (3121): https://samedayrepairs.com.au/suburbs/melbourne/richmond
+  - South Yarra (3141): https://samedayrepairs.com.au/suburbs/melbourne/south-yarra
+  - Brunswick (3056): https://samedayrepairs.com.au/suburbs/melbourne/brunswick
+  - Dandenong (3175): https://samedayrepairs.com.au/suburbs/melbourne/dandenong
+  - Box Hill (3128): https://samedayrepairs.com.au/suburbs/melbourne/box-hill
+  - Werribee (3030): https://samedayrepairs.com.au/suburbs/melbourne/werribee
+- **Gold Coast & Regional Centers**:
+  - Surfers Paradise (4217), Broadbeach (4218), Southport (4215), Robina (4226)
+  - Perth, Adelaide, Sunshine Coast, Canberra, Newcastle
 
 ## Trade Guarantees & Compliance
 - **Licensing**: All contractors audited against QBCC (Queensland), Fair Trading (NSW), and Victorian Building Authority (VBA).
@@ -32,6 +62,7 @@
 - Homepage: https://samedayrepairs.com.au
 - Service Categories: https://samedayrepairs.com.au/#categories
 - Appliance Repairs (Brisbane): https://samedayrepairs.com.au/category/appliance-repairs/brisbane
+- Appliance Repairs (Chermside 4032): https://samedayrepairs.com.au/category/appliance-repairs/brisbane/chermside
 - Emergency Plumbing (Brisbane): https://samedayrepairs.com.au/category/emergency-plumbing/brisbane
 - Locksmiths (Brisbane): https://samedayrepairs.com.au/category/emergency-locksmith/brisbane
 - Customer Account & Booking Tracker: https://samedayrepairs.com.au/portal/seeker

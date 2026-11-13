@@ -1,4 +1,4 @@
-import { AustralianCity } from "@/types";
+import { AustralianCity, Suburb } from "@/types";
 
 export const AUSTRALIAN_CITIES: AustralianCity[] = [
   {
@@ -8,15 +8,111 @@ export const AUSTRALIAN_CITIES: AustralianCity[] = [
     slug: "brisbane",
     isCapital: true,
     popularSuburbs: [
-      { name: "Brisbane CBD", postcode: "4000" },
-      { name: "South Brisbane", postcode: "4101" },
-      { name: "Fortitude Valley", postcode: "4006" },
-      { name: "Chermside", postcode: "4032" },
-      { name: "Indooroopilly", postcode: "4068" },
-      { name: "Carindale", postcode: "4152" },
-      { name: "Sunnybank", postcode: "4109" },
-      { name: "North Lakes", postcode: "4509" },
-      { name: "Ipswich", postcode: "4305" },
+      {
+        name: "Chermside",
+        postcode: "4032",
+        slug: "chermside",
+        region: "Northside",
+        nearbySuburbs: ["Kedron", "Aspley", "Wavell Heights", "Stafford", "Geebung"],
+      },
+      {
+        name: "Brisbane CBD",
+        postcode: "4000",
+        slug: "brisbane-cbd",
+        region: "Inner City",
+        nearbySuburbs: ["Spring Hill", "South Brisbane", "Fortitude Valley", "Milton", "Paddington"],
+      },
+      {
+        name: "South Brisbane",
+        postcode: "4101",
+        slug: "south-brisbane",
+        region: "Inner South",
+        nearbySuburbs: ["West End", "Highgate Hill", "Woolloongabba", "Kangaroo Point", "Dutton Park"],
+      },
+      {
+        name: "Fortitude Valley",
+        postcode: "4006",
+        slug: "fortitude-valley",
+        region: "Inner North",
+        nearbySuburbs: ["New Farm", "Teneriffe", "Bowen Hills", "Spring Hill", "Newstead"],
+      },
+      {
+        name: "Aspley",
+        postcode: "4034",
+        slug: "aspley",
+        region: "Northside",
+        nearbySuburbs: ["Chermside", "Carseldine", "Bridgeman Downs", "Zillmere", "McDowall"],
+      },
+      {
+        name: "Indooroopilly",
+        postcode: "4068",
+        slug: "indooroopilly",
+        region: "Western Suburbs",
+        nearbySuburbs: ["Toowong", "Taringa", "St Lucia", "Chapel Hill", "Kenmore"],
+      },
+      {
+        name: "Carindale",
+        postcode: "4152",
+        slug: "carindale",
+        region: "Eastern Suburbs",
+        nearbySuburbs: ["Belmont", "Camp Hill", "Carina", "Mansfield", "Mount Gravatt East"],
+      },
+      {
+        name: "Sunnybank",
+        postcode: "4109",
+        slug: "sunnybank",
+        region: "Southside",
+        nearbySuburbs: ["Sunnybank Hills", "Robertson", "Macgregor", "Runcorn", "Coopers Plains"],
+      },
+      {
+        name: "North Lakes",
+        postcode: "4509",
+        slug: "north-lakes",
+        region: "Moreton Bay",
+        nearbySuburbs: ["Mango Hill", "Deception Bay", "Kallangur", "Rothwell", "Murrumba Downs"],
+      },
+      {
+        name: "Ipswich",
+        postcode: "4305",
+        slug: "ipswich",
+        region: "Ipswich Region",
+        nearbySuburbs: ["Booval", "Brassall", "Raceview", "Bundamba", "Silkstone"],
+      },
+      {
+        name: "Toowong",
+        postcode: "4066",
+        slug: "toowong",
+        region: "Western Suburbs",
+        nearbySuburbs: ["Indooroopilly", "Milton", "Auchenflower", "St Lucia", "Taringa"],
+      },
+      {
+        name: "Coorparoo",
+        postcode: "4151",
+        slug: "coorparoo",
+        region: "Inner South",
+        nearbySuburbs: ["Greenslopes", "Camp Hill", "Norman Park", "Holland Park", "Woolloongabba"],
+      },
+      {
+        name: "Wynnum",
+        postcode: "4178",
+        slug: "wynnum",
+        region: "Bayside",
+        nearbySuburbs: ["Manly", "Lota", "Tingalpa", "Wynnum West", "Wakerley"],
+      },
+      {
+        name: "Strathpine",
+        postcode: "4500",
+        slug: "strathpine",
+        region: "Moreton Bay",
+        nearbySuburbs: ["Brendale", "Bald Hills", "Bray Park", "Lawnton", "Warner"],
+      },
+      {
+        name: "Browns Plains",
+        postcode: "4118",
+        slug: "browns-plains",
+        region: "Logan Region",
+        nearbySuburbs: ["Park Ridge", "Regents Park", "Hillcrest", "Calamvale", "Boronia Heights"],
+      },
     ],
   },
   {
@@ -26,14 +122,76 @@ export const AUSTRALIAN_CITIES: AustralianCity[] = [
     slug: "sydney",
     isCapital: true,
     popularSuburbs: [
-      { name: "Sydney CBD", postcode: "2000" },
-      { name: "Parramatta", postcode: "2150" },
-      { name: "Bondi", postcode: "2026" },
-      { name: "Chatswood", postcode: "2067" },
-      { name: "Penrith", postcode: "2750" },
-      { name: "Castle Hill", postcode: "2154" },
-      { name: "Cronulla", postcode: "2230" },
-      { name: "Liverpool", postcode: "2170" },
+      {
+        name: "Sydney CBD",
+        postcode: "2000",
+        slug: "sydney-cbd",
+        region: "City Centre",
+        nearbySuburbs: ["Pyrmont", "Surry Hills", "Ultimo", "Darlinghurst", "Barangaroo"],
+      },
+      {
+        name: "Parramatta",
+        postcode: "2150",
+        slug: "parramatta",
+        region: "Western Sydney",
+        nearbySuburbs: ["Westmead", "Harris Park", "Rosehill", "Granville", "North Parramatta"],
+      },
+      {
+        name: "Bondi",
+        postcode: "2026",
+        slug: "bondi",
+        region: "Eastern Suburbs",
+        nearbySuburbs: ["Bondi Junction", "Bronte", "Tamarama", "Bellevue Hill", "Waverley"],
+      },
+      {
+        name: "Chatswood",
+        postcode: "2067",
+        slug: "chatswood",
+        region: "North Shore",
+        nearbySuburbs: ["Willoughby", "Lane Cove", "Roseville", "Artarmon", "Castle Cove"],
+      },
+      {
+        name: "Penrith",
+        postcode: "2750",
+        slug: "penrith",
+        region: "Greater West",
+        nearbySuburbs: ["Kingswood", "Jamisontown", "Glenmore Park", "Emu Plains", "South Penrith"],
+      },
+      {
+        name: "Castle Hill",
+        postcode: "2154",
+        slug: "castle-hill",
+        region: "Hills District",
+        nearbySuburbs: ["Baulkham Hills", "Kellyville", "Cherrybrook", "Rouse Hill", "Dural"],
+      },
+      {
+        name: "Cronulla",
+        postcode: "2230",
+        slug: "cronulla",
+        region: "Sutherland Shire",
+        nearbySuburbs: ["Caringbah", "Woolooware", "Miranda", "Kurnell", "Burraneer"],
+      },
+      {
+        name: "Liverpool",
+        postcode: "2170",
+        slug: "liverpool",
+        region: "South West",
+        nearbySuburbs: ["Casula", "Warwick Farm", "Moorebank", "Cabramatta", "Chipping Norton"],
+      },
+      {
+        name: "Blacktown",
+        postcode: "2148",
+        slug: "blacktown",
+        region: "Western Sydney",
+        nearbySuburbs: ["Seven Hills", "Doonside", "Marayong", "Prospect", "Lalor Park"],
+      },
+      {
+        name: "Manly",
+        postcode: "2095",
+        slug: "manly",
+        region: "Northern Beaches",
+        nearbySuburbs: ["Fairlight", "Balgowlah", "Queenscliff", "Freshwater", "Brookvale"],
+      },
     ],
   },
   {
@@ -43,14 +201,76 @@ export const AUSTRALIAN_CITIES: AustralianCity[] = [
     slug: "melbourne",
     isCapital: true,
     popularSuburbs: [
-      { name: "Melbourne CBD", postcode: "3000" },
-      { name: "Richmond", postcode: "3121" },
-      { name: "South Yarra", postcode: "3141" },
-      { name: "Brunswick", postcode: "3056" },
-      { name: "Dandenong", postcode: "3175" },
-      { name: "Box Hill", postcode: "3128" },
-      { name: "Werribee", postcode: "3030" },
-      { name: "Frankston", postcode: "3199" },
+      {
+        name: "Melbourne CBD",
+        postcode: "3000",
+        slug: "melbourne-cbd",
+        region: "City Centre",
+        nearbySuburbs: ["Docklands", "Carlton", "North Melbourne", "East Melbourne", "Southbank"],
+      },
+      {
+        name: "Richmond",
+        postcode: "3121",
+        slug: "richmond",
+        region: "Inner East",
+        nearbySuburbs: ["South Yarra", "Hawthorn", "Cremorne", "Collingwood", "Burnley"],
+      },
+      {
+        name: "South Yarra",
+        postcode: "3141",
+        slug: "south-yarra",
+        region: "Inner South",
+        nearbySuburbs: ["Prahran", "Toorak", "Richmond", "St Kilda", "Windsor"],
+      },
+      {
+        name: "Brunswick",
+        postcode: "3056",
+        slug: "brunswick",
+        region: "Inner North",
+        nearbySuburbs: ["Coburg", "Carlton North", "Fitzroy", "Parkville", "Brunswick East"],
+      },
+      {
+        name: "Dandenong",
+        postcode: "3175",
+        slug: "dandenong",
+        region: "South East",
+        nearbySuburbs: ["Noble Park", "Keysborough", "Doveton", "Springvale", "Dandenong North"],
+      },
+      {
+        name: "Box Hill",
+        postcode: "3128",
+        slug: "box-hill",
+        region: "Eastern Suburbs",
+        nearbySuburbs: ["Blackburn", "Mont Albert", "Doncaster", "Surrey Hills", "Burwood"],
+      },
+      {
+        name: "Werribee",
+        postcode: "3030",
+        slug: "werribee",
+        region: "Western Suburbs",
+        nearbySuburbs: ["Hoppers Crossing", "Point Cook", "Tarneit", "Wyndham Vale", "Truganina"],
+      },
+      {
+        name: "Frankston",
+        postcode: "3199",
+        slug: "frankston",
+        region: "Mornington Peninsula",
+        nearbySuburbs: ["Seaford", "Mount Eliza", "Karingal", "Langwarrin", "Frankston South"],
+      },
+      {
+        name: "Preston",
+        postcode: "3072",
+        slug: "preston",
+        region: "Northern Suburbs",
+        nearbySuburbs: ["Thornbury", "Reservoir", "Coburg", "Heidelberg West", "Northcote"],
+      },
+      {
+        name: "St Kilda",
+        postcode: "3182",
+        slug: "st-kilda",
+        region: "Bayside",
+        nearbySuburbs: ["Elwood", "Balaclava", "St Kilda East", "Albert Park", "Middle Park"],
+      },
     ],
   },
   {
@@ -60,12 +280,48 @@ export const AUSTRALIAN_CITIES: AustralianCity[] = [
     slug: "gold-coast",
     isCapital: false,
     popularSuburbs: [
-      { name: "Surfers Paradise", postcode: "4217" },
-      { name: "Broadbeach", postcode: "4218" },
-      { name: "Southport", postcode: "4215" },
-      { name: "Robina", postcode: "4226" },
-      { name: "Burleigh Heads", postcode: "4220" },
-      { name: "Coomera", postcode: "4209" },
+      {
+        name: "Surfers Paradise",
+        postcode: "4217",
+        slug: "surfers-paradise",
+        region: "Central Coast",
+        nearbySuburbs: ["Broadbeach", "Main Beach", "Southport", "Bundall", "Isle of Capri"],
+      },
+      {
+        name: "Broadbeach",
+        postcode: "4218",
+        slug: "broadbeach",
+        region: "Central Coast",
+        nearbySuburbs: ["Surfers Paradise", "Mermaid Beach", "Broadbeach Waters", "Clear Island Waters"],
+      },
+      {
+        name: "Southport",
+        postcode: "4215",
+        slug: "southport",
+        region: "Central Coast",
+        nearbySuburbs: ["Labrador", "Main Beach", "Ashmore", "Molendinar", "Parkwood"],
+      },
+      {
+        name: "Robina",
+        postcode: "4226",
+        slug: "robina",
+        region: "Hinterland & Hub",
+        nearbySuburbs: ["Varsity Lakes", "Mudgeeraba", "Clear Island Waters", "Merrimac"],
+      },
+      {
+        name: "Burleigh Heads",
+        postcode: "4220",
+        slug: "burleigh-heads",
+        region: "South Coast",
+        nearbySuburbs: ["Miami", "Palm Beach", "Reedy Creek", "Burleigh Waters"],
+      },
+      {
+        name: "Coomera",
+        postcode: "4209",
+        slug: "coomera",
+        region: "North Coast",
+        nearbySuburbs: ["Upper Coomera", "Pimpama", "Hope Island", "Oxenford"],
+      },
     ],
   },
   {
@@ -75,12 +331,48 @@ export const AUSTRALIAN_CITIES: AustralianCity[] = [
     slug: "perth",
     isCapital: true,
     popularSuburbs: [
-      { name: "Perth CBD", postcode: "6000" },
-      { name: "Fremantle", postcode: "6160" },
-      { name: "Joondalup", postcode: "6027" },
-      { name: "Midland", postcode: "6056" },
-      { name: "Armadale", postcode: "6112" },
-      { name: "Subiaco", postcode: "6008" },
+      {
+        name: "Perth CBD",
+        postcode: "6000",
+        slug: "perth-cbd",
+        region: "City Centre",
+        nearbySuburbs: ["Northbridge", "East Perth", "West Perth", "South Perth"],
+      },
+      {
+        name: "Fremantle",
+        postcode: "6160",
+        slug: "fremantle",
+        region: "Harbour & Coast",
+        nearbySuburbs: ["East Fremantle", "South Fremantle", "White Gum Valley", "North Fremantle"],
+      },
+      {
+        name: "Joondalup",
+        postcode: "6027",
+        slug: "joondalup",
+        region: "North Metro",
+        nearbySuburbs: ["Connolly", "Currambine", "Edgewater", "Heathridge"],
+      },
+      {
+        name: "Midland",
+        postcode: "6056",
+        slug: "midland",
+        region: "East Metro",
+        nearbySuburbs: ["Guildford", "Woodbridge", "Bellevue", "Viveash"],
+      },
+      {
+        name: "Armadale",
+        postcode: "6112",
+        slug: "armadale",
+        region: "South East",
+        nearbySuburbs: ["Kelmscott", "Seville Grove", "Mount Nasura", "Brookdale"],
+      },
+      {
+        name: "Subiaco",
+        postcode: "6008",
+        slug: "subiaco",
+        region: "Inner West",
+        nearbySuburbs: ["West Leederville", "Shenton Park", "Daglish", "Wembley"],
+      },
     ],
   },
   {
@@ -90,11 +382,41 @@ export const AUSTRALIAN_CITIES: AustralianCity[] = [
     slug: "adelaide",
     isCapital: true,
     popularSuburbs: [
-      { name: "Adelaide CBD", postcode: "5000" },
-      { name: "Glenelg", postcode: "5045" },
-      { name: "Norwood", postcode: "5067" },
-      { name: "Mawson Lakes", postcode: "5095" },
-      { name: "Marion", postcode: "5043" },
+      {
+        name: "Adelaide CBD",
+        postcode: "5000",
+        slug: "adelaide-cbd",
+        region: "City Centre",
+        nearbySuburbs: ["North Adelaide", "Norwood", "Unley", "Bowden"],
+      },
+      {
+        name: "Glenelg",
+        postcode: "5045",
+        slug: "glenelg",
+        region: "Coastal",
+        nearbySuburbs: ["Somerton Park", "Glenelg North", "Novar Gardens", "Glengowrie"],
+      },
+      {
+        name: "Norwood",
+        postcode: "5067",
+        slug: "norwood",
+        region: "Eastern Suburbs",
+        nearbySuburbs: ["Kensington", "Rose Park", "Beulah Park", "Kent Town"],
+      },
+      {
+        name: "Mawson Lakes",
+        postcode: "5095",
+        slug: "mawson-lakes",
+        region: "Northern Suburbs",
+        nearbySuburbs: ["Pooraka", "Parafield", "Green Fields", "Salisbury"],
+      },
+      {
+        name: "Marion",
+        postcode: "5043",
+        slug: "marion",
+        region: "Southern Suburbs",
+        nearbySuburbs: ["Oaklands Park", "Mitchell Park", "Sturt", "Bedford Park"],
+      },
     ],
   },
   {
@@ -104,10 +426,34 @@ export const AUSTRALIAN_CITIES: AustralianCity[] = [
     slug: "sunshine-coast",
     isCapital: false,
     popularSuburbs: [
-      { name: "Maroochydore", postcode: "4558" },
-      { name: "Caloundra", postcode: "4551" },
-      { name: "Noosa Heads", postcode: "4567" },
-      { name: "Buderim", postcode: "4556" },
+      {
+        name: "Maroochydore",
+        postcode: "4558",
+        slug: "maroochydore",
+        region: "Central Coast",
+        nearbySuburbs: ["Alexandra Headland", "Mooloolaba", "Buderim", "Cotton Tree"],
+      },
+      {
+        name: "Caloundra",
+        postcode: "4551",
+        slug: "caloundra",
+        region: "South Coast",
+        nearbySuburbs: ["Golden Beach", "Kings Beach", "Currimundi", "Pelican Waters"],
+      },
+      {
+        name: "Noosa Heads",
+        postcode: "4567",
+        slug: "noosa-heads",
+        region: "North Coast",
+        nearbySuburbs: ["Noosaville", "Tewantin", "Sunshine Beach", "Peregian Beach"],
+      },
+      {
+        name: "Buderim",
+        postcode: "4556",
+        slug: "buderim",
+        region: "Hinterland",
+        nearbySuburbs: ["Mountain Creek", "Sippy Downs", "Maroochydore", "Kuluin"],
+      },
     ],
   },
   {
@@ -117,11 +463,41 @@ export const AUSTRALIAN_CITIES: AustralianCity[] = [
     slug: "canberra",
     isCapital: true,
     popularSuburbs: [
-      { name: "Canberra City", postcode: "2601" },
-      { name: "Belconnen", postcode: "2617" },
-      { name: "Woden", postcode: "2606" },
-      { name: "Tuggeranong", postcode: "2900" },
-      { name: "Gungahlin", postcode: "2912" },
+      {
+        name: "Canberra City",
+        postcode: "2601",
+        slug: "canberra-city",
+        region: "City Centre",
+        nearbySuburbs: ["Braddon", "Turner", "Acton", "Reid"],
+      },
+      {
+        name: "Belconnen",
+        postcode: "2617",
+        slug: "belconnen",
+        region: "North Canberra",
+        nearbySuburbs: ["Bruce", "Page", "Florey", "Scullin"],
+      },
+      {
+        name: "Woden",
+        postcode: "2606",
+        slug: "woden",
+        region: "South Canberra",
+        nearbySuburbs: ["Phillip", "Lyons", "Chifley", "Curtin"],
+      },
+      {
+        name: "Tuggeranong",
+        postcode: "2900",
+        slug: "tuggeranong",
+        region: "Far South",
+        nearbySuburbs: ["Greenway", "Kambah", "Wanniassa", "Bonython"],
+      },
+      {
+        name: "Gungahlin",
+        postcode: "2912",
+        slug: "gungahlin",
+        region: "Gungahlin District",
+        nearbySuburbs: ["Franklin", "Harrison", "Palmerston", "Amaroo"],
+      },
     ],
   },
   {
@@ -131,11 +507,59 @@ export const AUSTRALIAN_CITIES: AustralianCity[] = [
     slug: "newcastle",
     isCapital: false,
     popularSuburbs: [
-      { name: "Newcastle East", postcode: "2300" },
-      { name: "Maitland", postcode: "2320" },
-      { name: "Charlestown", postcode: "2290" },
-      { name: "Lake Macquarie", postcode: "2283" },
+      {
+        name: "Newcastle East",
+        postcode: "2300",
+        slug: "newcastle-east",
+        region: "City & Coast",
+        nearbySuburbs: ["Newcastle West", "Cooks Hill", "The Hill", "Bar Beach"],
+      },
+      {
+        name: "Maitland",
+        postcode: "2320",
+        slug: "maitland",
+        region: "Hunter Valley",
+        nearbySuburbs: ["East Maitland", "Rutherford", "Ashtonfield", "Telarah"],
+      },
+      {
+        name: "Charlestown",
+        postcode: "2290",
+        slug: "charlestown",
+        region: "Lake Macquarie North",
+        nearbySuburbs: ["Kotara", "Whitebridge", "Kahibah", "Hillsborough"],
+      },
+      {
+        name: "Lake Macquarie",
+        postcode: "2283",
+        slug: "lake-macquarie",
+        region: "Lake Region",
+        nearbySuburbs: ["Toronto", "Warners Bay", "Belmont", "Speers Point"],
+      },
     ],
   },
 ];
 
+/** Helper to retrieve a city by its slug */
+export function getCityBySlug(slug: string): AustralianCity | undefined {
+  return AUSTRALIAN_CITIES.find((c) => c.slug === slug || c.id === slug);
+}
+
+/** Helper to retrieve a specific suburb by city and suburb slug */
+export function getSuburbBySlug(citySlug: string, suburbSlug: string): Suburb | undefined {
+  const city = getCityBySlug(citySlug);
+  if (!city) return undefined;
+  return city.popularSuburbs.find(
+    (s) => s.slug === suburbSlug || s.name.toLowerCase().replace(/[^a-z0-9]+/g, "-") === suburbSlug
+  );
+}
+
+/** Get all suburbs with city context for sitemaps and indexes */
+export function getAllSuburbsWithCity(): { city: AustralianCity; suburb: Suburb }[] {
+  const result: { city: AustralianCity; suburb: Suburb }[] = [];
+  for (const city of AUSTRALIAN_CITIES) {
+    for (const suburb of city.popularSuburbs) {
+      result.push({ city, suburb });
+    }
+  }
+  return result;
+}

@@ -14,6 +14,8 @@ interface UrgentDispatchModalProps {
   onClose: () => void;
   defaultCategory?: RepairCategoryId;
   defaultCityId?: string;
+  defaultSuburb?: string;
+  defaultPostcode?: string;
 }
 
 export function UrgentDispatchModal({
@@ -21,6 +23,8 @@ export function UrgentDispatchModal({
   onClose,
   defaultCategory,
   defaultCityId = "brisbane",
+  defaultSuburb = "",
+  defaultPostcode = "",
 }: UrgentDispatchModalProps) {
   const router = useRouter();
   const { broadcastEmergencyTicket } = useAuth();
@@ -31,13 +35,19 @@ export function UrgentDispatchModal({
   const [form, setForm] = React.useState<UrgentBookingRequest>({
     customerName: "",
     customerPhone: "0468 991 300",
-    suburb: "",
-    postcode: "",
+    suburb: defaultSuburb || "",
+    postcode: defaultPostcode || "",
     categoryId: defaultCategory || "appliances",
     specificIssue: "",
     urgencyLevel: "Emergency (1-2 Hours)",
     notes: "",
   });
+
+  React.useEffect(() => {
+    if (defaultSuburb) setForm((prev) => ({ ...prev, suburb: defaultSuburb }));
+    if (defaultPostcode) setForm((prev) => ({ ...prev, postcode: defaultPostcode }));
+    if (defaultCategory) setForm((prev) => ({ ...prev, categoryId: defaultCategory }));
+  }, [defaultSuburb, defaultPostcode, defaultCategory]);
 
   React.useEffect(() => {
     if (defaultCategory) {

@@ -23,13 +23,21 @@ export interface RepairCategory {
   bannerColor: string;
 }
 
+export interface Suburb {
+  name: string;
+  postcode: string;
+  slug: string;
+  region: string;
+  nearbySuburbs: string[];
+}
+
 export interface AustralianCity {
   id: string;
   name: string;
   state: "QLD" | "NSW" | "VIC" | "WA" | "SA" | "ACT" | "TAS";
   slug: string;
   isCapital: boolean;
-  popularSuburbs: { name: string; postcode: string }[];
+  popularSuburbs: Suburb[];
 }
 
 export interface RepairProvider {
