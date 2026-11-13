@@ -130,7 +130,7 @@ export function ProviderCard({ provider, onOpenDispatch }: ProviderCardProps) {
           <button
             type="button"
             onClick={() => onOpenDispatch(provider)}
-            className="flex items-center justify-center gap-1.5 rounded-xl bg-orange-600 hover:bg-orange-700 py-2.5 text-xs font-bold text-white shadow-xs transition-all cursor-pointer"
+            className="flex items-center justify-center gap-1.5 rounded-xl bg-orange-700 hover:bg-orange-800 py-2.5 text-xs font-bold text-white shadow-xs transition-all cursor-pointer"
           >
             <Zap className="h-3.5 w-3.5 fill-white" />
             <span>Book Visit</span>

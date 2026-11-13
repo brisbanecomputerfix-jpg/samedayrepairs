@@ -121,7 +121,7 @@ export function Navbar({
                 <span className="text-xl font-black tracking-tight text-slate-950">
                   SameDay<span className="text-orange-600">Repairs</span>
                 </span>
-                <span className="text-xs font-bold text-slate-400 tracking-normal">
+                <span className="text-xs font-bold text-slate-600 tracking-normal">
                   .com.au
                 </span>
               </div>
@@ -352,8 +352,13 @@ export function Navbar({
           {/* Region Selector Mobile */}
           <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 p-2.5 text-xs">
             <MapPin className="h-4 w-4 text-orange-600 shrink-0" />
-            <span className="text-slate-500 font-medium">Metro Region:</span>
+            <label htmlFor="mobile-metro-region" className="text-slate-600 font-semibold shrink-0">
+              Metro:
+            </label>
             <select
+              id="mobile-metro-region"
+              name="mobile-metro-region"
+              aria-label="Select Australian metro region"
               value={selectedCityId}
               onChange={(e) => onSelectCity(e.target.value)}
               className="bg-transparent font-bold text-slate-900 focus:outline-hidden w-full cursor-pointer"

@@ -99,12 +99,12 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
             <h4 className="font-black text-slate-950 uppercase tracking-wider text-xs mb-3 font-mono flex items-center gap-1.5">
               <span>Emergency Trades</span>
             </h4>
-            <ul className="space-y-1.5 text-slate-600 font-medium">
+            <ul className="space-y-1 text-slate-600 font-medium">
               {REPAIR_CATEGORIES.map((cat) => (
                 <li key={cat.id}>
                   <Link
                     href={`/category/${cat.slug}`}
-                    className="hover:text-orange-600 hover:translate-x-0.5 transition-all inline-block"
+                    className="hover:text-orange-700 hover:translate-x-0.5 transition-all inline-flex items-center min-h-[26px] py-0.5"
                   >
                     {cat.name}
                   </Link>
@@ -118,12 +118,12 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
             <h4 className="font-black text-slate-950 uppercase tracking-wider text-xs mb-3 font-mono">
               Metro Coverage Hubs
             </h4>
-            <ul className="space-y-1.5 text-slate-600 font-medium">
+            <ul className="space-y-1 text-slate-600 font-medium">
               {AUSTRALIAN_CITIES.map((c) => (
                 <li key={c.id}>
                   <Link
                     href={`/category/appliance-repairs/${c.slug}`}
-                    className="hover:text-orange-600 hover:translate-x-0.5 transition-all inline-flex items-center gap-1"
+                    className="hover:text-orange-700 hover:translate-x-0.5 transition-all inline-flex items-center gap-1 min-h-[26px] py-0.5"
                   >
                     <MapPin className="h-3 w-3 text-slate-400" />
                     <span>{c.name} ({c.state})</span>
@@ -138,51 +138,41 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
             <h4 className="font-black text-slate-950 uppercase tracking-wider text-xs mb-3 font-mono">
               Local Suburb Hubs
             </h4>
-            <div className="space-y-2.5 text-slate-600">
+            <div className="space-y-3 text-slate-600">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block mb-1">
                   Queensland (QLD)
                 </span>
-                <div className="flex flex-wrap gap-x-1.5 gap-y-1 text-[11px]">
-                  <Link href="/suburbs/brisbane/chermside" className="hover:text-orange-600">Chermside (4032)</Link>
-                  <span className="text-slate-300">•</span>
-                  <Link href="/suburbs/brisbane/aspley" className="hover:text-orange-600">Aspley (4034)</Link>
-                  <span className="text-slate-300">•</span>
-                  <Link href="/suburbs/brisbane/indooroopilly" className="hover:text-orange-600">Indooroopilly (4068)</Link>
-                  <span className="text-slate-300">•</span>
-                  <Link href="/suburbs/brisbane/fortitude-valley" className="hover:text-orange-600">Fortitude Valley</Link>
-                  <span className="text-slate-300">•</span>
-                  <Link href="/suburbs/gold-coast/surfers-paradise" className="hover:text-orange-600">Surfers Paradise</Link>
+                <div className="flex flex-wrap gap-1 text-[11px]">
+                  <Link href="/suburbs/brisbane/chermside" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Chermside (4032)</Link>
+                  <Link href="/suburbs/brisbane/aspley" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Aspley (4034)</Link>
+                  <Link href="/suburbs/brisbane/indooroopilly" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Indooroopilly (4068)</Link>
+                  <Link href="/suburbs/brisbane/fortitude-valley" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Fortitude Valley</Link>
+                  <Link href="/suburbs/gold-coast/surfers-paradise" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Surfers Paradise</Link>
                 </div>
               </div>
 
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block mb-1">
                   New South Wales (NSW)
                 </span>
-                <div className="flex flex-wrap gap-x-1.5 gap-y-1 text-[11px]">
-                  <Link href="/suburbs/sydney/parramatta" className="hover:text-orange-600">Parramatta (2150)</Link>
-                  <span className="text-slate-300">•</span>
-                  <Link href="/suburbs/sydney/bondi" className="hover:text-orange-600">Bondi (2026)</Link>
-                  <span className="text-slate-300">•</span>
-                  <Link href="/suburbs/sydney/chatswood" className="hover:text-orange-600">Chatswood (2067)</Link>
-                  <span className="text-slate-300">•</span>
-                  <Link href="/suburbs/sydney/penrith" className="hover:text-orange-600">Penrith (2750)</Link>
+                <div className="flex flex-wrap gap-1 text-[11px]">
+                  <Link href="/suburbs/sydney/parramatta" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Parramatta (2150)</Link>
+                  <Link href="/suburbs/sydney/bondi" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Bondi (2026)</Link>
+                  <Link href="/suburbs/sydney/chatswood" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Chatswood (2067)</Link>
+                  <Link href="/suburbs/sydney/penrith" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Penrith (2750)</Link>
                 </div>
               </div>
 
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block mb-1">
                   Victoria (VIC)
                 </span>
-                <div className="flex flex-wrap gap-x-1.5 gap-y-1 text-[11px]">
-                  <Link href="/suburbs/melbourne/richmond" className="hover:text-orange-600">Richmond (3121)</Link>
-                  <span className="text-slate-300">•</span>
-                  <Link href="/suburbs/melbourne/south-yarra" className="hover:text-orange-600">South Yarra (3141)</Link>
-                  <span className="text-slate-300">•</span>
-                  <Link href="/suburbs/melbourne/brunswick" className="hover:text-orange-600">Brunswick (3056)</Link>
-                  <span className="text-slate-300">•</span>
-                  <Link href="/suburbs/melbourne/dandenong" className="hover:text-orange-600">Dandenong</Link>
+                <div className="flex flex-wrap gap-1 text-[11px]">
+                  <Link href="/suburbs/melbourne/richmond" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Richmond (3121)</Link>
+                  <Link href="/suburbs/melbourne/south-yarra" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">South Yarra (3141)</Link>
+                  <Link href="/suburbs/melbourne/brunswick" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Brunswick (3056)</Link>
+                  <Link href="/suburbs/melbourne/dandenong" className="hover:text-orange-700 hover:bg-slate-100 px-1 py-0.5 rounded min-h-[26px] inline-flex items-center">Dandenong</Link>
                 </div>
               </div>
             </div>
@@ -288,8 +278,7 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
             <button
               type="button"
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 text-slate-800 font-bold px-3 py-1.5 transition-all cursor-pointer group"
-              aria-label="Scroll to top of page"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 text-slate-800 font-bold px-3 py-1.5 transition-all cursor-pointer group min-h-[32px]"
             >
               <span>Back to Top</span>
               <ArrowUp className="h-3.5 w-3.5 text-orange-600 transition-transform group-hover:-translate-y-0.5" />

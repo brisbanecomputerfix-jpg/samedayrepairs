@@ -8,57 +8,57 @@ export function TrustSection() {
     <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-200">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-orange-600 mb-2">
-            <span className="w-2 h-2 rounded-full bg-orange-600 inline-block"></span>
-            <span>The Australian Trade Standard</span>
+          <div className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider text-orange-700 mb-2 font-mono">
+            <span className="w-2 h-2 rounded-full bg-orange-700 inline-block"></span>
+            <span>Australian Trade Standards</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-950 tracking-tight">
-            Built for Urgency. Backed by Australian Standards.
+            Emergency Trade Standards You Can Hold Us To
           </h2>
-          <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-            When your home or business faces an emergency, you need an on-call licensed technician at your door today—backed by statutory trade protection and clear upfront pricing.
+          <p className="mt-3 text-sm text-slate-700 leading-relaxed font-medium">
+            Emergency repairs shouldn&apos;t come with surprise bills or unverified handymen. Every technician dispatched through our network operates under strict Australian consumer protection and state licensing requirements.
           </p>
         </div>
 
         {/* 4 Concrete Consumer Protection Pillars */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
           <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-5 shadow-xs hover:bg-white hover:border-slate-300 transition-all">
-            <div className="h-10 w-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-3.5">
+            <div className="h-10 w-10 rounded-xl bg-orange-50 text-orange-700 flex items-center justify-center mb-3.5">
               <FileCheck2 className="h-5 w-5" />
             </div>
-            <h3 className="font-bold text-sm text-slate-950">Statutory Trade Licences</h3>
+            <h3 className="font-bold text-sm text-slate-950">Active State Trade Licences</h3>
             <p className="mt-1.5 text-xs text-slate-600 leading-relaxed">
-              Audited against QBCC (QLD), Fair Trading (NSW), and Energy Safe (VIC). Zero unverified handymen touching high-voltage or pressurized mains.
+              Audited against QBCC (QLD), Fair Trading (NSW), and Energy Safe (VIC). Electricians, plumbers, and refrigeration mechanics carry verified qualifications.
             </p>
           </div>
 
           <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-5 shadow-xs hover:bg-white hover:border-slate-300 transition-all">
-            <div className="h-10 w-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3.5">
+            <div className="h-10 w-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3.5">
               <Shield className="h-5 w-5" />
             </div>
-            <h3 className="font-bold text-sm text-slate-950">$20M Public Liability</h3>
+            <h3 className="font-bold text-sm text-slate-950">$20,000,000 Public Liability</h3>
             <p className="mt-1.5 text-xs text-slate-600 leading-relaxed">
-              Active insurance verified. Your property is fully protected in the event of accidental water damage or unforeseen incidents.
+              Active insurance certificates verified annually. Your property is protected against accidental damage or unforeseen incidents.
             </p>
           </div>
 
           <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-5 shadow-xs hover:bg-white hover:border-slate-300 transition-all">
-            <div className="h-10 w-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3.5">
+            <div className="h-10 w-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-3.5">
               <Wrench className="h-5 w-5" />
             </div>
-            <h3 className="font-bold text-sm text-slate-950">Mobile Workshop Stock</h3>
+            <h3 className="font-bold text-sm text-slate-950">Stocked for First-Visit Fix</h3>
             <p className="mt-1.5 text-xs text-slate-600 leading-relaxed">
-              Contractor vans carry fast-moving OEM spares (Samsung, Rheem, Bosch, LG, Lockwood) for an 85%+ first-visit resolution rate.
+              Mobile workshops carry common OEM spare parts (Samsung, Rheem, Bosch, LG, Lockwood) for an 85%+ same-day resolution rate.
             </p>
           </div>
 
           <div className="rounded-2xl border border-slate-200/90 bg-slate-50/50 p-5 shadow-xs hover:bg-white hover:border-slate-300 transition-all">
-            <div className="h-10 w-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-3.5">
+            <div className="h-10 w-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-3.5">
               <CreditCard className="h-5 w-5" />
             </div>
-            <h3 className="font-bold text-sm text-slate-950">On-Site Tap & Go EFTPOS</h3>
+            <h3 className="font-bold text-sm text-slate-950">Mobile EFTPOS & Tax Invoices</h3>
             <p className="mt-1.5 text-xs text-slate-600 leading-relaxed">
-              Pay securely on completion with mobile card terminals. Instant itemized tax invoices with ABN and GST breakdown for your records.
+              Pay securely on completion via card terminal. Instant itemised tax invoices with ABN and GST breakdown for insurance or tax records.
             </p>
           </div>
         </div>

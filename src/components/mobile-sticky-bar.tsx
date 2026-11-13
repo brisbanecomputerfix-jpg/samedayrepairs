@@ -28,7 +28,7 @@ export function MobileStickyBar({ onOpenDispatch, suburbText }: MobileStickyBarP
         <button
           type="button"
           onClick={onOpenDispatch}
-          className="flex-1 flex items-center justify-center gap-2 rounded-lg bg-orange-600 hover:bg-orange-700 py-3 text-xs font-black uppercase tracking-wider text-white shadow-xs active:scale-98 transition-all cursor-pointer"
+          className="flex-1 flex items-center justify-center gap-2 rounded-lg bg-orange-700 hover:bg-orange-800 py-3 text-xs font-black uppercase tracking-wider text-white shadow-xs active:scale-98 transition-all cursor-pointer"
         >
           <Zap className="h-4 w-4 fill-white" />
           <span>Dispatch Tech</span>

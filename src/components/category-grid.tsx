@@ -179,8 +179,8 @@ export function CategoryGrid({
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-orange-600 mb-1.5 font-mono">
-              <span className="w-2 h-2 rounded-full bg-orange-600 inline-block animate-pulse"></span>
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-orange-700 mb-1.5 font-mono">
+              <span className="w-2 h-2 rounded-full bg-orange-700 inline-block animate-pulse"></span>
               <span>Interactive Trade Directory</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
@@ -194,7 +194,7 @@ export function CategoryGrid({
           {selectedCategory !== "all" && (
             <button
               onClick={() => onSelectCategory("all")}
-              className="text-xs font-bold text-slate-700 hover:text-orange-600 bg-white border border-slate-200 rounded-xl px-3.5 py-2 shadow-2xs transition-colors self-start sm:self-auto cursor-pointer"
+              className="text-xs font-bold text-slate-700 hover:text-orange-700 bg-white border border-slate-200 rounded-xl px-3.5 py-2 shadow-2xs transition-colors self-start sm:self-auto cursor-pointer"
             >
               ← View All Services
             </button>
@@ -294,7 +294,7 @@ export function CategoryGrid({
                     <Link
                       href={`/category/${cat.slug}`}
                       onClick={(e) => e.stopPropagation()}
-                      className="text-xs font-semibold text-orange-600 hover:text-orange-700 transition-colors flex items-center gap-1 group/link"
+                      className="text-xs font-semibold text-orange-700 hover:text-orange-800 transition-colors flex items-center gap-1 group/link"
                     >
                       <span>Explore Hub</span>
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1" />
@@ -306,7 +306,7 @@ export function CategoryGrid({
                         e.stopPropagation();
                         onOpenDispatch(cat.id);
                       }}
-                      className="text-xs font-bold bg-slate-900 hover:bg-orange-600 text-white px-3.5 py-2 rounded-xl shadow-2xs hover:shadow-sm transition-all duration-200 cursor-pointer active:scale-95 flex items-center gap-1.5"
+                      className="text-xs font-bold bg-slate-900 hover:bg-orange-700 text-white px-3.5 py-2 rounded-xl shadow-2xs hover:shadow-sm transition-all duration-200 cursor-pointer active:scale-95 flex items-center gap-1.5"
                     >
                       <span>Book Visit</span>
                       <ArrowRight className="h-3 w-3" />
@@ -331,7 +331,7 @@ export function CategoryGrid({
 
           <Link
             href="/trade-charter"
-            className="text-orange-600 font-bold hover:underline shrink-0 flex items-center gap-1"
+            className="text-orange-700 font-bold hover:underline shrink-0 flex items-center gap-1"
           >
             <span>Read Trade Charter & Standards</span>
             <ArrowRight className="h-3.5 w-3.5" />

@@ -32,8 +32,8 @@ export function ScrollToTop() {
     <button
       type="button"
       onClick={scrollToTop}
-      aria-label="Scroll back to top"
-      className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 flex items-center gap-1.5 rounded-full border border-slate-300 bg-white/95 backdrop-blur-xs px-3.5 py-2.5 text-xs font-bold text-slate-800 shadow-lg hover:shadow-xl hover:border-orange-500 hover:text-orange-600 active:scale-95 transition-all cursor-pointer group"
+      aria-label="Back to top"
+      className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 flex items-center gap-1.5 rounded-full border border-slate-300 bg-white/95 backdrop-blur-xs px-3.5 py-2.5 text-xs font-bold text-slate-800 shadow-lg hover:shadow-xl hover:border-orange-500 hover:text-orange-600 active:scale-95 transition-all cursor-pointer group min-h-[44px] min-w-[44px]"
     >
       <ArrowUp className="h-4 w-4 text-orange-600 transition-transform group-hover:-translate-y-0.5" />
       <span className="hidden sm:inline">Back to Top</span>

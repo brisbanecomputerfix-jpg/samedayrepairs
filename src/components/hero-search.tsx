@@ -151,10 +151,10 @@ export function HeroSearch({
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-[1.15] break-words">
             Same-Day Emergency Repairs & Trades. <br className="hidden sm:inline" />
-            <span className="text-orange-600">Dispatched To Your Door Today.</span>
+            <span className="text-orange-700">Dispatched To Your Door Today.</span>
           </h1>
-          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Find vetted, licensed Australian whitegoods mechanics, emergency plumbers, 24/7 locksmiths, and electricians on call right now across {currentCity.name}. Upfront diagnostic fees, transparent quotes, and 12-month warranties.
+          <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed font-medium">
+            When a fridge stops cooling, a water pipe bursts, or your safety switch trips, you need a licensed local tradie today. We match your breakdown directly with mobile vans on call across {currentCity.name}. Upfront diagnostic fees, quotes before work begins, and 12-month parts warranties.
           </p>
         </div>
 
@@ -256,12 +256,15 @@ export function HeroSearch({
             
             {/* Category Dropdown */}
             <div className="md:col-span-5 bg-slate-50/80 border border-slate-200 rounded-xl p-2.5">
-              <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block px-1">
+              <label htmlFor="service-select" className="text-[10px] font-bold uppercase tracking-wider text-slate-600 block px-1">
                 Select Service
               </label>
               <div className="flex items-center mt-1">
-                <Search className="h-4 w-4 text-orange-600 mr-2 shrink-0" />
+                <Search className="h-4 w-4 text-orange-700 mr-2 shrink-0" />
                 <select
+                  id="service-select"
+                  name="service-select"
+                  aria-label="Select repair trade"
                   value={selectedCategory}
                   onChange={(e) => onSelectCategory(e.target.value)}
                   className="w-full bg-transparent text-sm font-bold text-slate-900 focus:outline-hidden cursor-pointer"
@@ -278,17 +281,20 @@ export function HeroSearch({
 
             {/* Suburb / Postcode Input */}
             <div className="md:col-span-4 bg-slate-50/80 border border-slate-200 rounded-xl p-2.5">
-              <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block px-1">
+              <label htmlFor="suburb-query-input" className="text-[10px] font-bold uppercase tracking-wider text-slate-600 block px-1">
                 Suburb or Postcode in {currentCity.name}
               </label>
               <div className="flex items-center mt-1">
-                <MapPin className="h-4 w-4 text-orange-600 mr-2 shrink-0" />
+                <MapPin className="h-4 w-4 text-orange-700 mr-2 shrink-0" />
                 <input
+                  id="suburb-query-input"
+                  name="suburb-query-input"
+                  aria-label={`Suburb or Postcode in ${currentCity.name}`}
                   type="text"
                   value={suburbQuery}
                   onChange={(e) => onSuburbChange(e.target.value)}
                   placeholder="e.g. Chermside, Parramatta, South Yarra"
-                  className="w-full bg-transparent text-sm font-medium text-slate-900 placeholder-slate-400 focus:outline-hidden"
+                  className="w-full bg-transparent text-sm font-medium text-slate-900 placeholder-slate-500 focus:outline-hidden"
                 />
               </div>
             </div>
@@ -298,7 +304,7 @@ export function HeroSearch({
               <button
                 type="button"
                 onClick={onOpenDispatch}
-                className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-700 py-3.5 px-4 text-sm font-bold text-white shadow-sm hover:shadow-md transition-all cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-700 hover:bg-orange-800 py-3.5 px-4 text-sm font-bold text-white shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
                 <span>Find Available Trades</span>
                 <ArrowRight className="h-4 w-4" />
