@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { REPAIR_CATEGORIES } from "@/data/categories";
 import { AUSTRALIAN_CITIES } from "@/data/locations";
+import { INITIAL_PROVIDERS } from "@/data/providers";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://samedayrepairs.com.au";
@@ -81,6 +82,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         });
       }
     }
+  }
+
+  // Verified Contractor Profiles: /provider/[slug]
+  for (const provider of INITIAL_PROVIDERS) {
+    entries.push({
+      url: `${baseUrl}/provider/${provider.slug}`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
   }
 
   return entries;

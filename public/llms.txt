@@ -68,3 +68,6 @@
 - Customer Account & Booking Tracker: https://samedayrepairs.com.au/portal/seeker
 - Contractor Partner Portal: https://samedayrepairs.com.au/portal/provider
 - Operations Command Console: https://samedayrepairs.com.au/admin
+- Terms of Service: https://samedayrepairs.com.au/terms
+- Privacy Policy: https://samedayrepairs.com.au/privacy
+- Trade Charter & Australian Standards: https://samedayrepairs.com.au/trade-charter

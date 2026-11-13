@@ -7,10 +7,14 @@
   --surface-muted: #f1f5f9;
   --border: #e2e8f0;
   --border-subtle: #cbd5e1;
-  --primary: #ea580c;
-  --primary-hover: #c2410c;
+  --primary: #c2410c;
+  --primary-hover: #9a3412;
   --safety-amber: #d97706;
   --slate-dark: #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
