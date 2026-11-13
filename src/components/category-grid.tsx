@@ -13,7 +13,8 @@ import {
   Home,
   ArrowRight,
   Clock,
-  DollarSign,
+  ShieldCheck,
+  Phone,
 } from "lucide-react";
 import { REPAIR_CATEGORIES } from "@/data/categories";
 import { RepairCategoryId } from "@/types";
@@ -32,55 +33,56 @@ export function CategoryGrid({
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "Refrigerator":
-        return <Refrigerator className="h-6 w-6" />;
+        return <Refrigerator className="h-5 w-5" />;
       case "Droplets":
-        return <Droplets className="h-6 w-6" />;
+        return <Droplets className="h-5 w-5" />;
       case "KeyRound":
-        return <KeyRound className="h-6 w-6" />;
+        return <KeyRound className="h-5 w-5" />;
       case "Zap":
-        return <Zap className="h-6 w-6" />;
+        return <Zap className="h-5 w-5" />;
       case "ShieldAlert":
-        return <ShieldAlert className="h-6 w-6" />;
+        return <ShieldAlert className="h-5 w-5" />;
       case "Warehouse":
-        return <Warehouse className="h-6 w-6" />;
+        return <Warehouse className="h-5 w-5" />;
       case "Wrench":
-        return <Wrench className="h-6 w-6" />;
+        return <Wrench className="h-5 w-5" />;
       case "Smartphone":
-        return <Smartphone className="h-6 w-6" />;
+        return <Smartphone className="h-5 w-5" />;
       case "Home":
-        return <Home className="h-6 w-6" />;
+        return <Home className="h-5 w-5" />;
       default:
-        return <Wrench className="h-6 w-6" />;
+        return <Wrench className="h-5 w-5" />;
     }
   };
 
   return (
-    <section className="py-12 px-4 bg-zinc-50 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-zinc-800">
+    <section className="py-12 px-4 bg-slate-50 border-b border-slate-200">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">
-              Select Vertical
+            <div className="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-orange-600 mb-1">
+              <span className="w-2 h-2 rounded-xs bg-orange-600 inline-block"></span>
+              <span>Emergency Repair Verticals</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-zinc-950 dark:text-white">
-              Emergency & Same-Day Repair Categories
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
+              Specialized Same-Day Trade Directory
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-500 mt-1">
-              Direct access to dedicated on-call technicians across 9 specialized repair fields.
+            <p className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">
+              Vans stocked with brand-specific parts. Real-time GPS dispatch across 9 core emergency trades.
             </p>
           </div>
 
           {selectedCategory !== "all" && (
             <button
               onClick={() => onSelectCategory("all")}
-              className="text-xs font-bold text-amber-600 hover:underline dark:text-amber-400 self-start sm:self-auto cursor-pointer"
+              className="text-xs font-black uppercase tracking-wider text-slate-700 hover:text-orange-600 bg-white border border-slate-300 rounded-lg px-3 py-1.5 shadow-2xs transition-colors self-start sm:self-auto cursor-pointer"
             >
-              ← View All Categories
+              ← Show Full Fleet (All Trades)
             </button>
           )}
         </div>
 
-        {/* Categories Grid */}
+        {/* Categories Grid - Industrial Utilitarian Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {REPAIR_CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat.id;
@@ -89,65 +91,70 @@ export function CategoryGrid({
               <div
                 key={cat.id}
                 onClick={() => onSelectCategory(cat.id)}
-                className={`group relative rounded-2xl border p-5 transition-all cursor-pointer bg-white dark:bg-zinc-900 shadow-xs hover:shadow-md ${
+                className={`group relative rounded-xl border-2 p-5 transition-all cursor-pointer bg-white shadow-2xs hover:shadow-md flex flex-col justify-between ${
                   isSelected
-                    ? "border-amber-500 ring-2 ring-amber-500/20 dark:border-amber-400"
-                    : "border-zinc-200 hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700"
+                    ? "border-slate-900 ring-2 ring-orange-500/30"
+                    : "border-slate-200 hover:border-slate-400"
                 }`}
               >
-                {/* Header Row */}
-                <div className="flex items-start justify-between gap-3">
-                  <div
-                    className={`h-12 w-12 rounded-xl flex items-center justify-center transition-colors ${
-                      isSelected
-                        ? "bg-amber-500 text-zinc-950"
-                        : "bg-zinc-100 text-zinc-800 group-hover:bg-amber-500/10 group-hover:text-amber-600 dark:bg-zinc-800 dark:text-zinc-200"
-                    }`}
-                  >
-                    {getIcon(cat.iconName)}
+                <div>
+                  {/* Top Badge & Icon */}
+                  <div className="flex items-start justify-between gap-3">
+                    <div
+                      className={`h-10 w-10 rounded-lg flex items-center justify-center transition-colors ${
+                        isSelected
+                          ? "bg-slate-950 text-amber-400"
+                          : "bg-slate-100 text-slate-800 group-hover:bg-amber-100 group-hover:text-amber-900"
+                      }`}
+                    >
+                      {getIcon(cat.iconName)}
+                    </div>
+
+                    <span className="rounded-md bg-slate-100 px-2 py-0.5 text-[10px] font-black uppercase text-slate-700 tracking-wider border border-slate-200">
+                      {cat.badgeText}
+                    </span>
                   </div>
 
-                  <span className="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-bold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
-                    {cat.badgeText}
-                  </span>
+                  {/* Title & Description */}
+                  <h3 className="mt-3 text-base font-black text-slate-950 group-hover:text-orange-600 transition-colors">
+                    {cat.name}
+                  </h3>
+                  <p className="mt-1 text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                    {cat.description}
+                  </p>
                 </div>
 
-                {/* Title & Description */}
-                <h3 className="mt-3 text-base font-bold text-zinc-950 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-                  {cat.name}
-                </h3>
-                <p className="mt-1 text-xs text-zinc-500 line-clamp-2 leading-relaxed">
-                  {cat.description}
-                </p>
+                <div>
+                  {/* Timing & Fee Strip */}
+                  <div className="mt-4 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-[11px] font-mono">
+                    <div className="bg-slate-50 border border-slate-200 rounded-md p-1.5 flex items-center gap-1 text-slate-700">
+                      <Clock className="h-3 w-3 text-amber-600 shrink-0" />
+                      <span className="font-semibold text-[10px]">{cat.avgResponseTime}</span>
+                    </div>
 
-                {/* Timing & Callout Badges */}
-                <div className="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-500">
-                  <span className="flex items-center gap-1 font-medium">
-                    <Clock className="h-3.5 w-3.5 text-amber-500" />
-                    <span>{cat.avgResponseTime}</span>
-                  </span>
-                  <span className="flex items-center gap-1 font-semibold text-zinc-700 dark:text-zinc-300">
-                    <DollarSign className="h-3.5 w-3.5 text-emerald-600" />
-                    <span>{cat.typicalCalloutFee}</span>
-                  </span>
-                </div>
+                    <div className="bg-amber-50 border border-amber-200 rounded-md p-1.5 text-amber-900 font-bold text-[10px] truncate text-center">
+                      {cat.typicalCalloutFee}
+                    </div>
+                  </div>
 
-                {/* Dispatch Trigger */}
-                <div className="mt-3 pt-2 flex items-center justify-between">
-                  <span className="text-[11px] font-bold text-amber-600 dark:text-amber-400 group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
-                    <span>Browse Technicians</span>
-                    <ArrowRight className="h-3 w-3" />
-                  </span>
+                  {/* Action Strip */}
+                  <div className="mt-3 flex items-center justify-between pt-1">
+                    <span className="text-[11px] font-black uppercase tracking-wider text-orange-600 group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
+                      <span>View Technicians</span>
+                      <ArrowRight className="h-3 w-3" />
+                    </span>
 
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onOpenDispatch(cat.id);
-                    }}
-                    className="text-[10px] font-bold bg-amber-100 hover:bg-amber-200 text-amber-900 px-2 py-1 rounded-md dark:bg-amber-950 dark:text-amber-200 transition-colors"
-                  >
-                    Dispatch Now
-                  </button>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenDispatch(cat.id);
+                      }}
+                      className="text-[10px] font-black uppercase tracking-wider bg-slate-950 hover:bg-slate-800 text-white px-2.5 py-1.5 rounded-md shadow-2xs transition-colors cursor-pointer"
+                    >
+                      Dispatch Tech
+                    </button>
+                  </div>
                 </div>
               </div>
             );
@@ -157,4 +164,3 @@ export function CategoryGrid({
     </section>
   );
 }
-

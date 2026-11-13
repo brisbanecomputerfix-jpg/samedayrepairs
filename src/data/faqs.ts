@@ -15,7 +15,7 @@ export const CATEGORY_FAQS: Record<RepairCategoryId, CategoryFaq[]> = {
     {
       question: "What is the typical diagnostic call-out fee for appliance repairs in Australia?",
       answer:
-        "Standard Australian diagnostic fees range from $89 to $120. Most verified technicians in our directory waive or credit this diagnostic fee toward the total bill if you proceed with the repair.",
+        "Standard Australian emergency diagnostic and call-out fees range from $149 to $195 depending on urgency and brand. Most verified technicians in our directory waive or credit this fee toward the total invoice if you approve and proceed with the repair.",
     },
     {
       question: "Do technicians carry genuine spare parts in their vans?",

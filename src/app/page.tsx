@@ -23,6 +23,9 @@ import {
   CheckCircle2,
   Phone,
   Search,
+  Radio,
+  ChevronDown,
+  HelpCircle,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -30,6 +33,7 @@ export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = React.useState<string>("all");
   const [suburbQuery, setSuburbQuery] = React.useState<string>("");
   const [onDutyOnly, setOnDutyOnly] = React.useState<boolean>(true);
+  const [expandedFaqIndex, setExpandedFaqIndex] = React.useState<number | null>(null);
 
   // Modals
   const [isDispatchOpen, setIsDispatchOpen] = React.useState<boolean>(false);
@@ -48,9 +52,9 @@ export default function HomePage() {
 
       // City filter (or show all if matches query)
       if (selectedCityId && p.cityId !== selectedCityId) {
-        // If user searched for a specific suburb, check if suburb matches
         if (suburbQuery.trim()) {
-          const matchSub = p.suburb.toLowerCase().includes(suburbQuery.toLowerCase()) ||
+          const matchSub =
+            p.suburb.toLowerCase().includes(suburbQuery.toLowerCase()) ||
             p.postcode.includes(suburbQuery.trim());
           if (!matchSub) return false;
         } else {
@@ -79,14 +83,39 @@ export default function HomePage() {
   }, [selectedCategory, selectedCityId, suburbQuery, onDutyOnly]);
 
   const handleOpenDispatch = (catId?: RepairCategoryId) => {
-    setActiveDispatchCategory(catId || (selectedCategory !== "all" ? (selectedCategory as RepairCategoryId) : "appliances"));
+    setActiveDispatchCategory(
+      catId || (selectedCategory !== "all" ? (selectedCategory as RepairCategoryId) : "appliances")
+    );
     setIsDispatchOpen(true);
   };
 
   const selectedCategoryObj = REPAIR_CATEGORIES.find((c) => c.id === selectedCategory);
 
+  const HOME_FAQS = [
+    {
+      q: "How fast can a technician arrive in Brisbane, Sydney, or Melbourne today?",
+      a: "Technicians dispatched through the SameDayRepairs fleet average an arrival window between 45 and 90 minutes across all capital metros. Emergency jobs logged before the local same-day cutoff (typically 3:30 PM to 5:00 PM) are prioritized for guaranteed same-day resolution.",
+    },
+    {
+      q: "What does the $149 - $195 diagnostic fee cover?",
+      a: "The diagnostic fee covers mobile workshop van travel to your premises, thorough physical fault triage using professional testing equipment (multimeters, pressure gauges, drain cameras), and a written itemized quote. When you approve the quote and proceed with the repair on the spot, the diagnostic fee is credited directly against the final bill.",
+    },
+    {
+      q: "Are the technicians licensed tradesmen?",
+      a: "Yes. Every technician on the platform is required to hold verified Australian statutory trade qualifications—including QBCC contractor licenses in Queensland, NSW Fair Trading licences, Victorian VBA registrations, ARC Arctick refrigerant licenses, and minimum $20M Public Liability insurance.",
+    },
+    {
+      q: "Do vans carry genuine replacement parts?",
+      a: "Yes. Our mobile workshop fleet carries fast-moving genuine OEM spare parts for major Australian brands—including Samsung, LG, Fisher & Paykel, Bosch, Westinghouse, Rheem, Clipsal, and Lockwood. Over 85% of repair calls are diagnosed and fixed during the very first visit.",
+    },
+    {
+      q: "How do I pay, and will I receive a formal tax invoice?",
+      a: "All technicians carry mobile EFTPOS card terminals accepting Visa, Mastercard, EFTPOS, Apple Pay, and Google Pay. You never need to hand over cash advances. An itemized digital tax invoice showing the business's verified ABN and GST is generated on site for your warranty, rental property ledger, or home insurance claim.",
+    },
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-zinc-950 pb-16 sm:pb-0">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 pb-16 sm:pb-0">
       {/* Top Navbar */}
       <Navbar
         selectedCityId={selectedCityId}
@@ -95,7 +124,7 @@ export default function HomePage() {
         onOpenRegister={() => setIsRegisterOpen(true)}
       />
 
-      {/* Hero with Search and Emergency Banner */}
+      {/* Hero with Emergency Crisis Console */}
       <HeroSearch
         selectedCityId={selectedCityId}
         selectedCategory={selectedCategory}
@@ -104,6 +133,32 @@ export default function HomePage() {
         onSuburbChange={(q) => setSuburbQuery(q)}
         onOpenDispatch={handleOpenDispatch}
       />
+
+      {/* LIVE DISPATCH TELEMETRY TICKER */}
+      <div className="bg-slate-900 text-slate-200 border-y-2 border-slate-950 py-2.5 px-4 overflow-hidden">
+        <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-2 text-xs font-mono">
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span className="text-amber-400 font-bold uppercase tracking-wider">Live Incident Feed:</span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-4 text-[11px] text-slate-300">
+            <span className="bg-slate-800 px-2 py-0.5 rounded-sm border border-slate-700">
+              <strong className="text-white">12m ago:</strong> SDR-948102 Fridge Cooling • Chermside QLD (En Route)
+            </span>
+            <span className="hidden sm:inline bg-slate-800 px-2 py-0.5 rounded-sm border border-slate-700">
+              <strong className="text-white">34m ago:</strong> SDR-812940 Burst Mains • Parramatta NSW (Fixed $285)
+            </span>
+            <span className="hidden lg:inline bg-slate-800 px-2 py-0.5 rounded-sm border border-slate-700">
+              <strong className="text-white">52m ago:</strong> SDR-774190 Locked Out • South Yarra VIC (Resolved $240)
+            </span>
+          </div>
+
+          <div className="shrink-0 text-slate-400 text-[11px]">
+            Dispatcher: <a href="tel:0468991300" className="text-amber-400 font-bold hover:underline">0468 991 300</a>
+          </div>
+        </div>
+      </div>
 
       {/* 9 Repair Verticals Grid */}
       <div id="categories">
@@ -116,20 +171,20 @@ export default function HomePage() {
 
       {/* Live Directory Section */}
       <section className="py-12 px-4 container mx-auto max-w-6xl">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-200 dark:border-zinc-800">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b-2 border-slate-200">
           <div>
             <div className="flex items-center gap-2">
               <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
-                Live On-Call Roster
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800">
+                ACTIVE ON-CALL ROSTER
               </span>
             </div>
-            <h2 className="text-2xl font-black text-zinc-950 dark:text-white mt-0.5">
+            <h2 className="text-2xl font-black text-slate-950 mt-0.5 tracking-tight">
               Verified Same-Day Technicians in {currentCity.name}
             </h2>
-            <p className="text-xs text-zinc-500 mt-0.5">
+            <p className="text-xs text-slate-600 mt-0.5 font-medium">
               {selectedCategory !== "all" ? `Category: ${selectedCategoryObj?.name} • ` : ""}
-              Showing <strong>{filteredProviders.length}</strong> available providers with guaranteed same-day dispatch.
+              Showing <strong>{filteredProviders.length}</strong> vetted providers with on-duty mobile vans ready to dispatch.
             </p>
           </div>
 
@@ -137,13 +192,13 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => setOnDutyOnly(!onDutyOnly)}
-              className={`rounded-xl border px-3 py-1.5 text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+              className={`rounded-lg border-2 px-3 py-1.5 text-xs font-black uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 ${
                 onDutyOnly
-                  ? "border-emerald-500 bg-emerald-50 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-200"
-                  : "border-zinc-200 text-zinc-600 hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-400"
+                  ? "border-emerald-600 bg-emerald-50 text-emerald-900"
+                  : "border-slate-300 text-slate-700 hover:bg-slate-100"
               }`}
             >
-              <CheckCircle2 className="h-3.5 w-3.5" />
+              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
               <span>On-Duty Today Only</span>
             </button>
 
@@ -151,7 +206,7 @@ export default function HomePage() {
             <select
               value={selectedCityId}
               onChange={(e) => setSelectedCityId(e.target.value)}
-              className="rounded-xl border border-zinc-200 bg-white px-3 py-1.5 text-xs font-bold text-zinc-800 focus:outline-hidden dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 cursor-pointer"
+              className="rounded-lg border-2 border-slate-300 bg-white px-3 py-1.5 text-xs font-bold text-slate-900 focus:outline-hidden cursor-pointer shadow-2xs"
             >
               {AUSTRALIAN_CITIES.map((c) => (
                 <option key={c.id} value={c.id}>
@@ -175,28 +230,93 @@ export default function HomePage() {
           </div>
         ) : (
           /* Empty State with Urgent Dispatch Box */
-          <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50/60 p-8 text-center dark:border-amber-900/50 dark:bg-amber-950/20 max-w-xl mx-auto space-y-4">
-            <div className="h-12 w-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto dark:bg-amber-900/60 dark:text-amber-300">
+          <div className="mt-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-8 text-center max-w-xl mx-auto space-y-4 shadow-sm">
+            <div className="h-12 w-12 rounded-lg bg-slate-950 text-amber-400 flex items-center justify-center mx-auto">
               <Zap className="h-6 w-6" />
             </div>
-            <h3 className="text-lg font-black text-amber-950 dark:text-amber-100">
-              Need Someone in {suburbQuery || currentCity.name} Right Now?
+            <h3 className="text-lg font-black text-slate-950">
+              Need A Tech Dispatched to {suburbQuery || currentCity.name} Right Now?
             </h3>
-            <p className="text-xs text-amber-900/80 dark:text-amber-200/80 leading-relaxed max-w-md mx-auto">
-              No individual listing matched your specific filter, but our on-call dispatch network covers all {currentCity.name} suburbs. Broadcast your urgent repair ticket to on-duty mobile vans.
+            <p className="text-xs text-slate-700 leading-relaxed max-w-md mx-auto font-medium">
+              No individual listing matched your specific filter, but our central dispatch fleet covers all {currentCity.name} postcodes. Broadcast your repair ticket directly to on-call mobile workshops.
             </p>
-            <button
-              onClick={() => handleOpenDispatch()}
-              className="rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 px-6 py-3 text-xs font-bold text-zinc-950 shadow-md shadow-orange-500/25 hover:brightness-105 active:scale-95 transition-all cursor-pointer"
-            >
-              Broadcast Urgent Dispatch Now
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 pt-2">
+              <button
+                onClick={() => handleOpenDispatch()}
+                className="w-full sm:w-auto rounded-lg bg-orange-600 hover:bg-orange-700 px-6 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all cursor-pointer"
+              >
+                Broadcast Urgent Dispatch
+              </button>
+              <a
+                href="tel:0468991300"
+                className="w-full sm:w-auto rounded-lg border-2 border-slate-900 bg-white hover:bg-slate-100 px-5 py-2.5 text-xs font-black uppercase text-slate-900 transition-colors"
+              >
+                Call 0468 991 300
+              </a>
+            </div>
           </div>
         )}
       </section>
 
-      {/* Trust & Comparison Section */}
+      {/* Trust & Australian Standard Charter */}
       <TrustSection />
+
+      {/* Frequently Asked Questions Section */}
+      <section className="py-14 px-4 bg-slate-100 border-b border-slate-200">
+        <div className="container mx-auto max-w-3xl">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-1.5 text-xs font-black uppercase tracking-wider text-orange-600 mb-1">
+              <HelpCircle className="h-4 w-4" />
+              <span>Consumer Clarity</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
+              Emergency Repair Frequently Asked Questions
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">
+              Upfront answers regarding arrival times, diagnostics, and Australian trade licensing.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            {HOME_FAQS.map((faq, idx) => {
+              const isOpen = expandedFaqIndex === idx;
+
+              return (
+                <div
+                  key={idx}
+                  className="rounded-xl border border-slate-200 bg-white shadow-2xs overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setExpandedFaqIndex(isOpen ? null : idx)}
+                    className="w-full flex items-center justify-between p-4 text-left font-black text-sm text-slate-950 hover:bg-slate-50 transition-colors cursor-pointer"
+                  >
+                    <span>{faq.q}</span>
+                    <ChevronDown
+                      className={`h-4 w-4 text-slate-500 transition-transform ${
+                        isOpen ? "rotate-180 text-orange-600" : ""
+                      }`}
+                    />
+                  </button>
+                  {isOpen && (
+                    <div className="px-4 pb-4 pt-1 text-xs text-slate-600 leading-relaxed border-t border-slate-100 font-medium">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Need help footer */}
+          <div className="mt-8 text-center text-xs text-slate-600 font-medium">
+            Have a question not listed here? Talk to our emergency dispatcher at{" "}
+            <a href="tel:0468991300" className="text-orange-600 font-black hover:underline">
+              0468 991 300
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <Footer

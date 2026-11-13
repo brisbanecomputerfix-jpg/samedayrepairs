@@ -1,116 +1,134 @@
 "use client";
 
 import * as React from "react";
-import { Check, X, Shield, Clock, Zap, Award } from "lucide-react";
+import { Check, X, Shield, Clock, Zap, Award, FileCheck2, CreditCard, Wrench } from "lucide-react";
 
 export function TrustSection() {
   return (
-    <section className="py-16 px-4 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
+    <section className="py-14 px-4 bg-white border-b border-slate-200">
       <div className="container mx-auto max-w-5xl">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">
-            The SameDayRepairs Standard
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="flex items-center justify-center gap-1.5 text-xs font-black uppercase tracking-wider text-orange-600 mb-1">
+            <span className="w-2 h-2 rounded-xs bg-orange-600 inline-block"></span>
+            <span>The Australian Trade Standard</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-black text-zinc-950 dark:text-white">
-            Built for Real Crises. Not Multi-Day Waiting Games.
+          <h2 className="text-2xl sm:text-4xl font-black text-slate-950 tracking-tight">
+            Built for Crises. Not Multi-Day Waiting Games.
           </h2>
-          <p className="mt-2 text-xs sm:text-sm text-zinc-500 leading-relaxed">
-            When your home or business faces an emergency, you need an on-call licensed technician at your door today—not days of bidding wars.
+          <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+            When your home or business faces an emergency, you need an on-call licensed technician at your door today—backed by Australian consumer law and verified licensing.
           </p>
         </div>
 
-        {/* Comparison Table */}
-        <div className="overflow-x-auto rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xs mb-12">
+        {/* 4 Concrete Consumer Protection Pillars */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
+          <div className="rounded-xl border-2 border-slate-200 bg-slate-50 p-4 shadow-2xs">
+            <div className="h-9 w-9 rounded-lg bg-slate-950 text-amber-400 flex items-center justify-center mb-3">
+              <FileCheck2 className="h-5 w-5" />
+            </div>
+            <h3 className="font-black text-sm text-slate-950">Statutory Trade Licences</h3>
+            <p className="mt-1.5 text-xs text-slate-600 leading-relaxed">
+              Audited against QBCC (QLD), Fair Trading (NSW), and Energy Safe (VIC). Zero unlicensed handymen touching high-voltage or pressurized mains.
+            </p>
+          </div>
+
+          <div className="rounded-xl border-2 border-slate-200 bg-slate-50 p-4 shadow-2xs">
+            <div className="h-9 w-9 rounded-lg bg-slate-950 text-emerald-400 flex items-center justify-center mb-3">
+              <Shield className="h-5 w-5" />
+            </div>
+            <h3 className="font-black text-sm text-slate-950">$20M Public Liability</h3>
+            <p className="mt-1.5 text-xs text-slate-600 leading-relaxed">
+              Active certificates of currency verified. Your premises and property are fully protected in the event of unforeseen leaks or accidents.
+            </p>
+          </div>
+
+          <div className="rounded-xl border-2 border-slate-200 bg-slate-50 p-4 shadow-2xs">
+            <div className="h-9 w-9 rounded-lg bg-slate-950 text-blue-400 flex items-center justify-center mb-3">
+              <Wrench className="h-5 w-5" />
+            </div>
+            <h3 className="font-black text-sm text-slate-950">Mobile Workshop Stock</h3>
+            <p className="mt-1.5 text-xs text-slate-600 leading-relaxed">
+              GPS-dispatched vans carry fast-moving OEM spares (Samsung, Rheem, Bosch, LG, Lockwood) for an 85%+ first-visit resolution rate.
+            </p>
+          </div>
+
+          <div className="rounded-xl border-2 border-slate-200 bg-slate-50 p-4 shadow-2xs">
+            <div className="h-9 w-9 rounded-lg bg-slate-950 text-orange-400 flex items-center justify-center mb-3">
+              <CreditCard className="h-5 w-5" />
+            </div>
+            <h3 className="font-black text-sm text-slate-950">On-Van Tap & Go EFTPOS</h3>
+            <p className="mt-1.5 text-xs text-slate-600 leading-relaxed">
+              Pay securely on completion with mobile card terminals. Instant itemized tax invoices with ABN and GST breakdown for your records.
+            </p>
+          </div>
+        </div>
+
+        {/* Operational Comparison Table */}
+        <div className="overflow-x-auto rounded-xl border-2 border-slate-200 shadow-2xs">
           <table className="w-full text-left border-collapse text-xs sm:text-sm">
             <thead>
-              <tr className="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
-                <th className="p-4 font-bold text-zinc-900 dark:text-white">What You Experience</th>
-                <th className="p-4 font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 border-x border-amber-500/20">
-                  SameDayRepairs.com.au
+              <tr className="border-b-2 border-slate-200 bg-slate-100 font-mono">
+                <th className="p-3.5 font-black text-slate-900 uppercase text-xs">Operational Factor</th>
+                <th className="p-3.5 font-black text-slate-950 bg-amber-100/70 border-x-2 border-amber-300 uppercase text-xs">
+                  SameDayRepairs Fleet
                 </th>
-                <th className="p-4 font-bold text-zinc-500">Airtasker / Bidding Apps</th>
-                <th className="p-4 font-bold text-zinc-500">Google Search / Directories</th>
+                <th className="p-3.5 font-bold text-slate-500 uppercase text-xs">Airtasker / Bidding Apps</th>
+                <th className="p-3.5 font-bold text-slate-500 uppercase text-xs">Standard Trade Directories</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
+            <tbody className="divide-y divide-slate-200 bg-white">
               <tr>
-                <td className="p-4 font-semibold text-zinc-900 dark:text-zinc-200">
+                <td className="p-3.5 font-bold text-slate-900">
                   Speed to Arrival
                 </td>
-                <td className="p-4 font-bold text-emerald-600 bg-amber-500/5 border-x border-amber-500/20 flex items-center gap-1.5">
-                  <Check className="h-4 w-4" /> Today (Under 60 - 90 mins)
+                <td className="p-3.5 font-black text-emerald-800 bg-amber-50/50 border-x-2 border-amber-300">
+                  <span className="flex items-center gap-1.5">
+                    <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> Today (Under 60–90 mins)
+                  </span>
                 </td>
-                <td className="p-4 text-zinc-500">2 to 4 days of bidding</td>
-                <td className="p-4 text-zinc-500">Must call 8+ numbers to find someone free</td>
+                <td className="p-3.5 text-slate-500">2 to 4 days of bidding rounds</td>
+                <td className="p-3.5 text-slate-500">Must call 8+ numbers to find someone free</td>
               </tr>
               <tr>
-                <td className="p-4 font-semibold text-zinc-900 dark:text-zinc-200">
-                  Vetting & Safety
+                <td className="p-3.5 font-bold text-slate-900">
+                  Licensing & Compliance
                 </td>
-                <td className="p-4 font-bold text-emerald-600 bg-amber-500/5 border-x border-amber-500/20 flex items-center gap-1.5">
-                  <Check className="h-4 w-4" /> ABN & Police Checked
+                <td className="p-3.5 font-black text-emerald-800 bg-amber-50/50 border-x-2 border-amber-300">
+                  <span className="flex items-center gap-1.5">
+                    <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> State Trade Licences Audited
+                  </span>
                 </td>
-                <td className="p-4 text-zinc-500">Unvetted casual handymen</td>
-                <td className="p-4 text-zinc-500">Varies widely, no verification</td>
+                <td className="p-3.5 text-slate-500">Unvetted casual handymen</td>
+                <td className="p-3.5 text-slate-500">Self-reported without live check</td>
               </tr>
               <tr>
-                <td className="p-4 font-semibold text-zinc-900 dark:text-zinc-200">
-                  Pricing Transparency
+                <td className="p-3.5 font-bold text-slate-900">
+                  Pricing Predictability
                 </td>
-                <td className="p-4 font-bold text-emerald-600 bg-amber-500/5 border-x border-amber-500/20 flex items-center gap-1.5">
-                  <Check className="h-4 w-4" /> Flat Diagnostic / Clear Fees
+                <td className="p-3.5 font-black text-emerald-800 bg-amber-50/50 border-x-2 border-amber-300">
+                  <span className="flex items-center gap-1.5">
+                    <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> Fixed Diagnostic (From $149)
+                  </span>
                 </td>
-                <td className="p-4 text-zinc-500">Price gouging or hidden costs</td>
-                <td className="p-4 text-zinc-500">Unexpected after-hours markups</td>
+                <td className="p-3.5 text-slate-500">Uncontrolled price escalation</td>
+                <td className="p-3.5 text-slate-500">Unknown call-out and hourly rates</td>
               </tr>
               <tr>
-                <td className="p-4 font-semibold text-zinc-900 dark:text-zinc-200">
+                <td className="p-3.5 font-bold text-slate-900">
                   Parts & Warranty
                 </td>
-                <td className="p-4 font-bold text-emerald-600 bg-amber-500/5 border-x border-amber-500/20 flex items-center gap-1.5">
-                  <Check className="h-4 w-4" /> 12-Month Guarantee
+                <td className="p-3.5 font-black text-emerald-800 bg-amber-50/50 border-x-2 border-amber-300">
+                  <span className="flex items-center gap-1.5">
+                    <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> 12-Month Genuine Warranty
+                  </span>
                 </td>
-                <td className="p-4 text-zinc-500">Zero formal warranty</td>
-                <td className="p-4 text-zinc-500">Depends on individual contractor</td>
+                <td className="p-3.5 text-slate-500">Zero formal warranty backing</td>
+                <td className="p-3.5 text-slate-500">Contractor-dependent</td>
               </tr>
             </tbody>
           </table>
-        </div>
-
-        {/* 3 Value Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900/60">
-            <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-3">
-              <Clock className="h-5 w-5" />
-            </div>
-            <h3 className="font-bold text-base text-zinc-950 dark:text-white">Strict Same-Day Cutoff Policy</h3>
-            <p className="mt-2 text-xs text-zinc-500 leading-relaxed">
-              Every technician in our network commits to clear same-day cut-off hours (typically 3:30 PM to 5:00 PM). If you book before cut-off, a tech arrives today.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900/60">
-            <div className="h-10 w-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center mb-3">
-              <Shield className="h-5 w-5" />
-            </div>
-            <h3 className="font-bold text-base text-zinc-950 dark:text-white">Verified Australian ABNs</h3>
-            <p className="mt-2 text-xs text-zinc-500 leading-relaxed">
-              We verify Australian Business Numbers, state trade contractor licenses (QBCC, NSW Fair Trading, ESV), and minimum \$5M public liability insurance.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900/60">
-            <div className="h-10 w-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center mb-3">
-              <Award className="h-5 w-5" />
-            </div>
-            <h3 className="font-bold text-base text-zinc-950 dark:text-white">Van-Stocked First-Time Fixes</h3>
-            <p className="mt-2 text-xs text-zinc-500 leading-relaxed">
-              Our technicians carry common genuine components for major brands (Samsung, LG, Bosch, Merlin, Dux, Rheem) to maximize same-day repair completion.
-            </p>
-          </div>
         </div>
       </div>
     </section>
   );
 }
-

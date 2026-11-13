@@ -50,7 +50,7 @@ export function CategoryClient({
   }, [providers, selectedCityId]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-zinc-950 pb-16 sm:pb-0">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 pb-16 sm:pb-0">
       <Navbar
         selectedCityId="brisbane"
         onSelectCity={(cId) => setSelectedCityId(cId)}
@@ -59,52 +59,51 @@ export function CategoryClient({
       />
 
       {/* Breadcrumb */}
-      <div className="bg-zinc-100 border-b border-zinc-200 dark:bg-zinc-900/60 dark:border-zinc-800 text-xs py-2.5 px-4">
-        <div className="container mx-auto max-w-6xl flex items-center gap-1.5 text-zinc-500">
-          <Link href="/" className="hover:text-zinc-900 dark:hover:text-zinc-200">
+      <div className="bg-slate-100 border-b border-slate-200 text-xs py-2 px-4">
+        <div className="container mx-auto max-w-6xl flex items-center gap-1.5 text-slate-500 font-medium">
+          <Link href="/" className="hover:text-slate-900">
             Home
           </Link>
           <ChevronRight className="h-3 w-3" />
-          <Link href="/#categories" className="hover:text-zinc-900 dark:hover:text-zinc-200">
+          <Link href="/#categories" className="hover:text-slate-900">
             Categories
           </Link>
           <ChevronRight className="h-3 w-3" />
-          <span className="font-bold text-zinc-900 dark:text-white">
+          <span className="font-bold text-slate-900">
             {category.name}
           </span>
         </div>
       </div>
 
-      {/* Category Hero Header */}
-      <header className="relative bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 text-white py-14 px-4 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-amber-500/10 blur-[100px] rounded-full pointer-events-none" />
-
+      {/* Category Hero Header - Industrial Emergency Command */}
+      <header className="relative bg-white border-b border-slate-200 py-12 px-4 industrial-grid">
         <div className="container mx-auto max-w-5xl relative z-10 text-center sm:text-left">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-400 mb-4">
-            <Zap className="h-3.5 w-3.5 fill-current" />
+          <div className="inline-flex items-center gap-2 rounded-md bg-slate-900 px-3 py-1 text-xs font-mono font-medium text-slate-100 mb-4 border border-slate-700 shadow-2xs">
+            <Zap className="h-3.5 w-3.5 text-amber-400 fill-amber-400" />
+            <span className="text-amber-400 font-bold">NATIONAL FLEET:</span>
             <span>Australia-Wide Same-Day Dispatch</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-950 leading-tight">
             Same-Day {category.name}
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-zinc-300 max-w-3xl leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed font-medium">
             {category.description} On-call licensed Australian technicians ready for emergency dispatch today with zero multi-day waiting games.
           </p>
 
           {/* Quick Metrics Bar */}
-          <div className="mt-8 flex flex-wrap items-center gap-4 text-xs">
-            <div className="flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/80 px-4 py-2.5">
-              <Clock className="h-4 w-4 text-amber-400" />
-              <span>Avg Arrival: <strong>{category.avgResponseTime}</strong></span>
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-mono">
+            <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2 text-slate-800 shadow-2xs">
+              <Clock className="h-4 w-4 text-orange-600" />
+              <span>Avg Response: <strong>{category.avgResponseTime}</strong></span>
             </div>
-            <div className="flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/80 px-4 py-2.5">
-              <DollarSign className="h-4 w-4 text-emerald-400" />
+            <div className="flex items-center gap-2 rounded-lg border border-amber-300 bg-amber-50 px-3.5 py-2 text-amber-950 shadow-2xs">
+              <DollarSign className="h-4 w-4 text-emerald-700" />
               <span>Typical Callout: <strong>{category.typicalCalloutFee}</strong></span>
             </div>
-            <div className="flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/80 px-4 py-2.5">
-              <ShieldCheck className="h-4 w-4 text-sky-400" />
+            <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2 text-slate-800 shadow-2xs">
+              <ShieldCheck className="h-4 w-4 text-emerald-600" />
               <span>100% ABN Verified & Insured</span>
             </div>
           </div>
@@ -113,16 +112,16 @@ export function CategoryClient({
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               onClick={() => setIsDispatchOpen(true)}
-              className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 px-6 py-3 text-xs font-bold text-zinc-950 shadow-md shadow-orange-500/20 hover:brightness-105 active:scale-95 transition-all cursor-pointer"
+              className="flex items-center gap-2 rounded-lg bg-orange-600 hover:bg-orange-700 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md active:scale-95 transition-all cursor-pointer"
             >
-              <Zap className="h-4 w-4 fill-zinc-950" />
-              <span>Dispatch On-Call Technician Now</span>
+              <Zap className="h-4 w-4 fill-white" />
+              <span>Dispatch On-Call Tech Now</span>
             </button>
             <a
               href="tel:0468991300"
-              className="flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-800/80 px-5 py-3 text-xs font-bold text-white hover:bg-zinc-700 transition-colors"
+              className="flex items-center gap-2 rounded-lg border-2 border-emerald-600 bg-white px-5 py-3 text-xs font-black uppercase text-emerald-800 hover:bg-emerald-50 transition-colors shadow-2xs"
             >
-              <Phone className="h-4 w-4 text-emerald-400" />
+              <Phone className="h-4 w-4 text-emerald-600" />
               <span>Call Hotline: 0468 991 300</span>
             </a>
           </div>

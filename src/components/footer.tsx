@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Zap, ShieldCheck, Phone, Heart } from "lucide-react";
+import { Zap, ShieldCheck, Phone, AlertTriangle } from "lucide-react";
 import { REPAIR_CATEGORIES } from "@/data/categories";
 import { AUSTRALIAN_CITIES } from "@/data/locations";
 
@@ -13,50 +13,54 @@ interface FooterProps {
 
 export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
   return (
-    <footer className="border-t border-zinc-200 bg-white text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-400 text-xs">
-      {/* Top Tradie CTA Banner */}
-      <div className="bg-gradient-to-r from-zinc-900 to-zinc-950 text-white py-8 px-4 border-b border-zinc-800">
+    <footer className="border-t-2 border-slate-200 bg-white text-slate-600 text-xs">
+      {/* Top Tradie Fleet Callout Ribbon */}
+      <div className="bg-slate-950 text-white py-8 px-4 border-b border-slate-800">
         <div className="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
-            <span className="text-amber-400 font-bold uppercase tracking-wider text-[11px]">
-              Are You an Australian Tradie or Repairer?
-            </span>
-            <h3 className="text-lg sm:text-xl font-black text-white mt-0.5">
-              Get High-Margin Same-Day Repair Jobs in Your Local Suburbs
+            <div className="flex items-center justify-center sm:justify-start gap-1.5 text-amber-400 font-mono font-bold uppercase tracking-wider text-[11px] mb-1">
+              <span className="w-2 h-2 rounded-xs bg-amber-400 inline-block"></span>
+              <span>Australian Licensed Trade Contractors</span>
+            </div>
+            <h3 className="text-lg sm:text-xl font-black text-white">
+              Own a Licensed Trade Van or Mobile Workshop?
             </h3>
-            <p className="text-xs text-zinc-400 mt-1 max-w-xl">
-              Fill calendar gaps with urgent, high-paying jobs. Zero bidding wars. List your ABN-registered business for free during our national rollout.
+            <p className="text-xs text-slate-300 mt-1 max-w-xl font-medium">
+              Join our emergency dispatch fleet. Fill schedule gaps with urgent, high-margin same-day jobs across your local postcode radius.
             </p>
           </div>
 
           <button
             onClick={onOpenRegister}
-            className="rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 px-5 py-3 text-xs font-bold text-zinc-950 shadow-md shadow-orange-500/20 hover:brightness-105 active:scale-95 transition-all shrink-0 cursor-pointer"
+            className="rounded-lg bg-orange-600 hover:bg-orange-700 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all shrink-0 cursor-pointer"
           >
-            List Your Business (Free)
+            Register Trade Van (Free)
           </button>
         </div>
       </div>
 
-      {/* Main Footer Links */}
+      {/* Main Footer Directory Links */}
       <div className="container mx-auto max-w-6xl px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Col */}
           <div className="space-y-3">
             <Link href="/" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-zinc-950">
-                <Zap className="h-4 w-4 fill-zinc-950 text-zinc-950" />
+              <div className="h-8 w-8 rounded-lg bg-slate-950 flex items-center justify-center text-amber-400 border border-slate-800">
+                <Zap className="h-4 w-4 fill-amber-400 text-amber-400" />
               </div>
-              <span className="text-base font-black text-zinc-950 dark:text-white">
-                SameDay<span className="text-amber-500">Repairs</span>.com.au
+              <span className="text-base font-black text-slate-950">
+                SameDay<span className="text-orange-600">Repairs</span>.com.au
               </span>
             </Link>
-            <p className="text-xs text-zinc-500 leading-relaxed">
-              Australia's dedicated nationwide directory and dispatch network for urgent, emergency, and same-day repair providers.
+            <p className="text-xs text-slate-600 leading-relaxed font-medium">
+              Australia's dedicated nationwide emergency directory and GPS dispatch network for urgent, high-priority same-day trade services.
             </p>
-            <div className="pt-2 text-[11px] text-zinc-500">
-              National Referral Hotline:<br />
-              <a href="tel:0468991300" className="text-zinc-900 dark:text-zinc-200 text-sm font-bold hover:text-amber-500 transition-colors">
+            <div className="pt-2 text-[11px] font-mono">
+              <span className="text-slate-500 uppercase block">Duty Dispatch Hotline:</span>
+              <a
+                href="tel:0468991300"
+                className="text-slate-950 text-base font-black hover:text-orange-600 transition-colors"
+              >
                 0468 991 300
               </a>
             </div>
@@ -64,13 +68,16 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
 
           {/* Categories */}
           <div>
-            <h4 className="font-bold text-zinc-950 dark:text-white uppercase tracking-wider text-[11px] mb-3">
-              Repair Verticals
+            <h4 className="font-black text-slate-950 uppercase tracking-wider text-xs mb-3 font-mono">
+              Emergency Trades
             </h4>
-            <ul className="space-y-1.5 text-zinc-500">
+            <ul className="space-y-1.5 text-slate-600 font-medium">
               {REPAIR_CATEGORIES.map((cat) => (
                 <li key={cat.id}>
-                  <Link href={`#categories`} className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
+                  <Link
+                    href={`/category/${cat.id}`}
+                    className="hover:text-orange-600 transition-colors"
+                  >
                     {cat.name}
                   </Link>
                 </li>
@@ -80,14 +87,14 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
 
           {/* Australian Cities */}
           <div>
-            <h4 className="font-bold text-zinc-950 dark:text-white uppercase tracking-wider text-[11px] mb-3">
-              Covered Regions
+            <h4 className="font-black text-slate-950 uppercase tracking-wider text-xs mb-3 font-mono">
+              Metro Coverage Hubs
             </h4>
-            <ul className="space-y-1.5 text-zinc-500">
+            <ul className="space-y-1.5 text-slate-600 font-medium">
               {AUSTRALIAN_CITIES.map((c) => (
                 <li key={c.id}>
-                  <span className="hover:text-amber-600 dark:hover:text-amber-400 cursor-pointer">
-                    {c.name} ({c.state})
+                  <span className="hover:text-orange-600 transition-colors cursor-pointer">
+                    {c.name} ({c.state}) Metro
                   </span>
                 </li>
               ))}
@@ -96,28 +103,32 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
 
           {/* Trust & Legal */}
           <div>
-            <h4 className="font-bold text-zinc-950 dark:text-white uppercase tracking-wider text-[11px] mb-3">
-              Trust & Standards
+            <h4 className="font-black text-slate-950 uppercase tracking-wider text-xs mb-3 font-mono">
+              Compliance & Safety
             </h4>
-            <ul className="space-y-2 text-zinc-500 text-[11px]">
+            <ul className="space-y-2 text-slate-600 text-[11px] font-medium">
               <li className="flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
-                <span>ABN & License Verification</span>
+                <span>QBCC & Fair Trading Licences Checked</span>
               </li>
-              <li>Same-Day Cutoff Policy</li>
+              <li>$20M Public Liability Insurance Audited</li>
               <li>12-Month Workmanship Warranty</li>
-              <li>Fair Diagnostic Fee Guidelines</li>
+              <li>Itemized Tax Invoices with ABN & GST</li>
               <li className="pt-2 space-y-1">
-                <Link href="/login" className="block font-bold text-amber-500 hover:underline">
-                  → Portal Access & Login
+                <Link href="/login" className="block font-black text-orange-600 hover:underline">
+                  → Seeker & Tradie Portal Login
                 </Link>
-                <Link href="/admin" className="block text-zinc-400 hover:underline">
-                  → Operations Dispatch Center
+                <Link href="/admin" className="block text-slate-500 hover:underline">
+                  → Central Dispatch Console
                 </Link>
               </li>
               <li className="pt-2">
-                <div className="rounded-lg bg-red-50 p-2 text-[10px] text-red-900 dark:bg-red-950/40 dark:text-red-300">
-                  <strong>Notice:</strong> For life-threatening emergencies (e.g. major gas leaks, structural collapse), please call <strong>000</strong> immediately.
+                <div className="rounded-lg bg-red-50 border border-red-200 p-2.5 text-[10px] text-red-900 leading-snug">
+                  <div className="flex items-center gap-1 font-black mb-0.5">
+                    <AlertTriangle className="h-3 w-3 text-red-600 shrink-0" />
+                    <span>Life-Threatening Emergency Notice:</span>
+                  </div>
+                  For active gas leaks, sparking mains with fire hazard, or structural danger, dial <strong>000</strong> immediately.
                 </div>
               </li>
             </ul>
@@ -125,14 +136,14 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
         </div>
 
         {/* Bottom copyright row */}
-        <div className="mt-12 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-zinc-400">
+        <div className="mt-12 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500 font-medium">
           <div>
-            © 2026 SameDayRepairs.com.au. All Rights Reserved. ABN Verified Australian Directory.
+            © 2026 SameDayRepairs.com.au. Australian Registered Business Directory.
           </div>
           <div className="flex items-center gap-4">
             <span className="hover:underline cursor-pointer">Privacy Policy</span>
             <span className="hover:underline cursor-pointer">Terms of Service</span>
-            <span className="hover:underline cursor-pointer">Tradie Code of Conduct</span>
+            <span className="hover:underline cursor-pointer">Statutory Trade Charter</span>
           </div>
         </div>
       </div>
