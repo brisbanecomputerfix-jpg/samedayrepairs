@@ -12,24 +12,6 @@ export const metadata = {
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between text-slate-900 font-sans">
-      {/* Top Warning Banner */}
-      <div className="bg-amber-400 text-slate-950 font-bold text-xs py-2 px-4 text-center border-b border-amber-500 shadow-2xs">
-        <div className="container mx-auto flex items-center justify-center gap-2">
-          <span className="inline-block bg-slate-950 text-amber-300 text-[10px] uppercase font-mono px-1.5 py-0.5 rounded-sm tracking-wider">
-            ⚠️ PROTOTYPE DEMO
-          </span>
-          <span className="hidden sm:inline">
-            This platform is currently a demonstration mockup and is NOT active for live bookings.
-          </span>
-          <span>
-            Direct enquiries:{" "}
-            <a href="tel:0468991300" className="underline font-black hover:text-black">
-              0468 991 300
-            </a>
-          </span>
-        </div>
-      </div>
-
       {/* Mini Brand Header */}
       <header className="border-b border-slate-200 bg-white/95 backdrop-blur-md sticky top-0 z-30">
         <div className="container mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
@@ -165,3 +147,4 @@ export default function NotFound() {
     </div>
   );
 }
+
