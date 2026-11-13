@@ -115,7 +115,7 @@ export default function TermsPage() {
               <span className="text-orange-600 font-mono font-bold">3.</span> Diagnostic Fees & On-Site Quotes
             </a>
             <a href="#section-4" className="hover:text-orange-600 flex items-center gap-1.5 py-1">
-              <span className="text-orange-600 font-mono font-bold">5.</span> Emergency 000 Safety Disclaimer
+              <span className="text-orange-600 font-mono font-bold">4.</span> Emergency 000 Safety Disclaimer
             </a>
             <a href="#section-5" className="hover:text-orange-600 flex items-center gap-1.5 py-1">
               <span className="text-orange-600 font-mono font-bold">5.</span> Contractor Licensing & $20M Insurance
