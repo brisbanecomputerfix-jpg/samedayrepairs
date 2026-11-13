@@ -65,7 +65,7 @@ export function TrustSection() {
 
         {/* Operational Comparison Table */}
         <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-xs">
-          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+          <table className="w-full min-w-[560px] text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-slate-200 bg-slate-50">
                 <th className="p-4 font-bold text-slate-900 text-xs uppercase tracking-wider">Service Feature</th>
