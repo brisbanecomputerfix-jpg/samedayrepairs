@@ -25,12 +25,10 @@ import {
   ChevronRight,
   TrendingUp,
   AlertTriangle,
-  Lock,
-  Unlock,
+  RotateCw,
 } from "lucide-react";
 
 export function AdminClient() {
-  const [pinUnlocked, setPinUnlocked] = React.useState<boolean>(true);
   const [activeTab, setActiveTab] = React.useState<"dispatches" | "applications" | "roster">("dispatches");
 
   // State
@@ -80,31 +78,33 @@ export function AdminClient() {
   });
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white flex flex-col font-sans">
-      {/* Top Admin Bar */}
-      <header className="border-b border-zinc-800 bg-zinc-900/90 px-4 py-3 sticky top-0 z-30 backdrop-blur-md">
+    <div className="min-h-screen bg-slate-100 text-slate-900 flex flex-col font-sans">
+      {/* Top Admin Command Header */}
+      <header className="border-b-2 border-slate-950 bg-slate-950 px-4 py-3 sticky top-0 z-30 shadow-md">
         <div className="container mx-auto max-w-7xl flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-zinc-950 font-black">
-                <Zap className="h-4 w-4 fill-zinc-950" />
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="h-8 w-8 rounded-lg bg-amber-400 flex items-center justify-center text-slate-950 font-black shadow-xs">
+                <Zap className="h-4 w-4 fill-slate-950 text-slate-950" />
               </div>
-              <span className="font-black text-sm text-white">SameDayRepairs</span>
+              <span className="font-black text-sm text-white font-mono">
+                SameDayRepairs<span className="text-orange-500">.com.au</span>
+              </span>
             </Link>
-            <span className="rounded bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-400 border border-amber-500/30">
-              Operations Center
+            <span className="rounded-sm bg-slate-800 px-2 py-0.5 text-[10px] font-mono font-black text-amber-300 uppercase tracking-widest border border-slate-700">
+              Operations Dispatch Console
             </span>
           </div>
 
           <div className="flex items-center gap-3 text-xs">
-            <span className="flex items-center gap-1.5 text-emerald-400 font-semibold text-[11px]">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-              <span>National Dispatch Active</span>
+            <span className="hidden sm:flex items-center gap-1.5 text-emerald-400 font-bold text-[11px] font-mono">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>NATIONAL DISPATCH RADAR: ACTIVE</span>
             </span>
 
             <Link
               href="/"
-              className="rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-1 text-xs font-semibold hover:bg-zinc-700 transition-colors"
+              className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-1.5 text-xs font-bold text-slate-200 hover:bg-slate-700 hover:text-white transition-colors"
             >
               Public Site →
             </Link>
@@ -112,62 +112,63 @@ export function AdminClient() {
         </div>
       </header>
 
-      {/* KPI Overview Metrics */}
-      <div className="border-b border-zinc-800 bg-zinc-900/40 px-4 py-6">
+      {/* KPI Overview Telemetry Metrics */}
+      <div className="border-b border-slate-200 bg-white px-4 py-6 shadow-2xs">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/80 p-4">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5">
+            <div className="rounded-xl border-2 border-slate-200 bg-slate-50 p-4">
+              <div className="text-[10px] font-mono font-black uppercase tracking-wider text-slate-500">
                 Dispatches Today
               </div>
               <div className="mt-1 flex items-baseline gap-2">
-                <span className="text-2xl font-black text-amber-400">{dispatches.length + 34}</span>
-                <span className="text-[11px] text-emerald-400 font-bold">+18% vs avg</span>
+                <span className="text-2xl font-black text-slate-950 font-mono">{dispatches.length + 38}</span>
+                <span className="text-[11px] text-emerald-700 font-bold font-mono">+24% vs avg</span>
               </div>
             </div>
 
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/80 p-4">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">
-                On-Duty Fleet
+            <div className="rounded-xl border-2 border-slate-200 bg-slate-50 p-4">
+              <div className="text-[10px] font-mono font-black uppercase tracking-wider text-slate-500">
+                On-Duty Active Fleet
               </div>
               <div className="mt-1 flex items-baseline gap-2">
-                <span className="text-2xl font-black text-emerald-400">
-                  {providers.filter((p) => p.isOnDutyToday).length} Mobile Vans
+                <span className="text-2xl font-black text-emerald-700 font-mono">
+                  {providers.filter((p) => p.isOnDutyToday).length} Vans
                 </span>
+                <span className="text-[11px] text-slate-500 font-mono">GPS live</span>
               </div>
             </div>
 
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/80 p-4">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">
-                Avg Response Time
+            <div className="rounded-xl border-2 border-slate-200 bg-slate-50 p-4">
+              <div className="text-[10px] font-mono font-black uppercase tracking-wider text-slate-500">
+                Average Arrival Window
               </div>
               <div className="mt-1 flex items-baseline gap-2">
-                <span className="text-2xl font-black text-sky-400">41 Mins</span>
-                <span className="text-[11px] text-zinc-400">Arrival window</span>
+                <span className="text-2xl font-black text-orange-600 font-mono">42 Mins</span>
+                <span className="text-[11px] text-slate-500 font-mono">Across metros</span>
               </div>
             </div>
 
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/80 p-4">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">
-                Pending Tradie Signups
+            <div className="rounded-xl border-2 border-slate-200 bg-slate-50 p-4">
+              <div className="text-[10px] font-mono font-black uppercase tracking-wider text-slate-500">
+                Pending Tradie Audits
               </div>
               <div className="mt-1 flex items-baseline gap-2">
-                <span className="text-2xl font-black text-orange-400">
+                <span className="text-2xl font-black text-amber-700 font-mono">
                   {applications.filter((a) => a.status === "pending").length} Awaiting
                 </span>
-                <span className="text-[11px] text-zinc-400">ABN check</span>
+                <span className="text-[11px] text-slate-500 font-mono">ABN lookup</span>
               </div>
             </div>
           </div>
 
           {/* Navigation Tabs */}
-          <div className="mt-6 flex items-center gap-2 border-b border-zinc-800">
+          <div className="mt-6 flex items-center gap-2 border-b border-slate-200 font-mono text-xs">
             <button
               onClick={() => setActiveTab("dispatches")}
-              className={`pb-3 px-3 text-xs font-bold transition-all border-b-2 -mb-px cursor-pointer flex items-center gap-1.5 ${
+              className={`pb-3 px-3.5 font-black uppercase tracking-wider transition-all border-b-2 -mb-px cursor-pointer flex items-center gap-1.5 ${
                 activeTab === "dispatches"
-                  ? "border-amber-500 text-amber-400"
-                  : "border-transparent text-zinc-400 hover:text-white"
+                  ? "border-orange-600 text-orange-600"
+                  : "border-transparent text-slate-500 hover:text-slate-900"
               }`}
             >
               <Truck className="h-4 w-4" />
@@ -176,26 +177,26 @@ export function AdminClient() {
 
             <button
               onClick={() => setActiveTab("applications")}
-              className={`pb-3 px-3 text-xs font-bold transition-all border-b-2 -mb-px cursor-pointer flex items-center gap-1.5 ${
+              className={`pb-3 px-3.5 font-black uppercase tracking-wider transition-all border-b-2 -mb-px cursor-pointer flex items-center gap-1.5 ${
                 activeTab === "applications"
-                  ? "border-amber-500 text-amber-400"
-                  : "border-transparent text-zinc-400 hover:text-white"
+                  ? "border-orange-600 text-orange-600"
+                  : "border-transparent text-slate-500 hover:text-slate-900"
               }`}
             >
               <Users className="h-4 w-4" />
-              <span>Tradie Onboarding Review ({applications.filter((a) => a.status === "pending").length})</span>
+              <span>Tradie Onboarding Audits ({applications.filter((a) => a.status === "pending").length})</span>
             </button>
 
             <button
               onClick={() => setActiveTab("roster")}
-              className={`pb-3 px-3 text-xs font-bold transition-all border-b-2 -mb-px cursor-pointer flex items-center gap-1.5 ${
+              className={`pb-3 px-3.5 font-black uppercase tracking-wider transition-all border-b-2 -mb-px cursor-pointer flex items-center gap-1.5 ${
                 activeTab === "roster"
-                  ? "border-amber-500 text-amber-400"
-                  : "border-transparent text-zinc-400 hover:text-white"
+                  ? "border-orange-600 text-orange-600"
+                  : "border-transparent text-slate-500 hover:text-slate-900"
               }`}
             >
               <ShieldCheck className="h-4 w-4" />
-              <span>On-Duty Roster ({providers.length})</span>
+              <span>On-Duty Tradie Roster ({providers.length})</span>
             </button>
           </div>
         </div>
@@ -208,19 +209,19 @@ export function AdminClient() {
           <div>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
               <div>
-                <h2 className="text-xl font-black text-white">Active Dispatch Stream</h2>
-                <p className="text-xs text-zinc-400">
-                  Simulated live emergency repair tickets currently dispatched to Australian vans.
+                <h2 className="text-xl font-black text-slate-950 tracking-tight">Active Dispatch Stream</h2>
+                <p className="text-xs text-slate-600 font-medium">
+                  Real-time emergency tickets currently dispatched to Australian mobile workshops.
                 </p>
               </div>
 
               {/* City filter */}
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-zinc-400">Region:</span>
+              <div className="flex items-center gap-2 text-xs">
+                <span className="text-slate-500 font-bold uppercase font-mono">Metro:</span>
                 <select
                   value={selectedCityFilter}
                   onChange={(e) => setSelectedCityFilter(e.target.value)}
-                  className="rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-xs font-semibold text-white focus:outline-hidden"
+                  className="rounded-lg border-2 border-slate-300 bg-white px-3 py-1.5 text-xs font-bold text-slate-900 focus:outline-hidden cursor-pointer"
                 >
                   <option value="all">All Regions</option>
                   <option value="brisbane">Greater Brisbane</option>
@@ -232,55 +233,55 @@ export function AdminClient() {
             </div>
 
             {/* Table */}
-            <div className="overflow-x-auto rounded-2xl border border-zinc-800 bg-zinc-900 shadow-xl">
+            <div className="overflow-x-auto rounded-xl border-2 border-slate-200 bg-white shadow-2xs">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
-                  <tr className="border-b border-zinc-800 bg-zinc-950/60 text-zinc-400 font-bold uppercase tracking-wider text-[10px]">
+                  <tr className="border-b-2 border-slate-200 bg-slate-50 text-slate-600 font-black font-mono uppercase tracking-wider text-[10px]">
                     <th className="p-3.5">Ticket Ref</th>
                     <th className="p-3.5">Customer & Suburb</th>
-                    <th className="p-3.5">Vertical & Problem</th>
-                    <th className="p-3.5">Assigned Specialist</th>
+                    <th className="p-3.5">Vertical & Issue</th>
+                    <th className="p-3.5">Assigned Van</th>
                     <th className="p-3.5">Status</th>
                     <th className="p-3.5 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-zinc-800">
+                <tbody className="divide-y divide-slate-200">
                   {filteredDispatches.map((d) => (
-                    <tr key={d.id} className="hover:bg-zinc-800/40 transition-colors">
-                      <td className="p-3.5 font-bold font-mono text-amber-400">
-                        <Link href={`/dispatch/${d.id}`} className="hover:underline flex items-center gap-1">
+                    <tr key={d.id} className="hover:bg-slate-50/80 transition-colors">
+                      <td className="p-3.5 font-bold font-mono text-slate-900">
+                        <Link href={`/dispatch/${d.id}`} className="hover:text-orange-600 flex items-center gap-1 font-black">
                           <span>{d.id}</span>
-                          <ExternalLink className="h-3 w-3 opacity-60" />
+                          <ExternalLink className="h-3 w-3 opacity-60 text-orange-600" />
                         </Link>
-                        <span className="text-[10px] text-zinc-500 block font-sans font-normal">
+                        <span className="text-[10px] text-slate-400 block font-normal">
                           {d.createdAt}
                         </span>
                       </td>
 
                       <td className="p-3.5">
-                        <div className="font-bold text-white">{d.customerName}</div>
-                        <div className="text-[11px] text-zinc-400">
+                        <div className="font-black text-slate-950">{d.customerName}</div>
+                        <div className="text-[11px] text-slate-600 font-medium">
                           {d.suburb}, {d.city}
                         </div>
-                        <div className="text-[10px] text-zinc-500">{d.customerPhone}</div>
+                        <div className="text-[10px] text-slate-500 font-mono">{d.customerPhone}</div>
                       </td>
 
                       <td className="p-3.5 max-w-xs">
-                        <span className="rounded bg-zinc-800 px-2 py-0.5 text-[10px] font-bold text-zinc-300">
+                        <span className="rounded bg-slate-100 border border-slate-200 px-2 py-0.5 text-[10px] font-bold text-slate-800 font-mono">
                           {d.categoryName}
                         </span>
-                        <p className="mt-1 text-zinc-300 text-[11px] line-clamp-2">
+                        <p className="mt-1 text-slate-600 text-[11px] line-clamp-2 font-medium">
                           "{d.issue}"
                         </p>
                       </td>
 
                       <td className="p-3.5">
-                        <div className="font-semibold text-zinc-200">
+                        <div className="font-bold text-slate-900">
                           {d.assignedTechName || "Searching on-call pool..."}
                         </div>
                         {d.assignedTechVehicle && (
-                          <div className="text-[10px] text-zinc-400 flex items-center gap-1 mt-0.5">
-                            <Truck className="h-3 w-3 text-zinc-500" />
+                          <div className="text-[10px] text-slate-500 flex items-center gap-1 mt-0.5 font-mono">
+                            <Truck className="h-3 w-3 text-slate-400" />
                             <span>{d.assignedTechVehicle}</span>
                           </div>
                         )}
@@ -288,17 +289,17 @@ export function AdminClient() {
 
                       <td className="p-3.5">
                         <span
-                          className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-bold ${
+                          className={`inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 text-[10px] font-mono font-bold ${
                             d.status === "En Route"
-                              ? "bg-amber-500/20 text-amber-300 border border-amber-500/30"
+                              ? "bg-amber-100 text-amber-950 border border-amber-300"
                               : d.status === "Arrived"
-                              ? "bg-sky-500/20 text-sky-300 border border-sky-500/30"
+                              ? "bg-blue-100 text-blue-950 border border-blue-300"
                               : d.status === "Completed"
-                              ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
-                              : "bg-zinc-800 text-zinc-300"
+                              ? "bg-emerald-100 text-emerald-950 border border-emerald-300"
+                              : "bg-slate-100 text-slate-800 border border-slate-200"
                           }`}
                         >
-                          {d.status === "En Route" && <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-ping" />}
+                          {d.status === "En Route" && <span className="h-1.5 w-1.5 rounded-full bg-amber-600 animate-ping" />}
                           <span>{d.status}</span>
                         </span>
                       </td>
@@ -307,12 +308,12 @@ export function AdminClient() {
                         {d.status !== "Completed" ? (
                           <button
                             onClick={() => handleAdvanceStatus(d.id)}
-                            className="rounded-lg bg-zinc-800 hover:bg-zinc-700 px-3 py-1 text-[11px] font-bold text-white border border-zinc-700 hover:border-zinc-600 transition-colors"
+                            className="rounded-lg bg-slate-950 hover:bg-slate-800 px-3 py-1 text-[11px] font-mono font-bold uppercase tracking-wider text-amber-300 transition-colors cursor-pointer shadow-2xs"
                           >
-                            Advance Status →
+                            Advance →
                           </button>
                         ) : (
-                          <span className="text-[11px] text-emerald-400 font-bold">✓ Signed Off</span>
+                          <span className="text-[11px] text-emerald-800 font-bold font-mono">✓ Closed & Signed</span>
                         )}
                       </td>
                     </tr>
@@ -327,9 +328,9 @@ export function AdminClient() {
         {activeTab === "applications" && (
           <div>
             <div className="mb-6">
-              <h2 className="text-xl font-black text-white">Pending Contractor Registrations</h2>
-              <p className="text-xs text-zinc-400">
-                Review ABN credentials, trade licensing, and public liability insurance before publishing to directory.
+              <h2 className="text-xl font-black text-slate-950 tracking-tight">Pending Contractor Registrations</h2>
+              <p className="text-xs text-slate-600 font-medium">
+                Review ABN credentials, trade licensing, and public liability insurance before publishing to the live directory.
               </p>
             </div>
 
@@ -337,41 +338,41 @@ export function AdminClient() {
               {applications.map((app) => (
                 <div
                   key={app.id}
-                  className="rounded-2xl border border-zinc-800 bg-zinc-900 p-5 shadow-lg flex flex-col justify-between"
+                  className="rounded-xl border-2 border-slate-200 bg-white p-5 shadow-2xs flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] font-mono text-zinc-500 uppercase">{app.submittedAt}</span>
+                      <span className="text-[10px] font-mono text-slate-500 uppercase">{app.submittedAt}</span>
                       <span
-                        className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${
+                        className={`rounded-md px-2 py-0.5 text-[10px] font-mono font-bold uppercase ${
                           app.status === "approved"
-                            ? "bg-emerald-500/20 text-emerald-300"
+                            ? "bg-emerald-100 text-emerald-900 border border-emerald-300"
                             : app.status === "rejected"
-                            ? "bg-red-500/20 text-red-300"
-                            : "bg-amber-500/20 text-amber-300"
+                            ? "bg-red-100 text-red-900 border border-red-300"
+                            : "bg-amber-100 text-amber-900 border border-amber-300"
                         }`}
                       >
                         {app.status}
                       </span>
                     </div>
 
-                    <h3 className="font-bold text-base text-white">{app.businessName}</h3>
-                    <div className="mt-1 text-xs text-zinc-400">
+                    <h3 className="font-black text-base text-slate-950">{app.businessName}</h3>
+                    <div className="mt-1 text-xs text-slate-600 font-medium">
                       Contact: <strong>{app.contactName}</strong> ({app.contactPhone})
                     </div>
-                    <div className="text-xs text-zinc-400">
+                    <div className="text-xs text-slate-600 font-medium">
                       Base: <strong>{app.suburb}, {app.city}</strong>
                     </div>
 
                     {/* ABN details */}
-                    <div className="mt-3 p-3 rounded-xl bg-zinc-950 border border-zinc-800 space-y-1.5 text-xs">
+                    <div className="mt-3 p-3 rounded-lg bg-slate-50 border border-slate-200 space-y-1.5 text-xs font-mono">
                       <div className="flex items-center justify-between">
-                        <span className="text-zinc-500">ABN Number:</span>
+                        <span className="text-slate-500">ABN Number:</span>
                         <a
                           href={`https://abr.business.gov.au/ABN/View?id=${app.abn.replace(/\s+/g, "")}`}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-amber-400 font-bold hover:underline flex items-center gap-1 text-[11px]"
+                          className="text-orange-600 font-bold hover:underline flex items-center gap-1 text-[11px]"
                         >
                           <span>{app.abn}</span>
                           <ExternalLink className="h-3 w-3" />
@@ -379,34 +380,34 @@ export function AdminClient() {
                       </div>
 
                       <div className="flex items-center justify-between text-[11px]">
-                        <span className="text-zinc-500">Public Liability:</span>
-                        <span className="text-emerald-400 font-bold flex items-center gap-1">
-                          <CheckCircle2 className="h-3 w-3" /> $5M+ Verified
+                        <span className="text-slate-500">Public Liability:</span>
+                        <span className="text-emerald-700 font-bold flex items-center gap-1">
+                          <CheckCircle2 className="h-3 w-3 text-emerald-600" /> $5M+ Verified
                         </span>
                       </div>
                     </div>
                   </div>
 
                   {/* Actions */}
-                  <div className="mt-5 pt-4 border-t border-zinc-800 flex items-center gap-2">
+                  <div className="mt-5 pt-4 border-t border-slate-200 flex items-center gap-2">
                     {app.status === "pending" ? (
                       <>
                         <button
                           onClick={() => handleApproveApplication(app.id)}
-                          className="flex-1 rounded-xl bg-emerald-600 hover:bg-emerald-500 py-2 text-xs font-bold text-white transition-colors flex items-center justify-center gap-1"
+                          className="flex-1 rounded-lg bg-emerald-700 hover:bg-emerald-800 py-2 text-xs font-black uppercase tracking-wider text-white transition-colors flex items-center justify-center gap-1 shadow-2xs"
                         >
                           <CheckCircle2 className="h-3.5 w-3.5" />
-                          <span>Approve & Publish</span>
+                          <span>Approve Van</span>
                         </button>
                         <button
                           onClick={() => handleRejectApplication(app.id)}
-                          className="rounded-xl border border-zinc-700 hover:bg-zinc-800 py-2 px-3 text-xs font-bold text-red-400 transition-colors"
+                          className="rounded-lg border-2 border-slate-200 hover:bg-slate-100 py-2 px-3 text-xs font-bold text-red-600 transition-colors"
                         >
                           Reject
                         </button>
                       </>
                     ) : (
-                      <div className="w-full text-center text-xs font-bold text-zinc-400 py-1">
+                      <div className="w-full text-center text-xs font-bold font-mono text-slate-500 py-1">
                         Application {app.status.toUpperCase()}
                       </div>
                     )}
@@ -421,8 +422,8 @@ export function AdminClient() {
         {activeTab === "roster" && (
           <div>
             <div className="mb-6">
-              <h2 className="text-xl font-black text-white">Technician On-Duty Roster</h2>
-              <p className="text-xs text-zinc-400">
+              <h2 className="text-xl font-black text-slate-950 tracking-tight">Technician On-Duty Roster</h2>
+              <p className="text-xs text-slate-600 font-medium">
                 Toggle availability status for provider listings across Australian cities.
               </p>
             </div>
@@ -431,43 +432,43 @@ export function AdminClient() {
               {providers.map((p) => (
                 <div
                   key={p.id}
-                  className="rounded-2xl border border-zinc-800 bg-zinc-900 p-5 shadow-lg flex flex-col justify-between"
+                  className="rounded-xl border-2 border-slate-200 bg-white p-5 shadow-2xs flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[11px] font-semibold text-zinc-400">
+                      <span className="text-[11px] font-semibold text-slate-500 font-mono">
                         {p.suburb}, {p.state}
                       </span>
                       <span
-                        className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                        className={`rounded-md px-2 py-0.5 text-[10px] font-mono font-bold uppercase ${
                           p.isOnDutyToday
-                            ? "bg-emerald-500/20 text-emerald-300"
-                            : "bg-zinc-800 text-zinc-500"
+                            ? "bg-emerald-100 text-emerald-900 border border-emerald-300"
+                            : "bg-slate-100 text-slate-500 border border-slate-200"
                         }`}
                       >
                         {p.isOnDutyToday ? "● LIVE ON-DUTY" : "○ PAUSED"}
                       </span>
                     </div>
 
-                    <h3 className="font-bold text-base text-white">{p.name}</h3>
-                    <p className="text-xs text-amber-400 mt-0.5">{p.tagline}</p>
-                    <div className="mt-2 text-xs text-zinc-400">
+                    <h3 className="font-black text-base text-slate-950">{p.name}</h3>
+                    <p className="text-xs text-orange-700 font-bold mt-0.5">{p.tagline}</p>
+                    <div className="mt-2 text-xs text-slate-600 font-mono">
                       Phone: <strong>{p.phone}</strong> • ABN: {p.abn}
                     </div>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-zinc-800 flex items-center justify-between">
-                    <span className="text-xs text-zinc-400">Cutoff: {p.sameDayCutoffTime}</span>
+                  <div className="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between">
+                    <span className="text-xs text-slate-500 font-mono">Cutoff: {p.sameDayCutoffTime}</span>
 
                     <button
                       onClick={() => handleToggleOnDuty(p.id)}
-                      className={`rounded-xl px-3 py-1.5 text-xs font-bold transition-all cursor-pointer ${
+                      className={`rounded-lg px-3 py-1.5 text-xs font-mono font-black uppercase tracking-wider transition-all cursor-pointer shadow-2xs ${
                         p.isOnDutyToday
-                          ? "bg-red-950 text-red-300 hover:bg-red-900 border border-red-800"
-                          : "bg-emerald-600 text-white hover:bg-emerald-500"
+                          ? "bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300"
+                          : "bg-emerald-700 text-white hover:bg-emerald-800"
                       }`}
                     >
-                      {p.isOnDutyToday ? "Set Off-Duty" : "Activate On-Duty"}
+                      {p.isOnDutyToday ? "Pause Roster" : "Activate On-Duty"}
                     </button>
                   </div>
                 </div>
@@ -479,4 +480,3 @@ export function AdminClient() {
     </div>
   );
 }
-

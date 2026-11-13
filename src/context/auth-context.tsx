@@ -7,9 +7,22 @@ import {
   SeekerUser,
   ProviderUser,
   ProviderActiveJob,
+  ProviderBroadcastJob,
   SavedProperty,
 } from "@/types/auth";
 import { DEMO_SEEKER, DEMO_PROVIDER } from "@/data/mock-users";
+
+export interface EmergencyTicketPayload {
+  ticketRef: string;
+  category: string;
+  issue: string;
+  suburb: string;
+  postcode?: string;
+  customerName: string;
+  customerPhone: string;
+  urgency?: string;
+  notes?: string;
+}
 
 interface AuthContextType {
   user: AuthUser;
@@ -24,11 +37,13 @@ interface AuthContextType {
   declineBroadcastJob: (broadcastId: string) => void;
   addSavedProperty: (property: Omit<SavedProperty, "id">) => void;
   setServiceRadius: (radiusKm: number) => void;
+  broadcastEmergencyTicket: (payload: EmergencyTicketPayload) => void;
 }
 
 const AuthContext = React.createContext<AuthContextType | undefined>(undefined);
 
 const AUTH_STORAGE_KEY = "sdr_auth_user_v1";
+const BROADCAST_STORAGE_KEY = "sdr_shared_broadcasts_v1";
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = React.useState<AuthUser>(null);
@@ -67,7 +82,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const loginAsProvider = () => {
-    saveUser(DEMO_PROVIDER);
+    // Check if there are broadcast jobs queued from emergency tickets
+    let prov = { ...DEMO_PROVIDER };
+    try {
+      const queued = localStorage.getItem(BROADCAST_STORAGE_KEY);
+      if (queued) {
+        const extraBroadcasts: ProviderBroadcastJob[] = JSON.parse(queued);
+        prov = {
+          ...prov,
+          broadcastQueue: [...extraBroadcasts, ...prov.broadcastQueue],
+        };
+      }
+    } catch {
+      // ignore
+    }
+    saveUser(prov);
   };
 
   const logout = () => {
@@ -105,14 +134,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const newActiveJob: ProviderActiveJob = {
       id: `job-${Date.now()}`,
       ticketRef: target.ticketRef,
-      customerName: "Verified Resident",
+      customerName: "Sarah Jenkins (Verified)",
       customerPhone: "0468 991 300",
-      address: `12 Station Rd, ${target.suburb}`,
+      address: `14 Wallace Street, ${target.suburb}`,
       suburb: target.suburb,
       issue: target.issue,
       urgency: target.urgency,
       status: "En Route",
-      etaMinutes: 25,
+      etaMinutes: 22,
       diagnosticFee: "$149 Urgent Diagnostic (Waived if repair approved)",
       totalQuote: target.payoutEstimate,
     };
@@ -156,6 +185,45 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     saveUser(updated);
   };
 
+  const broadcastEmergencyTicket = (payload: EmergencyTicketPayload) => {
+    const newBroadcast: ProviderBroadcastJob = {
+      id: `bcast-${Date.now()}`,
+      ticketRef: payload.ticketRef,
+      category: payload.category,
+      suburb: payload.suburb,
+      distanceKm: 3.2,
+      issue: payload.issue,
+      urgency: payload.urgency || "Emergency (1-2 Hours)",
+      payoutEstimate: "$240 - $390",
+      minutesAgo: 1,
+    };
+
+    // Store in shared broadcast queue
+    try {
+      const stored = localStorage.getItem(BROADCAST_STORAGE_KEY);
+      const list: ProviderBroadcastJob[] = stored ? JSON.parse(stored) : [];
+      localStorage.setItem(BROADCAST_STORAGE_KEY, JSON.stringify([newBroadcast, ...list]));
+    } catch {
+      // ignore
+    }
+
+    // If currently logged in as provider, add immediately to radar
+    if (user && user.role === "provider") {
+      saveUser({
+        ...user,
+        broadcastQueue: [newBroadcast, ...user.broadcastQueue],
+      });
+    }
+
+    // If currently logged in as seeker, set active ticket
+    if (user && user.role === "seeker") {
+      saveUser({
+        ...user,
+        activeTicketId: payload.ticketRef,
+      });
+    }
+  };
+
   const role: UserRole = user ? user.role : null;
 
   return (
@@ -173,6 +241,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         declineBroadcastJob,
         addSavedProperty,
         setServiceRadius,
+        broadcastEmergencyTicket,
       }}
     >
       {children}
@@ -187,4 +256,3 @@ export function useAuth() {
   }
   return context;
 }
-

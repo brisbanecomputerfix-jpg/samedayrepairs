@@ -23,6 +23,7 @@ import {
   Zap,
   DollarSign,
   Award,
+  FileCheck,
 } from "lucide-react";
 
 interface ProviderClientProps {
@@ -63,7 +64,7 @@ export function ProviderClient({ provider }: ProviderClientProps) {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-zinc-50 dark:bg-zinc-950 pb-16 sm:pb-0">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 pb-16 sm:pb-0">
       <Navbar
         selectedCityId={provider.cityId}
         onSelectCity={() => {}}
@@ -72,17 +73,17 @@ export function ProviderClient({ provider }: ProviderClientProps) {
       />
 
       {/* Breadcrumb */}
-      <div className="bg-white border-b border-zinc-200 dark:bg-zinc-900/60 dark:border-zinc-800 text-xs py-2.5 px-4">
-        <div className="container mx-auto max-w-5xl flex items-center gap-1.5 text-zinc-500">
-          <Link href="/" className="hover:text-zinc-900 dark:hover:text-zinc-200">
+      <div className="bg-slate-100 border-b border-slate-200 text-xs py-2 px-4">
+        <div className="container mx-auto max-w-5xl flex items-center gap-1.5 text-slate-500 font-medium">
+          <Link href="/" className="hover:text-slate-900">
             Home
           </Link>
           <ChevronRight className="h-3 w-3" />
-          <Link href="/#categories" className="hover:text-zinc-900 dark:hover:text-zinc-200">
+          <Link href="/#categories" className="hover:text-slate-900">
             Directory
           </Link>
           <ChevronRight className="h-3 w-3" />
-          <span className="font-bold text-zinc-900 dark:text-white">
+          <span className="font-bold text-slate-900">
             {provider.name}
           </span>
         </div>
@@ -90,88 +91,89 @@ export function ProviderClient({ provider }: ProviderClientProps) {
 
       <div className="container mx-auto max-w-5xl px-4 py-8 flex-1">
         {/* Provider Profile Header Card */}
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8 dark:border-zinc-800 dark:bg-zinc-900 shadow-sm">
+        <div className="rounded-xl border-2 border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-2 mb-3">
-                <span className="flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
+                <span className="flex items-center gap-1.5 rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-mono font-bold text-emerald-800 border border-emerald-200">
                   <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>On-Duty Today</span>
+                  <span>ON-DUTY FLEET</span>
                 </span>
 
-                <span className="flex items-center gap-1 text-xs font-semibold text-zinc-500">
-                  <Clock className="h-3.5 w-3.5 text-amber-500" />
-                  <span>Same-Day Cutoff: <strong>{provider.sameDayCutoffTime}</strong></span>
+                <span className="flex items-center gap-1 text-xs font-mono font-bold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md">
+                  <Clock className="h-3.5 w-3.5 text-orange-600" />
+                  <span>CUTOFF: {provider.sameDayCutoffTime}</span>
                 </span>
               </div>
 
-              <h1 className="text-2xl sm:text-4xl font-black text-zinc-950 dark:text-white">
+              <h1 className="text-2xl sm:text-4xl font-black text-slate-950 tracking-tight">
                 {provider.name}
               </h1>
-              <p className="mt-1 text-sm font-semibold text-amber-600 dark:text-amber-400">
+              <p className="mt-1 text-sm font-bold text-orange-700">
                 {provider.tagline}
               </p>
 
               {/* Badges row */}
-              <div className="mt-4 flex flex-wrap gap-2 text-xs">
+              <div className="mt-4 flex flex-wrap gap-2 text-xs font-mono">
                 {provider.isAbnVerified && (
-                  <span className="inline-flex items-center gap-1.5 rounded-lg bg-zinc-100 px-3 py-1 font-bold text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-slate-100 border border-slate-200 px-2.5 py-1 font-bold text-slate-800">
                     <ShieldCheck className="h-4 w-4 text-emerald-600" />
                     <span>ABN: {provider.abn} (Verified)</span>
                   </span>
                 )}
                 {provider.isPoliceChecked && (
-                  <span className="inline-flex items-center gap-1.5 rounded-lg bg-zinc-100 px-3 py-1 font-bold text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">
-                    <CheckCircle2 className="h-4 w-4 text-blue-600" />
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-slate-100 border border-slate-200 px-2.5 py-1 font-bold text-slate-800">
+                    <FileCheck className="h-4 w-4 text-blue-600" />
                     <span>National Police Checked</span>
                   </span>
                 )}
                 {provider.isLicensed && (
-                  <span className="inline-flex items-center gap-1.5 rounded-lg bg-zinc-100 px-3 py-1 font-bold text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200">
-                    <Award className="h-4 w-4 text-purple-600" />
-                    <span>Licensed & $5M Insured</span>
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-emerald-50 border border-emerald-200 px-2.5 py-1 font-bold text-emerald-800">
+                    <Award className="h-4 w-4 text-emerald-700" />
+                    <span>Licensed & $20M Insured</span>
                   </span>
                 )}
               </div>
 
-              <div className="mt-4 flex items-center gap-4 text-xs text-zinc-500">
+              <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-slate-600 font-medium">
                 <span className="flex items-center gap-1">
-                  <MapPin className="h-4 w-4 text-zinc-400" />
-                  <span>Based in {provider.suburb}, {provider.state} ({provider.serviceRadiusKm}km service zone)</span>
+                  <MapPin className="h-4 w-4 text-orange-600" />
+                  <span>Based in {provider.suburb}, {provider.state} ({provider.serviceRadiusKm}km radius)</span>
                 </span>
 
-                <span className="flex items-center gap-1 font-bold text-zinc-800 dark:text-zinc-200">
-                  <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                <span className="flex items-center gap-1 font-bold text-slate-900 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
+                  <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
                   <span>{provider.rating} / 5.0</span>
-                  <span className="text-zinc-400 font-normal">({provider.reviewCount} verified reviews)</span>
+                  <span className="text-slate-500 font-normal">({provider.reviewCount} verified reviews)</span>
                 </span>
               </div>
             </div>
 
             {/* Quick Contact & Dispatch Box */}
-            <div className="w-full md:w-80 rounded-2xl border border-amber-200 bg-amber-50/70 p-5 dark:border-amber-900/50 dark:bg-amber-950/20 space-y-3">
+            <div className="w-full md:w-80 rounded-xl border-2 border-amber-300 bg-amber-50 p-5 space-y-3 shadow-2xs">
               <div className="text-center">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-amber-900 dark:text-amber-200">
-                  Upfront Diagnostic Fee
+                <div className="text-[11px] font-mono font-black uppercase tracking-wider text-amber-800">
+                  Fixed Upfront Diagnostic
                 </div>
-                <div className="text-sm font-black text-amber-950 dark:text-amber-100 mt-0.5">
+                <div className="text-sm font-black text-slate-950 mt-0.5">
                   {provider.calloutPricingNote}
                 </div>
               </div>
 
               <a
                 href={`tel:${provider.phone.replace(/\s+/g, "")}`}
-                className="w-full flex items-center justify-center gap-2 rounded-xl bg-white py-3 text-xs font-bold text-zinc-900 border border-zinc-200 hover:bg-zinc-50 shadow-xs dark:bg-zinc-900 dark:border-zinc-700 dark:text-white"
+                className="w-full flex items-center justify-center gap-2 rounded-lg bg-emerald-700 hover:bg-emerald-800 py-3 text-xs font-black uppercase tracking-wider text-white shadow-2xs transition-colors"
               >
-                <Phone className="h-4 w-4 text-emerald-600" />
-                <span>Call Hotline: {provider.phone}</span>
+                <Phone className="h-4 w-4 fill-white" />
+                <span>Call Van: 0468 991 300</span>
               </a>
 
               <button
+                type="button"
                 onClick={() => setIsDispatchOpen(true)}
-                className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 py-3 text-xs font-bold text-zinc-950 shadow-md shadow-orange-500/20 hover:brightness-105 active:scale-98 transition-all cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 rounded-lg bg-orange-600 hover:bg-orange-700 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md active:scale-98 transition-all cursor-pointer"
               >
-                <Zap className="h-4 w-4 fill-zinc-950" />
+                <Zap className="h-4 w-4 fill-white" />
                 <span>Request Same-Day Visit</span>
               </button>
             </div>
@@ -182,71 +184,72 @@ export function ProviderClient({ provider }: ProviderClientProps) {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-6">
             {/* Bio Card */}
-            <div className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900 shadow-sm">
-              <h2 className="text-lg font-black text-zinc-950 dark:text-white mb-3">
+            <div className="rounded-xl border-2 border-slate-200 bg-white p-6 shadow-2xs">
+              <h2 className="text-lg font-black text-slate-950 mb-3 tracking-tight">
                 About {provider.name}
               </h2>
-              <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                 {provider.bio}
               </p>
 
-              <div className="mt-6 pt-6 border-t border-zinc-100 dark:border-zinc-800">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-500 mb-3">
-                  Vehicle Stock & Guarantee Highlights
+              <div className="mt-6 pt-5 border-t border-slate-200">
+                <h3 className="text-xs font-mono font-black uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-1.5">
+                  <Truck className="h-4 w-4 text-slate-700" />
+                  <span>Mobile Workshop Stock & Guarantee</span>
                 </h3>
                 <div className="space-y-2">
                   {provider.features.map((feat, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-zinc-700 dark:text-zinc-300">
+                    <div key={i} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
                       <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
                       <span>{feat}</span>
                     </div>
                   ))}
-                  <div className="flex items-center gap-2 text-xs text-zinc-700 dark:text-zinc-300">
+                  <div className="flex items-center gap-2 text-xs text-slate-700 font-medium">
                     <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
-                    <span>12-Month written warranty certificate on all replaced components</span>
+                    <span>12-Month written warranty certificate on all replaced OEM components</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Verified Customer Reviews */}
-            <div className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900 shadow-sm">
-              <div className="flex items-center justify-between mb-6">
+            <div className="rounded-xl border-2 border-slate-200 bg-white p-6 shadow-2xs">
+              <div className="flex items-center justify-between mb-5">
                 <div>
-                  <h2 className="text-lg font-black text-zinc-950 dark:text-white">
+                  <h2 className="text-lg font-black text-slate-950 tracking-tight">
                     Verified Customer Reviews
                   </h2>
-                  <p className="text-xs text-zinc-500">
-                    Real emergency repair feedback from local residents.
+                  <p className="text-xs text-slate-500 font-medium">
+                    Emergency repair feedback from local residents.
                   </p>
                 </div>
-                <div className="flex items-center gap-1 font-black text-amber-500 text-sm">
-                  <Star className="h-4 w-4 fill-current" />
+                <div className="flex items-center gap-1 font-black text-slate-900 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 text-sm">
+                  <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
                   <span>{provider.rating} Rating</span>
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {mockReviews.map((rev, i) => (
                   <div
                     key={i}
-                    className="rounded-xl border border-zinc-100 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-800/40"
+                    className="rounded-lg border border-slate-200 bg-slate-50 p-4"
                   >
                     <div className="flex items-center justify-between mb-1.5">
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-xs text-zinc-900 dark:text-white">
+                        <span className="font-black text-xs text-slate-950">
                           {rev.author}
                         </span>
-                        <span className="text-[10px] text-zinc-400">({rev.suburb})</span>
+                        <span className="text-[10px] text-slate-500 font-mono">({rev.suburb})</span>
                       </div>
-                      <span className="text-[10px] text-zinc-400">{rev.date}</span>
+                      <span className="text-[10px] text-slate-400 font-mono">{rev.date}</span>
                     </div>
-                    <div className="flex items-center gap-0.5 text-amber-400 mb-2">
+                    <div className="flex items-center gap-0.5 text-amber-500 mb-2">
                       {[...Array(rev.rating)].map((_, idx) => (
                         <Star key={idx} className="h-3 w-3 fill-current" />
                       ))}
                     </div>
-                    <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
                       "{rev.text}"
                     </p>
                   </div>
@@ -257,29 +260,30 @@ export function ProviderClient({ provider }: ProviderClientProps) {
 
           {/* Right Sidebar: Coverage Suburbs */}
           <div className="space-y-6">
-            <div className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900 shadow-sm">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-2">
+            <div className="rounded-xl border-2 border-slate-200 bg-white p-6 shadow-2xs">
+              <h3 className="text-xs font-mono font-black uppercase tracking-wider text-orange-600 mb-2">
                 Service Radius & Coverage
               </h3>
-              <p className="text-xs text-zinc-500 mb-4">
+              <p className="text-xs text-slate-600 mb-4 font-medium">
                 Mobile vans dispatch from <strong>{provider.suburb}</strong> servicing a <strong>{provider.serviceRadiusKm}km</strong> radius.
               </p>
 
-              <div className="space-y-1.5 text-xs text-zinc-700 dark:text-zinc-300">
+              <div className="space-y-1.5 text-xs text-slate-700">
                 {city?.popularSuburbs.map((sub) => (
-                  <div key={sub.name} className="flex items-center justify-between py-1 border-b border-zinc-100 dark:border-zinc-800 text-[11px]">
+                  <div key={sub.name} className="flex items-center justify-between py-1 border-b border-slate-100 text-[11px] font-medium">
                     <span className="flex items-center gap-1.5">
-                      <MapPin className="h-3 w-3 text-zinc-400" />
+                      <MapPin className="h-3 w-3 text-orange-600" />
                       <span>{sub.name}</span>
                     </span>
-                    <span className="text-zinc-400 font-mono">{sub.postcode}</span>
+                    <span className="text-slate-400 font-mono">{sub.postcode}</span>
                   </div>
                 ))}
               </div>
 
               <button
+                type="button"
                 onClick={() => setIsDispatchOpen(true)}
-                className="mt-6 w-full rounded-xl bg-amber-500 py-3 text-xs font-bold text-zinc-950 hover:bg-amber-400 transition-colors"
+                className="mt-6 w-full rounded-lg bg-slate-950 hover:bg-slate-800 py-3 text-xs font-black uppercase tracking-wider text-amber-300 shadow-xs transition-colors cursor-pointer"
               >
                 Dispatch to My Suburb
               </button>
@@ -309,4 +313,3 @@ export function ProviderClient({ provider }: ProviderClientProps) {
     </div>
   );
 }
-
