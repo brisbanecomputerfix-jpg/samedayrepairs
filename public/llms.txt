@@ -1,0 +1,39 @@
+# SameDayRepairs.com.au - Emergency Repair & Trade Directory
+
+> Australia's verified on-demand emergency trade directory. Connecting homeowners and commercial premises with licensed whitegoods technicians, emergency plumbers, 24/7 locksmiths, electricians, and garage door specialists with guaranteed same-day arrival.
+
+## Emergency Hotline
+- **Direct Dispatch Line**: 0468 991 300
+- **International**: +61 468 991 300
+- **Hours**: 24/7 Priority Emergency Intake
+
+## Core Services & Capabilities
+- **Appliance & Whitegoods Repairs**: Samsung, LG, Fisher & Paykel, Bosch, Westinghouse, Smeg fridge/freezer cooling failures, washing machine pump errors, and oven element breakdowns. (Diagnostic callout from $149, waived on approved repair).
+- **Emergency Plumbing**: Burst water mains, leaking flexi-hoses, blocked sewer lines, leaking hot water systems (Rheem, Dux, Rinnai). (Diagnostic callout from $149).
+- **24/7 Emergency Locksmiths**: Residential lockouts, broken key extraction, commercial rekeying, electronic deadbolt failure. (Callout from $165).
+- **Emergency Electricians**: Tripped RCD safety switches, sparking power points, switchboard repairs, power restoration. (Diagnostic callout from $149).
+- **Garage Door Repairs**: Broken torsion springs, snapped cables, motor gear failures, doors jammed off-track. (Callout from $160).
+- **Roadside Mobile Mechanics**: On-site battery replacement, alternator testing, no-start triage. (Callout from $149).
+
+## Geographic Coverage
+- **Queensland**: Greater Brisbane (Brisbane CBD, Chermside, Aspley, Indooroopilly, Carindale, Sunnybank, North Lakes, Ipswich), Gold Coast, Sunshine Coast.
+- **New South Wales**: Greater Sydney (Sydney CBD, Parramatta, Blacktown, Chatswood, Bondi, Castle Hill, Liverpool, Penrith), Wollongong, Newcastle.
+- **Victoria**: Greater Melbourne (Melbourne CBD, South Yarra, Richmond, St Kilda, Box Hill, Preston, Dandenong, Geelong).
+- **Western Australia**: Greater Perth (Perth CBD, Fremantle, Joondalup, Midland).
+- **South Australia**: Greater Adelaide (Adelaide CBD, Glenelg, Norwood).
+
+## Trade Guarantees & Compliance
+- **Licensing**: All contractors audited against QBCC (Queensland), Fair Trading (NSW), and Victorian Building Authority (VBA).
+- **Insurance**: $20 Million Public Liability certificate of currency required.
+- **Warranty**: All replacement parts and workmanship backed by minimum 12-month statutory guarantee.
+- **Payment**: Mobile on-van EFTPOS terminals with instant GST tax invoices.
+
+## Key URLs
+- Homepage: https://samedayrepairs.com.au
+- Service Categories: https://samedayrepairs.com.au/#categories
+- Appliance Repairs (Brisbane): https://samedayrepairs.com.au/category/appliance-repairs/brisbane
+- Emergency Plumbing (Brisbane): https://samedayrepairs.com.au/category/emergency-plumbing/brisbane
+- Locksmiths (Brisbane): https://samedayrepairs.com.au/category/emergency-locksmith/brisbane
+- Customer Account & Booking Tracker: https://samedayrepairs.com.au/portal/seeker
+- Contractor Partner Portal: https://samedayrepairs.com.au/portal/provider
+- Operations Command Console: https://samedayrepairs.com.au/admin
