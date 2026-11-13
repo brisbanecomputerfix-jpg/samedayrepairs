@@ -94,7 +94,7 @@ export function CategorySuburbClient({
 
           <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-[1.15]">
             Same-Day {category.name} in <br className="hidden sm:inline" />
-            <span className="text-orange-600">{suburb.name}, {city.state} {suburb.postcode}</span>
+            <span className="text-orange-700">{suburb.name}, {city.state} {suburb.postcode}</span>
           </h1>
 
           <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
@@ -104,7 +104,7 @@ export function CategorySuburbClient({
           {/* Quick Metrics Bar */}
           <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-mono">
             <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-slate-800 shadow-2xs">
-              <Clock className="h-4 w-4 text-orange-600" />
+              <Clock className="h-4 w-4 text-orange-700" />
               <span>{suburb.name} Arrival: <strong>45 – 60 mins</strong></span>
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-amber-300 bg-amber-50 px-3.5 py-2 text-amber-950 shadow-2xs">
@@ -121,7 +121,7 @@ export function CategorySuburbClient({
           <div className="mt-8 flex flex-wrap items-center gap-3.5">
             <button
               onClick={() => setIsDispatchOpen(true)}
-              className="inline-flex items-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold px-6 py-3.5 text-xs shadow-sm hover:shadow-md transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-xl bg-orange-700 hover:bg-orange-800 text-white font-bold px-6 py-3.5 text-xs shadow-sm hover:shadow-md transition-all cursor-pointer"
             >
               <Zap className="h-4 w-4 fill-white" />
               <span>Request Dispatch to {suburb.name}</span>
@@ -166,7 +166,7 @@ export function CategorySuburbClient({
                 key={idx}
                 className="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 bg-slate-50/60"
               >
-                <div className="h-7 w-7 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="h-7 w-7 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center shrink-0 mt-0.5">
                   <Wrench className="h-3.5 w-3.5" />
                 </div>
                 <div className="space-y-1">
@@ -219,7 +219,7 @@ export function CategorySuburbClient({
               </p>
               <button
                 onClick={() => setIsDispatchOpen(true)}
-                className="inline-flex items-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold px-5 py-2.5 text-xs shadow-sm cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-xl bg-orange-700 hover:bg-orange-800 text-white font-bold px-5 py-2.5 text-xs shadow-sm cursor-pointer"
               >
                 <Zap className="h-4 w-4 fill-white" />
                 <span>Request Rapid Dispatch Now</span>
@@ -241,7 +241,7 @@ export function CategorySuburbClient({
             </div>
             <Link
               href={`/category/${category.slug}/${city.slug}`}
-              className="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1"
+              className="text-xs font-bold text-orange-700 hover:text-orange-800 flex items-center gap-1"
             >
               <span>View All {city.name}</span>
               <ArrowRight className="h-3 w-3" />
@@ -253,10 +253,10 @@ export function CategorySuburbClient({
               <Link
                 key={nearSub.slug}
                 href={`/category/${category.slug}/${city.slug}/${nearSub.slug}`}
-                className="p-2.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-orange-500 hover:text-orange-600 transition-all text-xs font-medium flex items-center justify-between group"
+                className="p-2.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-orange-500 hover:text-orange-700 transition-all text-xs font-medium flex items-center justify-between group"
               >
                 <div className="flex items-center gap-1.5 truncate">
-                  <MapPin className="h-3.5 w-3.5 text-slate-400 group-hover:text-orange-600 shrink-0" />
+                  <MapPin className="h-3.5 w-3.5 text-slate-400 group-hover:text-orange-700 shrink-0" />
                   <span className="truncate">{nearSub.name}</span>
                 </div>
                 <span className="font-mono text-[10px] text-slate-400 shrink-0">
@@ -271,7 +271,7 @@ export function CategorySuburbClient({
         <section className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
           <div className="max-w-2xl mb-6">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 mb-1">
-              <HelpCircle className="h-4 w-4 text-orange-600" />
+              <HelpCircle className="h-4 w-4 text-orange-700" />
               <span>Local Frequently Asked Questions</span>
             </div>
             <h3 className="text-xl font-bold text-slate-950">
@@ -283,7 +283,7 @@ export function CategorySuburbClient({
             {faqs.map((faq, index) => (
               <div key={index} className="py-4 first:pt-0 last:pb-0">
                 <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-start gap-2">
-                  <span className="text-orange-600 font-mono">Q:</span>
+                  <span className="text-orange-700 font-mono">Q:</span>
                   <span>{faq.question.replace(/\?$/, "")} in {suburb.name}?</span>
                 </h4>
                 <p className="mt-2 text-xs text-slate-600 leading-relaxed pl-5">

@@ -78,13 +78,13 @@ const CATEGORY_THEMES: Record<
   },
   electrical: {
     bg: "bg-orange-50/80",
-    text: "text-orange-600",
+    text: "text-orange-700",
     border: "border-orange-200/80",
-    hoverBg: "group-hover:bg-orange-600 group-hover:text-white group-hover:border-orange-600",
+    hoverBg: "group-hover:bg-orange-700 group-hover:text-white group-hover:border-orange-700",
     glow: "group-hover:shadow-[0_0_20px_rgba(234,88,12,0.25)]",
-    accent: "group-hover:text-orange-600",
+    accent: "group-hover:text-orange-700",
     badgeBg: "bg-orange-50 border-orange-200",
-    badgeText: "text-orange-700",
+    badgeText: "text-orange-800",
     dot: "bg-orange-500",
   },
   glazing: {

@@ -115,7 +115,7 @@ export function SuburbClient({
 
           <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-[1.15]">
             Same-Day Emergency Repairs & Trades in <br className="hidden sm:inline" />
-            <span className="text-orange-600">{suburb.name}, {city.state} {suburb.postcode}</span>
+            <span className="text-orange-700">{suburb.name}, {city.state} {suburb.postcode}</span>
           </h1>
 
           <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
@@ -125,7 +125,7 @@ export function SuburbClient({
           {/* Quick Metrics Bar */}
           <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-mono">
             <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-slate-800 shadow-2xs">
-              <Clock className="h-4 w-4 text-orange-600" />
+              <Clock className="h-4 w-4 text-orange-700" />
               <span>{suburb.name} Response: <strong>45 – 60 mins</strong></span>
             </div>
             <div className="flex items-center gap-2 rounded-xl border border-amber-300 bg-amber-50 px-3.5 py-2 text-amber-950 shadow-2xs">
@@ -142,7 +142,7 @@ export function SuburbClient({
           <div className="mt-8 flex flex-wrap items-center gap-3.5">
             <button
               onClick={() => openDispatchWithCategory()}
-              className="inline-flex items-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold px-6 py-3.5 text-xs shadow-sm hover:shadow-md transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-xl bg-orange-700 hover:bg-orange-800 text-white font-bold px-6 py-3.5 text-xs shadow-sm hover:shadow-md transition-all cursor-pointer"
             >
               <Zap className="h-4 w-4 fill-white" />
               <span>Request Same-Day Repair in {suburb.name}</span>
@@ -188,7 +188,7 @@ export function SuburbClient({
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <div className="h-10 w-10 rounded-xl bg-orange-50 border border-orange-100 text-orange-600 flex items-center justify-center">
+                      <div className="h-10 w-10 rounded-xl bg-orange-50 border border-orange-100 text-orange-700 flex items-center justify-center">
                         <Icon className="h-5 w-5" />
                       </div>
                       <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 font-mono">
@@ -204,7 +204,7 @@ export function SuburbClient({
                     </p>
 
                     <div className="mt-3 text-[11px] font-mono text-slate-500 flex items-center gap-1.5">
-                      <Clock className="h-3.5 w-3.5 text-orange-600" />
+                      <Clock className="h-3.5 w-3.5 text-orange-700" />
                       <span>{suburb.name} Arrival: {cat.avgResponseTime}</span>
                     </div>
                   </div>
@@ -212,7 +212,7 @@ export function SuburbClient({
                   <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
                     <Link
                       href={`/category/${cat.slug}/${city.slug}/${suburb.slug}`}
-                      className="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1"
+                      className="text-xs font-bold text-orange-700 hover:text-orange-800 flex items-center gap-1"
                     >
                       <span>Explore Service</span>
                       <ArrowRight className="h-3 w-3" />
@@ -272,7 +272,7 @@ export function SuburbClient({
             </div>
             <Link
               href={`/category/appliance-repairs/${city.slug}`}
-              className="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1"
+              className="text-xs font-bold text-orange-700 hover:text-orange-800 flex items-center gap-1"
             >
               <span>View All {city.name}</span>
               <ArrowRight className="h-3 w-3" />
@@ -284,10 +284,10 @@ export function SuburbClient({
               <Link
                 key={nearSub.slug}
                 href={`/suburbs/${city.slug}/${nearSub.slug}`}
-                className="p-2.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-orange-500 hover:text-orange-600 transition-all text-xs font-medium flex items-center justify-between group"
+                className="p-2.5 rounded-xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-orange-500 hover:text-orange-700 transition-all text-xs font-medium flex items-center justify-between group"
               >
                 <div className="flex items-center gap-1.5 truncate">
-                  <MapPin className="h-3.5 w-3.5 text-slate-400 group-hover:text-orange-600 shrink-0" />
+                  <MapPin className="h-3.5 w-3.5 text-slate-400 group-hover:text-orange-700 shrink-0" />
                   <span className="truncate">{nearSub.name}</span>
                 </div>
                 <span className="font-mono text-[10px] text-slate-400 shrink-0">
@@ -302,7 +302,7 @@ export function SuburbClient({
         <section className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
           <div className="max-w-2xl mb-6">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 mb-1">
-              <HelpCircle className="h-4 w-4 text-orange-600" />
+              <HelpCircle className="h-4 w-4 text-orange-700" />
               <span>Local Frequently Asked Questions</span>
             </div>
             <h3 className="text-xl font-bold text-slate-950">
@@ -313,7 +313,7 @@ export function SuburbClient({
           <div className="divide-y divide-slate-200">
             <div className="py-4 first:pt-0">
               <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-start gap-2">
-                <span className="text-orange-600 font-mono">Q:</span>
+                <span className="text-orange-700 font-mono">Q:</span>
                 <span>How fast can a repair van arrive in {suburb.name} ({suburb.postcode}) today?</span>
               </h4>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed pl-5">
@@ -323,7 +323,7 @@ export function SuburbClient({
 
             <div className="py-4">
               <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-start gap-2">
-                <span className="text-orange-600 font-mono">Q:</span>
+                <span className="text-orange-700 font-mono">Q:</span>
                 <span>Are there extra travel fees for callouts to {suburb.name}?</span>
               </h4>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed pl-5">
@@ -333,7 +333,7 @@ export function SuburbClient({
 
             <div className="py-4">
               <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-start gap-2">
-                <span className="text-orange-600 font-mono">Q:</span>
+                <span className="text-orange-700 font-mono">Q:</span>
                 <span>Do your contractors service commercial premises in {suburb.name}?</span>
               </h4>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed pl-5">
@@ -343,7 +343,7 @@ export function SuburbClient({
 
             <div className="py-4 last:pb-0">
               <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-start gap-2">
-                <span className="text-orange-600 font-mono">Q:</span>
+                <span className="text-orange-700 font-mono">Q:</span>
                 <span>Are all technicians licensed under {city.state} trade authorities?</span>
               </h4>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed pl-5">

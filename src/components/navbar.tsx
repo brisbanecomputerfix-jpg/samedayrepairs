@@ -113,13 +113,13 @@ export function Navbar({
         {/* Left: Brand Logo & Internal Nav Links */}
         <div className="flex items-center gap-6 lg:gap-8">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="h-10 w-10 rounded-xl bg-orange-600 flex items-center justify-center text-white shadow-sm group-hover:bg-orange-700 transition-colors">
+            <div className="h-10 w-10 rounded-xl bg-orange-700 flex items-center justify-center text-white shadow-sm group-hover:bg-orange-800 transition-colors">
               <Zap className="h-5 w-5 fill-white" />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
                 <span className="text-xl font-black tracking-tight text-slate-950">
-                  SameDay<span className="text-orange-600">Repairs</span>
+                  SameDay<span className="text-orange-700">Repairs</span>
                 </span>
                 <span className="text-xs font-bold text-slate-600 tracking-normal">
                   .com.au
@@ -149,7 +149,7 @@ export function Navbar({
                 }`}
               >
                 <span>Services</span>
-                <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesDropdownOpen ? "rotate-180 text-orange-600" : "text-slate-400"}`} />
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform ${servicesDropdownOpen ? "rotate-180 text-orange-700" : "text-slate-400"}`} />
               </button>
 
               {servicesDropdownOpen && (
@@ -168,11 +168,11 @@ export function Navbar({
                           className="flex items-center justify-between p-2 rounded-xl hover:bg-slate-50 transition-colors group"
                         >
                           <div className="flex items-center gap-2.5">
-                            <div className="h-8 w-8 rounded-xl bg-orange-50 text-orange-600 border border-orange-100 flex items-center justify-center shrink-0 transition-all duration-300 ease-out transform group-hover:scale-115 group-hover:-rotate-6 group-hover:bg-orange-600 group-hover:text-white group-hover:shadow-xs">
+                            <div className="h-8 w-8 rounded-xl bg-orange-50 text-orange-700 border border-orange-100 flex items-center justify-center shrink-0 transition-all duration-300 ease-out transform group-hover:scale-115 group-hover:-rotate-6 group-hover:bg-orange-700 group-hover:text-white group-hover:shadow-xs">
                               <Icon className="h-4 w-4" />
                             </div>
                             <div>
-                              <div className="text-xs font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
+                              <div className="text-xs font-bold text-slate-900 group-hover:text-orange-700 transition-colors">
                                 {cat.name}
                               </div>
                               <div className="text-[10px] text-slate-500 font-normal">
@@ -180,7 +180,7 @@ export function Navbar({
                               </div>
                             </div>
                           </div>
-                          <ArrowRight className="h-3 w-3 text-slate-300 group-hover:text-orange-600 group-hover:translate-x-0.5 transition-all" />
+                          <ArrowRight className="h-3 w-3 text-slate-300 group-hover:text-orange-700 group-hover:translate-x-0.5 transition-all" />
                         </Link>
                       );
                     })}
@@ -204,7 +204,7 @@ export function Navbar({
                 }`}
               >
                 <span>Metro Hubs</span>
-                <ChevronDown className={`h-3.5 w-3.5 transition-transform ${locationsDropdownOpen ? "rotate-180 text-orange-600" : "text-slate-400"}`} />
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform ${locationsDropdownOpen ? "rotate-180 text-orange-700" : "text-slate-400"}`} />
               </button>
 
               {locationsDropdownOpen && (
@@ -228,7 +228,7 @@ export function Navbar({
                         }`}
                       >
                         <div className="flex items-center gap-2">
-                          <MapPin className="h-3.5 w-3.5 text-orange-600 shrink-0" />
+                          <MapPin className="h-3.5 w-3.5 text-orange-700 shrink-0" />
                           <span>{c.name} ({c.state})</span>
                         </div>
                         <span className="text-[10px] text-slate-400 font-mono">
@@ -279,12 +279,12 @@ export function Navbar({
             >
               {role === "seeker" ? (
                 <>
-                  <User className="h-4 w-4 text-orange-600" />
+                  <User className="h-4 w-4 text-orange-700" />
                   <span>{(user as any).name?.split(" ")[0] || "Account"}</span>
                 </>
               ) : (
                 <>
-                  <Wrench className="h-4 w-4 text-orange-600" />
+                  <Wrench className="h-4 w-4 text-orange-700" />
                   <span>{(user as any).contactName?.split(" ")[0] || "Contractor"}</span>
                 </>
               )}
@@ -312,14 +312,14 @@ export function Navbar({
             href="tel:0468991300"
             className="hidden lg:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-900 hover:border-slate-300 hover:bg-slate-50 transition-all"
           >
-            <Phone className="h-3.5 w-3.5 text-orange-600" />
+            <Phone className="h-3.5 w-3.5 text-orange-700" />
             <span>0468 991 300</span>
           </a>
-
+          
           {/* Primary Action Button */}
           <button
             onClick={onOpenDispatch}
-            className="inline-flex items-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-700 px-4 py-2.5 text-xs font-bold text-white shadow-sm hover:shadow-md transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-xl bg-orange-700 hover:bg-orange-800 px-4 py-2.5 text-xs font-bold text-white shadow-sm hover:shadow-md transition-all cursor-pointer"
           >
             <Zap className="h-4 w-4 fill-white" />
             <span>Request Same-Day Repair</span>
@@ -330,7 +330,7 @@ export function Navbar({
         <div className="flex sm:hidden items-center gap-2">
           <a
             href="tel:0468991300"
-            className="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-orange-50 border border-orange-200 text-orange-600"
+            className="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-orange-50 border border-orange-200 text-orange-700"
             aria-label="Call emergency dispatch line"
           >
             <Phone className="h-4 w-4" />
@@ -351,7 +351,7 @@ export function Navbar({
           
           {/* Region Selector Mobile */}
           <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 p-2.5 text-xs">
-            <MapPin className="h-4 w-4 text-orange-600 shrink-0" />
+            <MapPin className="h-4 w-4 text-orange-700 shrink-0" />
             <label htmlFor="mobile-metro-region" className="text-slate-600 font-semibold shrink-0">
               Metro:
             </label>
@@ -386,7 +386,7 @@ export function Navbar({
                     onClick={() => setMobileMenuOpen(false)}
                     className="flex items-center gap-2 p-2 rounded-xl border border-slate-200/90 bg-slate-50/50 hover:bg-orange-50 hover:border-orange-300 text-xs text-slate-800 transition-all duration-200 group active:scale-98"
                   >
-                    <div className="h-6 w-6 rounded-lg bg-orange-100/80 text-orange-600 flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-115 group-hover:-rotate-6">
+                    <div className="h-6 w-6 rounded-lg bg-orange-100/80 text-orange-700 flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-115 group-hover:-rotate-6">
                       <Icon className="h-3.5 w-3.5" />
                     </div>
                     <span className="truncate font-semibold">{cat.shortName}</span>
@@ -407,7 +407,7 @@ export function Navbar({
                   key={sub.slug}
                   href={`/suburbs/${currentCity.slug}/${sub.slug}`}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-lg border border-slate-200 bg-white px-2.5 py-1 text-xs text-slate-700 hover:border-orange-500 hover:text-orange-600 transition-colors font-medium"
+                  className="rounded-lg border border-slate-200 bg-white px-2.5 py-1 text-xs text-slate-700 hover:border-orange-500 hover:text-orange-700 transition-colors font-medium"
                 >
                   {sub.name} ({sub.postcode})
                 </Link>
@@ -451,7 +451,7 @@ export function Navbar({
               setMobileMenuOpen(false);
               onOpenDispatch();
             }}
-            className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-600 py-3 text-xs font-bold text-white shadow-sm cursor-pointer"
+            className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-700 hover:bg-orange-800 py-3 text-xs font-bold text-white shadow-sm cursor-pointer"
           >
             <Zap className="h-4 w-4 fill-white" />
             <span>Request Same-Day Repair Now</span>

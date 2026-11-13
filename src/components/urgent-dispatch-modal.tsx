@@ -135,7 +135,7 @@ export function UrgentDispatchModal({
 
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-left text-xs space-y-2">
               <div className="flex items-center gap-2 font-bold text-slate-900">
-                <Clock className="h-4 w-4 text-orange-600" />
+                <Clock className="h-4 w-4 text-orange-700" />
                 <span>Next Step: Contractor Confirmation</span>
               </div>
               <p className="text-slate-600 text-xs leading-relaxed">
@@ -147,7 +147,7 @@ export function UrgentDispatchModal({
               <Link
                 href={`/dispatch/${ticketId}`}
                 onClick={onClose}
-                className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-700 py-3 text-xs font-bold text-white shadow-sm transition-all"
+                className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-700 hover:bg-orange-800 py-3 text-xs font-bold text-white shadow-sm transition-all"
               >
                 <span>View Live Status Tracker (ETA & Specialist)</span>
                 <ArrowRight className="h-4 w-4" />
@@ -164,8 +164,8 @@ export function UrgentDispatchModal({
           <div>
             {/* Header */}
             <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-1.5 text-orange-600 text-xs font-bold uppercase tracking-wider">
-                <Zap className="h-4 w-4 fill-orange-600 text-orange-600" />
+              <div className="flex items-center gap-1.5 text-orange-700 text-xs font-bold uppercase tracking-wider">
+                <Zap className="h-4 w-4 fill-orange-700 text-orange-700" />
                 <span>Request Same-Day Repair</span>
               </div>
 
@@ -298,7 +298,7 @@ export function UrgentDispatchModal({
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex items-center justify-center gap-2 rounded-lg bg-orange-600 hover:bg-orange-700 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md active:scale-98 transition-all cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 rounded-lg bg-orange-700 hover:bg-orange-800 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md active:scale-98 transition-all cursor-pointer"
               >
                 {loading ? (
                   <span>Broadcasting Ticket to Nearby Vans...</span>

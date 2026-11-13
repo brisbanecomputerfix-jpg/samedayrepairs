@@ -283,7 +283,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-2 pt-2">
               <button
                 onClick={() => handleOpenDispatch()}
-                className="w-full sm:w-auto rounded-lg bg-orange-600 hover:bg-orange-700 px-6 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all cursor-pointer"
+                className="w-full sm:w-auto rounded-lg bg-orange-700 hover:bg-orange-800 px-6 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all cursor-pointer"
               >
                 Broadcast Urgent Dispatch
               </button>
@@ -308,14 +308,14 @@ export default function HomePage() {
       <section className="py-14 px-4 bg-slate-100 border-b border-slate-200">
         <div className="container mx-auto max-w-3xl">
           <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-1.5 text-xs font-black uppercase tracking-wider text-orange-600 mb-1">
+            <div className="flex items-center justify-center gap-1.5 text-xs font-black uppercase tracking-wider text-orange-800 mb-1">
               <HelpCircle className="h-4 w-4" />
               <span>Consumer Clarity</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Emergency Repair Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">
+            <p className="text-xs sm:text-sm text-slate-700 mt-1 font-medium">
               Upfront answers regarding arrival times, diagnostics, and Australian trade licensing.
             </p>
           </div>
@@ -337,7 +337,7 @@ export default function HomePage() {
                     <span>{faq.q}</span>
                     <ChevronDown
                       className={`h-4 w-4 text-slate-500 transition-transform ${
-                        isOpen ? "rotate-180 text-orange-600" : ""
+                        isOpen ? "rotate-180 text-orange-700" : ""
                       }`}
                     />
                   </button>

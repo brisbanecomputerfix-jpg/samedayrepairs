@@ -84,7 +84,7 @@ export function CityCategoryClient({
 
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-950 leading-tight">
             Same-Day {category.name} in <br className="hidden sm:inline" />
-            <span className="text-orange-600">{city.name}, {city.state}</span>
+            <span className="text-orange-700">{city.name}, {city.state}</span>
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed font-medium">
@@ -98,7 +98,7 @@ export function CityCategoryClient({
               <Link
                 key={sub.name}
                 href={`/category/${category.slug}/${city.slug}/${sub.slug}`}
-                className="rounded-md border border-slate-200 bg-white hover:border-orange-500 hover:text-orange-600 px-2 py-0.5 text-slate-800 transition-colors shadow-2xs"
+                className="rounded-md border border-slate-200 bg-white hover:border-orange-500 hover:text-orange-700 px-2 py-0.5 text-slate-800 transition-colors shadow-2xs"
               >
                 {sub.name} ({sub.postcode})
               </Link>
@@ -108,7 +108,7 @@ export function CityCategoryClient({
           {/* Quick Metrics Bar */}
           <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-mono">
             <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2 text-slate-800 shadow-2xs">
-              <Clock className="h-4 w-4 text-orange-600" />
+              <Clock className="h-4 w-4 text-orange-700" />
               <span>{city.name} Arrival: <strong>{category.avgResponseTime}</strong></span>
             </div>
             <div className="flex items-center gap-2 rounded-lg border border-amber-300 bg-amber-50 px-3.5 py-2 text-amber-950 shadow-2xs">
@@ -125,7 +125,7 @@ export function CityCategoryClient({
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               onClick={() => setIsDispatchOpen(true)}
-              className="flex items-center gap-2 rounded-lg bg-orange-600 hover:bg-orange-700 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md active:scale-95 transition-all cursor-pointer"
+              className="flex items-center gap-2 rounded-lg bg-orange-700 hover:bg-orange-800 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md active:scale-95 transition-all cursor-pointer"
             >
               <Zap className="h-4 w-4 fill-white" />
               <span>Dispatch {city.name} Tech Now</span>

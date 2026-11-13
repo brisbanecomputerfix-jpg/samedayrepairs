@@ -96,7 +96,7 @@ export function CategoryClient({
           {/* Quick Metrics Bar */}
           <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-mono">
             <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2 text-slate-800 shadow-2xs">
-              <Clock className="h-4 w-4 text-orange-600" />
+              <Clock className="h-4 w-4 text-orange-700" />
               <span>Avg Response: <strong>{category.avgResponseTime}</strong></span>
             </div>
             <div className="flex items-center gap-2 rounded-lg border border-amber-300 bg-amber-50 px-3.5 py-2 text-amber-950 shadow-2xs">
@@ -113,7 +113,7 @@ export function CategoryClient({
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               onClick={() => setIsDispatchOpen(true)}
-              className="flex items-center gap-2 rounded-lg bg-orange-600 hover:bg-orange-700 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md active:scale-95 transition-all cursor-pointer"
+              className="flex items-center gap-2 rounded-lg bg-orange-700 hover:bg-orange-800 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md active:scale-95 transition-all cursor-pointer"
             >
               <Zap className="h-4 w-4 fill-white" />
               <span>Dispatch On-Call Tech Now</span>

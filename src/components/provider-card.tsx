@@ -45,9 +45,9 @@ export function ProviderCard({ provider, onOpenDispatch }: ProviderCardProps) {
 
         {/* Business Title & Tagline */}
         <Link href={`/provider/${provider.slug}`} className="group block">
-          <h3 className="text-lg font-bold text-slate-950 group-hover:text-orange-600 transition-colors flex items-center justify-between">
+          <h3 className="text-lg font-bold text-slate-950 group-hover:text-orange-700 transition-colors flex items-center justify-between">
             <span>{provider.name}</span>
-            <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity text-orange-600" />
+            <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity text-orange-700" />
           </h3>
         </Link>
         <p className="text-xs font-medium text-orange-700 mt-0.5">
@@ -57,7 +57,7 @@ export function ProviderCard({ provider, onOpenDispatch }: ProviderCardProps) {
         {/* Location & Reviews Row */}
         <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-600">
           <div className="flex items-center gap-1 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200/80">
-            <MapPin className="h-3.5 w-3.5 text-orange-600 shrink-0" />
+            <MapPin className="h-3.5 w-3.5 text-orange-700 shrink-0" />
             <span>{provider.suburb}, {provider.state} ({provider.serviceRadiusKm}km radius)</span>
           </div>
 
@@ -123,7 +123,7 @@ export function ProviderCard({ provider, onOpenDispatch }: ProviderCardProps) {
             href="tel:0468991300"
             className="flex items-center justify-center gap-1.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 py-2.5 text-xs font-bold text-slate-800 transition-colors shadow-2xs"
           >
-            <Phone className="h-3.5 w-3.5 text-orange-600" />
+            <Phone className="h-3.5 w-3.5 text-orange-700" />
             <span>0468 991 300</span>
           </a>
 

@@ -99,9 +99,9 @@ export function HeroSearch({
       icon: Zap,
       diagnostic: "$149 Diagnostic",
       bg: "bg-orange-50",
-      text: "text-orange-600",
+      text: "text-orange-700",
       border: "border-orange-200/80",
-      hoverBg: "group-hover:bg-orange-600 group-hover:text-white",
+      hoverBg: "group-hover:bg-orange-700 group-hover:text-white",
       glow: "group-hover:shadow-[0_0_15px_rgba(234,88,12,0.35)]",
       dot: "bg-orange-500",
     },
@@ -162,7 +162,7 @@ export function HeroSearch({
         <div className="mt-10">
           <div className="flex items-center justify-between mb-3 px-1">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 flex items-center gap-1.5 font-mono">
-              <Radio className="h-3.5 w-3.5 text-orange-600 animate-pulse" />
+              <Radio className="h-3.5 w-3.5 text-orange-700 animate-pulse" />
               <span>Common Urgent Repairs (Select for Instant Match)</span>
             </h2>
             <span className="text-xs text-slate-500 hidden sm:inline">
@@ -199,7 +199,7 @@ export function HeroSearch({
                               : "group-hover:rotate-6"
                           } group-hover:scale-115 active:scale-95 ${
                             isSelected
-                              ? "bg-orange-600 text-white border-orange-500 shadow-md"
+                              ? "bg-orange-700 text-white border-orange-600 shadow-md"
                               : `${item.bg} ${item.text} ${item.border} ${item.hoverBg} ${item.glow}`
                           }`}
                         >
@@ -230,7 +230,7 @@ export function HeroSearch({
 
                     <div
                       className={`text-xs font-bold leading-snug line-clamp-2 transition-colors ${
-                        isSelected ? "text-white" : "text-slate-950 group-hover:text-orange-600"
+                        isSelected ? "text-white" : "text-slate-950 group-hover:text-orange-700"
                       }`}
                     >
                       {item.title}
@@ -331,7 +331,7 @@ export function HeroSearch({
         {/* 4 Guarantees Row */}
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
           <div className="flex items-center gap-2.5 text-slate-700 font-medium bg-white border border-slate-200/80 rounded-xl p-3 shadow-2xs">
-            <Clock className="h-4 w-4 text-orange-600 shrink-0" />
+            <Clock className="h-4 w-4 text-orange-700 shrink-0" />
             <span>Same-Day On-Site Arrival</span>
           </div>
           <div className="flex items-center gap-2.5 text-slate-700 font-medium bg-white border border-slate-200/80 rounded-xl p-3 shadow-2xs">

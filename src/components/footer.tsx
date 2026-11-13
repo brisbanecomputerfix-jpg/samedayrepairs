@@ -50,7 +50,7 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
           <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={onOpenRegister}
-              className="rounded-xl bg-orange-600 hover:bg-orange-700 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all cursor-pointer"
+              className="rounded-xl bg-orange-700 hover:bg-orange-800 px-5 py-3 text-xs font-black uppercase tracking-wider text-white shadow-md transition-all cursor-pointer"
             >
               Register Trade Van (Free)
             </button>
@@ -71,11 +71,11 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
           {/* Brand Col */}
           <div className="space-y-3 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="h-8 w-8 rounded-lg bg-orange-600 flex items-center justify-center text-white shadow-2xs group-hover:bg-orange-700 transition-colors">
+              <div className="h-8 w-8 rounded-lg bg-orange-700 flex items-center justify-center text-white shadow-2xs group-hover:bg-orange-800 transition-colors">
                 <Zap className="h-4 w-4 fill-white" />
               </div>
               <span className="text-base font-black text-slate-950">
-                SameDay<span className="text-orange-600">Repairs</span>.com.au
+                SameDay<span className="text-orange-700">Repairs</span>.com.au
               </span>
             </Link>
             <p className="text-xs text-slate-600 leading-relaxed font-medium">
@@ -268,13 +268,13 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
 
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-4">
-              <Link href="/privacy" className="hover:text-orange-600 hover:underline transition-colors">
+              <Link href="/privacy" className="hover:text-orange-700 hover:underline transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-orange-600 hover:underline transition-colors">
+              <Link href="/terms" className="hover:text-orange-700 hover:underline transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/trade-charter" className="hover:text-orange-600 hover:underline transition-colors">
+              <Link href="/trade-charter" className="hover:text-orange-700 hover:underline transition-colors">
                 Trade Charter
               </Link>
             </div>
@@ -286,7 +286,7 @@ export function Footer({ onOpenRegister, onOpenDispatch }: FooterProps) {
               className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 text-slate-800 font-bold px-3 py-1.5 transition-all cursor-pointer group min-h-[32px]"
             >
               <span>Back to Top</span>
-              <ArrowUp className="h-3.5 w-3.5 text-orange-600 transition-transform group-hover:-translate-y-0.5" />
+              <ArrowUp className="h-3.5 w-3.5 text-orange-700 transition-transform group-hover:-translate-y-0.5" />
             </button>
           </div>
         </div>

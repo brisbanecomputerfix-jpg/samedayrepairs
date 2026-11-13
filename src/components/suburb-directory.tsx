@@ -39,7 +39,7 @@ export function SuburbDirectory({
       <div className="container mx-auto max-w-7xl">
         <div className="max-w-3xl mb-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 text-xs font-semibold text-slate-700 mb-3 shadow-2xs">
-            <MapPin className="h-3.5 w-3.5 text-orange-600" />
+            <MapPin className="h-3.5 w-3.5 text-orange-700" />
             <span>Hyper-Local Suburb Coverage</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
