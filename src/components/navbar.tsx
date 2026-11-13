@@ -38,12 +38,12 @@ export function Navbar({
   return (
     <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-200 shadow-xs">
       {/* Top Reassurance Ribbon */}
-      <div className="bg-slate-900 text-slate-300 px-4 py-2 text-xs">
-        <div className="container mx-auto max-w-7xl flex items-center justify-between">
-          <div className="flex items-center gap-2 sm:gap-4">
-            <span className="flex items-center gap-1.5 text-slate-200 font-medium">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              <span>Same-Day Availability: <strong className="text-white">{currentCity.name} Metro</strong></span>
+      <div className="bg-slate-900 text-slate-300 px-3 sm:px-4 py-2 text-xs">
+        <div className="container mx-auto max-w-7xl flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+            <span className="flex items-center gap-1.5 text-slate-200 font-medium truncate">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 shrink-0" />
+              <span className="truncate">Same-Day Availability: <strong className="text-white">{currentCity.name} Metro</strong></span>
             </span>
             <span className="hidden md:inline text-slate-600">|</span>
             <span className="hidden md:flex items-center gap-1 text-slate-400">
@@ -52,15 +52,15 @@ export function Navbar({
             </span>
           </div>
 
-          <div className="flex items-center gap-3 sm:gap-5">
+          <div className="flex items-center gap-3 sm:gap-5 shrink-0">
             <span className="hidden sm:inline text-slate-400 text-[11px]">
               Average arrival window: 45–75 mins
             </span>
             <a
               href="tel:0468991300"
-              className="inline-flex items-center gap-1.5 font-bold text-amber-400 hover:text-amber-300 transition-colors"
+              className="inline-flex items-center gap-1.5 font-bold text-amber-400 hover:text-amber-300 transition-colors text-xs"
             >
-              <Phone className="h-3.5 w-3.5" />
+              <Phone className="h-3.5 w-3.5 shrink-0" />
               <span>0468 991 300</span>
             </a>
           </div>

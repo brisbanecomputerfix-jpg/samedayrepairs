@@ -96,9 +96,9 @@ export function HeroSearch({
         
         {/* Verification Pill */}
         <div className="flex items-center justify-center mb-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs text-slate-700 shadow-xs">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
-            <span className="font-semibold text-slate-900">Australia's Verified Same-Day Trade Directory</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-xs text-slate-700 shadow-xs max-w-full">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500 shrink-0" />
+            <span className="font-semibold text-slate-900 truncate">Australia's Verified Same-Day Trade Directory</span>
             <span className="text-slate-300 hidden sm:inline">•</span>
             <span className="text-slate-500 hidden sm:inline">QBCC & State Licences Audited</span>
           </div>
@@ -106,7 +106,7 @@ export function HeroSearch({
 
         {/* Clear, High-Trust Headline */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-[1.15]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-[1.15] break-words">
             Same-Day Emergency Repairs & Trades. <br className="hidden sm:inline" />
             <span className="text-orange-600">Dispatched To Your Door Today.</span>
           </h1>
