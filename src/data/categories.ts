@@ -182,3 +182,4 @@ export const REPAIR_CATEGORIES: RepairCategory[] = [
     bannerColor: "from-slate-700 to-cyan-900",
   },
 ];
+

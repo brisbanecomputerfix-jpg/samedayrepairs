@@ -290,3 +290,4 @@ export function ListBusinessModal({ isOpen, onClose }: ListBusinessModalProps) {
     </div>
   );
 }
+

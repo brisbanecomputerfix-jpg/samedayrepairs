@@ -132,3 +132,4 @@ export function ProviderCard({ provider, onOpenDispatch }: ProviderCardProps) {
     </div>
   );
 }
+
